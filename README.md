@@ -14,7 +14,7 @@ it will fetch the git repositories specified in the manifest and, by doing so,
 setup an OpenEmbedded build environment for you!
 
 Daisy is the name of the April 2014 Yocto Project release. For normal work
-use the release branch for best results. Elite hacker dudes can work on 
+use the release branch for best results. Elite hacker dudes can work on
 master.
 
 Getting Started
@@ -48,7 +48,7 @@ Getting Started
     initialized in your working directory. Your client directory should now
     contain a .repo directory where files such as the manifest will be kept.
 
-    To learn more about repo, look at http://source.android.com/source/version-control.html 
+    To learn more about repo, look at https://source.android.com/source/using-repo.html 
 
 3.  Fetch all the repositories.
 
@@ -152,4 +152,3 @@ These machines have been tested:
  imx6sabre-lite
 
 Please send success stories to philip@balister.org.
-
