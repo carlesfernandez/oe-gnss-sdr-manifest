@@ -1,7 +1,12 @@
-Repo Manifests for building systems based on meta-sdr
+# WORK IN PROGRESS
+
+
+
+
+Repo Manifests for building systems based on meta-gnss-sdr
 =============================================
 This repository provides Repo manifests to setup the OpenEmbedded build system
-with meta-sdr and some interesting boards
+with meta-gnss-sdr and some interesting boards
 
 OpenEmbedded allows the creation of custom linux distributions for embedded
 systems. It is a collection of git repositories known as *layers* each of
@@ -13,9 +18,6 @@ single *manifest* file.  Tell repo to fetch a manifest from this repository and
 it will fetch the git repositories specified in the manifest and, by doing so,
 setup an OpenEmbedded build environment for you!
 
-Daisy is the name of the April 2014 Yocto Project release. For normal work
-use the release branch for best results. Elite hacker dudes can work on
-master.
 
 Getting Started
 ---------------
@@ -42,13 +44,13 @@ Getting Started
 
     Tell Repo where to find the manifest
 
-        $ repo init -u git://github.com/balister/oe-gnuradio-manifest.git -b jethro
+        $ repo init -u git://github.com/carlesfernandez/oe-gnss-sdr-manifest.git -b master
 
     A successful initialization will end with a message stating that Repo is
     initialized in your working directory. Your client directory should now
     contain a .repo directory where files such as the manifest will be kept.
 
-    To learn more about repo, look at https://source.android.com/source/using-repo.html 
+    To learn more about repo, look at https://source.android.com/source/using-repo.html
 
 3.  Fetch all the repositories.
 
@@ -60,7 +62,7 @@ Getting Started
 4.  Initialize the OpenEmbedded Environment. This assumes you created the oe-core directory
     in your home directory.
 
-        $ TEMPLATECONF=`pwd`/meta-sdr/conf source ./oe-core/oe-init-build-env ./build ./bitbake
+        $ TEMPLATECONF=`pwd`/meta-gnss-sdr/conf source ./oe-core/oe-init-build-env ./build ./bitbake
 
     This copies default configuration information into the build/conf*
     directory and sets up some environment variables for OpenEmbedded.  You may
@@ -72,7 +74,7 @@ Getting Started
     do an awful lot of compilation so make sure you have plenty of space (25GB
     minimum). Go drink some beer.
 
-        $ export MACHINE="zedboard-zynq7" (default is ettus-e300)
+        $ export MACHINE="ettus-e300" (default is zedboard-zynq7)
         $ bitbake gnuradio-dev-image
 
     If everything goes well, you should have a compressed root filesystem
@@ -141,14 +143,3 @@ Make your changes (and contribute them back if they are generally useful :) ),
 and then re-initialize your repo client
 
     $ repo init -u <file:///path/to/your/git/repository.git>
-
-Known Good Machines
--------------------
-
-These machines have been tested:
-
- zedboard-zynq7
- ettus-e1xx (need to use kernel+modules from official image)
- imx6sabre-lite
-
-Please send success stories to philip@balister.org.
