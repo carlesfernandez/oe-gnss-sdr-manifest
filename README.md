@@ -13,7 +13,7 @@ $ sudo apt-get install gawk wget git-core diffstat unzip texinfo gcc-multilib \
 Repo Manifests for building systems based on meta-gnss-sdr
 =============================================
 This repository provides Repo manifests to setup the OpenEmbedded build system
-with meta-gnss-sdr and some interesting boards
+with meta-gnss-sdr and a Zedboard.
 
 OpenEmbedded allows the creation of custom linux distributions for embedded
 systems. It is a collection of git repositories known as *layers* each of
@@ -81,7 +81,6 @@ Getting Started
     do an awful lot of compilation so make sure you have plenty of space (25GB
     minimum). Go drink some beer.
 
-        $ export MACHINE="ettus-e300" (default is zedboard-zynq7)
         $ bitbake gnuradio-dev-image
 
     If everything goes well, you should have a compressed root filesystem
@@ -97,7 +96,6 @@ Getting Started
 
     Run:
 
-        $ export MACHINE="zedboard-zynq7" (only if MACHINE is not already set)
         $ bitbake -c populate_sdk gnuradio-dev-image
 
     When this completes the sdk is in ./tmp-eglibc/deploy/sdk/ as an .sh file
@@ -150,3 +148,10 @@ Make your changes (and contribute them back if they are generally useful :) ),
 and then re-initialize your repo client
 
     $ repo init -u <file:///path/to/your/git/repository.git>
+
+Credits
+---------
+
+This repo is based on https://github.com/balister/oe-gnuradio-manifest
+
+In case of success, you own philip@balister.org a cold beer.
