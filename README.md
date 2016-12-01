@@ -1,6 +1,13 @@
 # WORK IN PROGRESS
 
+### Environment
 
+Ubuntu 16.04 64 bits in a Virtual Machine
+
+```
+$ sudo apt-get install gawk wget git-core diffstat unzip texinfo gcc-multilib \
+    build-essential chrpath libsdl1.2-dev xterm
+```
 
 
 Repo Manifests for building systems based on meta-gnss-sdr
