@@ -9,6 +9,13 @@ $ sudo apt-get install gawk wget git-core diffstat unzip texinfo gcc-multilib \
     build-essential chrpath libsdl1.2-dev xterm
 ```
 
+Configure Git:
+
+```
+$ git config --global user.name "Your Name"
+$ git config --global user.email your.name@example.com
+```
+
 
 Repo Manifests for building systems based on meta-gnss-sdr
 =============================================
