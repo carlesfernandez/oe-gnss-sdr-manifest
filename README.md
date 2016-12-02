@@ -78,10 +78,10 @@ Getting Started
 5.  Build an image.
 
     This process downloads several gigabytes of source code and then proceeds to
-    do an awful lot of compilation so make sure you have plenty of space (25GB
+    do an awful lot of compilation so make sure you have plenty of space (25 GB
     minimum). Go drink some beer.
 
-        $ bitbake gnuradio-dev-image
+        $ bitbake gnss-sdr-dev-image
 
     If everything goes well, you should have a compressed root filesystem
     tarball as well as kernel and bootloader binaries available in your
@@ -92,11 +92,11 @@ Getting Started
     a look to be sure your operating system is supported:
     https://wiki.yoctoproject.org/wiki/Distribution_Support
 
-6.  Build an SDK for cross compiling gnuradio on an x86 machine.
+6.  Build an SDK for cross compiling GNSS-SDR on an x86 machine.
 
     Run:
 
-        $ bitbake -c populate_sdk gnuradio-dev-image
+        $ bitbake -c populate_sdk gnss-sdr-dev-image
 
     When this completes the sdk is in ./tmp-eglibc/deploy/sdk/ as an .sh file
     you copy to the machine you want to cross compile on and run the file.
@@ -119,7 +119,7 @@ Enter the OpenEmbedded environment:
 
 You can then rebuild as before:
 
-    $ bitbake gnuradio-dev-image
+    $ bitbake gnss-sdr-dev-image
 
 Starting from Fresh
 -------------------
@@ -142,7 +142,7 @@ repositories and branches or pull in additional meta-layers.
 
 Clone this repository (or fork it on github):
 
-    $ git clone git://github.com/balister/oe-gnuradio-manifest.git
+    $ git clone git://github.com/carlesfernandez/oe-gnss-sdr-manifest.git
 
 Make your changes (and contribute them back if they are generally useful :) ),
 and then re-initialize your repo client
