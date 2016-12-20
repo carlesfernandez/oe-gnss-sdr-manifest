@@ -1,5 +1,3 @@
-# WORK IN PROGRESS
-
 ### Environment
 
 Ubuntu 16.04 64 bits in a Virtual Machine
@@ -17,8 +15,9 @@ $ git config --global user.email your.name@example.com
 ```
 
 
-Repo Manifests for building systems based on meta-gnss-sdr
-=============================================
+Repo Manifests for building systems based on the meta-gnss-sdr layer
+====================================================================
+
 This repository provides Repo manifests to setup the OpenEmbedded build system
 with meta-gnss-sdr and a Zedboard.
 
