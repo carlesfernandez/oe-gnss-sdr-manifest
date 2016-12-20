@@ -130,7 +130,7 @@ Cross compile GNSS-SDR and install on target:
         $ cd gnss-sdr
         $ git checkout next
         $ cd build
-        $ cmake -DCMAKE_TOOLCHAIN_FILE=../cmake/Toolchains/oe-sdk_cross.cmake   -DCMAKE_INSTALL_PREFIX=/usr ..
+        $ cmake -DCMAKE_TOOLCHAIN_FILE=../cmake/Toolchains/oe-sdk_cross.cmake -DCMAKE_INSTALL_PREFIX=/usr ..
         $ make
         $ sudo make install DESTDIR=/usr/local/oecore-x86_64/sysroots/armv7ahf-vfp-neon-oe-linux-gnueabi/
 
