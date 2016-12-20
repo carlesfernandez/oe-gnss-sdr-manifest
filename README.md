@@ -115,14 +115,14 @@ Using the SDK
 
 Install it by running:
 
-        $ sudo sh ./tmp-eglibc/deploy/sdk/ oecore-x86_64-armv7ahf-vfp-neon-toolchain-nodistro.0.sh
+        $ sudo sh ./tmp-eglibc/deploy/sdk/oecore-x86_64-armv7ahf-vfp-neon-toolchain-nodistro.0.sh
 
 
 This will ask you what directory to install the SDK into. Which directory doesn't matter, just make sure wherever it goes that you have enough disk space. The default is ```/usr/local```. You can also install it in your home directory if you do not have root access.
 
 Running the environment script will set up most of the variables we'll need to compile. You will need to do this each time you want to run the SDK (and since the environment variable are only set for the current shell, you need to source it for every console you will run the SDK from)
 
-        $ . /usr/local/oecore-x86_64/environment-setup-armv7ahf-vfp-neon-oe-linux-gnueabi.sh
+        $ . /usr/local/oecore-x86_64/environment-setup-armv7ahf-vfp-neon-oe-linux-gnueabi
 
 Cross compile GNSS-SDR and install on target:
 
