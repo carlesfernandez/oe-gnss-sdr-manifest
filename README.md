@@ -114,7 +114,7 @@ Using the SDK
 
 Install it by running:
 
-        $ sudo sh ./tmp-eglibc/deploy/sdk/oecore-x86_64-armv7ahf-vfp-neon-toolchain-nodistro.0.sh
+        $ sudo sh ./tmp-glibc/deploy/sdk/oecore-x86_64-armv7ahf-vfp-neon-toolchain-nodistro.0.sh
 
 
 This will ask you what directory to install the SDK into. Which directory doesn't matter, just make sure wherever it goes that you have enough disk space. The default is ```/usr/local```. You can also install it in your home directory if you do not have root access.
