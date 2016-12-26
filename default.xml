@@ -33,6 +33,6 @@
 	<project name="meta-fsl-arm" remote="freescale" path="meta-fsl-arm" version="417f669e4dede244a81e11aa6d8b60c4e333e589" />
 	<project name="meta-fsl-arm-extra" remote="freescale" path="meta-fsl-arm-extra" revision="dd074c47af53948041f6c5671e519fbf815b0980" />
 	<project name="meta-ti" remote="yocto" path="meta-ti" revision="12fbf1a37424f1cabd06dc993bf8921fd06f93d1" />
-	<project name="meta-gnss-sdr" remote="gnss-sdr" path="meta-gnss-sdr" revision="master" />
+	<project name="meta-gnss-sdr" remote="gnss-sdr" path="meta-gnss-sdr" revision="jethro" />
 
 </manifest>
