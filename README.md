@@ -63,6 +63,8 @@ Getting Started
     initialized in your working directory. Your client directory should now
     contain a .repo directory where files such as the manifest will be kept.
 
+    **Note on the branch name**: This repository has several branches, which names follow those of [Yocto Project Releases](https://wiki.yoctoproject.org/wiki/Releases). Each branch will download and build different versions of the software packages. Most recent stuff is in the ```master``` branch, but it can be unstable.
+
     To learn more about repo, look at https://source.android.com/source/using-repo.html
 
 3.  Fetch all the repositories.
