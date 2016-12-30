@@ -24,15 +24,16 @@
 
 	<default remote="openembedded" revision="master"  />
 
-	<project name="meta-ettus" remote="ettus" path="meta-ettus" revision="6bf4aa6e0d96928fddf6b1fd860f71809475e260" />
-	<project name="bitbake"  path="bitbake" revision="b993d96203541cd2919d688559ab802078a7a506" />
-	<project name="openembedded-core"  path="oe-core" revision="39ef8e22b52d3f5daa853aa7866145e9c5469d4b" />
-	<project name="meta-openembedded"  path="meta-oe" revision="2ea8d7f54a061e902657c4f8ea1f7f7c25c6c4e1"  />
-	<project name="meta-xilinx" remote="Xilinx" path="meta-xilinx" revision="b271330b745ead404ddb8a9912db44da6fbbf968" />
-	<project name="meta-sdr" remote="balister" path="meta-sdr" revision="c8731a2f6acba2157431108b5e14e37821f932fc" />
-	<project name="meta-fsl-arm" remote="freescale" path="meta-fsl-arm" version="417f669e4dede244a81e11aa6d8b60c4e333e589" />
-	<project name="meta-fsl-arm-extra" remote="freescale" path="meta-fsl-arm-extra" revision="dd074c47af53948041f6c5671e519fbf815b0980" />
-	<project name="meta-ti" remote="yocto" path="meta-ti" revision="12fbf1a37424f1cabd06dc993bf8921fd06f93d1" />
-	<project name="meta-gnss-sdr" remote="gnss-sdr" path="meta-gnss-sdr" revision="master" />
+	<project name="meta-ettus" remote="ettus" path="meta-ettus" revision="d07a9ab1bdb555956f6d323847818b17f98f6205" />
+	<project name="bitbake"  path="bitbake" revision="25859009b710cb35ac8f9ee9eb3a7305f9e13402" />
+	<project name="openembedded-core"  path="oe-core" revision="85ab50390edd3c0de632386da71ccc9256d4d4c5" />
+	<project name="meta-openembedded"  path="meta-oe" revision="247b1267bbe95719cd4877d2d3cfbaf2a2f4865a"  />
+	<project name="meta-qt4"  remote="yocto" path="meta-qt4" revision="92a72a790a427af5f85ce86fea4fce86a72c7b58"  />
+	<project name="meta-xilinx" remote="Xilinx" path="meta-xilinx" revision="dcd1c218f943c3657b138cb05012c90c65f32a35" />
+	<project name="meta-sdr" remote="balister" path="meta-sdr" revision="69012ff5b1bdd9bee212a1c21985d90d2e58b5b7" />
+	<project name="meta-fsl-arm" remote="freescale" path="meta-fsl-arm" version="e713e9d0cc2fc0dd407e2cbf9d1eea9c573a4de7" />
+	<project name="meta-fsl-arm-extra" remote="freescale" path="meta-fsl-arm-extra" revision="698cf389aa446244a39b597fbf58be1d55096500" />
+	<project name="meta-ti" remote="yocto" path="meta-ti" revision="20e57e16de436d83231a62da8a5074fd3a055937" />
+	<project name="meta-gnss-sdr" remote="gnss-sdr" path="meta-gnss-sdr" revision="krogoth" />
 
 </manifest>
