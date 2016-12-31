@@ -106,7 +106,7 @@ Getting Started
 
         $ bitbake -c populate_sdk gnss-sdr-dev-image
 
-    When this completes the sdk is in ./tmp-eglibc/deploy/sdk/ as an .sh file
+    When this completes the sdk is in ./tmp-glibc/deploy/sdk/ as an .sh file
     you copy to the machine you want to cross compile on and run the file.
     It will default to installing the sdk in /usr/local, and you can ask it to
     install anywhere you have write access to.
