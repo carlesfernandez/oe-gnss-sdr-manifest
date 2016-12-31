@@ -137,6 +137,21 @@ Cross compile GNSS-SDR and install on target:
 
 
 
+Build a root filesystem with GNSS-SDR already installed
+---------------
+
+In order to obtain a filesystem with GNSS-SDR already installed and ready to be copied to your SD card, you can bit bake the following image:
+
+        $ bitbake gnss-sdr-demo-image
+        $ bitbake -c populate_sdk gnss-sdr-demo-image
+
+This will create a root filesystem at ```./tmp-glibc/deploy/images/zedboard-zynq7/gnss-sdr-demo-image-zedboard-zynq7-YYYYMMDDHHMMSS.rootfs.tar.gz```.
+
+As well, executing ```./tmp-glibc/deploy/sdk/oecore-x86_64-armv7ahf-neon-toolchain-nodistro.0.sh``` as sudo will install the SDK, providing the full root filesystem at ```/usr/local/oecore-x86_64/sysroots/armv7ahf-vfp-neon-oe-linux-gnueabi/```.
+
+Such filesystem, as in the case of the ```gnss-sdr-dev-image``` recipe, will have root access without password by default.
+
+
 Staying Up to Date
 ------------------
 To pick up the latest changes for all source repositories, run:
