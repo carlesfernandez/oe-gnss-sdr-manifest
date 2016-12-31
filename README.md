@@ -96,7 +96,7 @@ Getting Started
     *work/deploy* directory.  If you run into problems, the most likely
     candidate is missing packages.  Check out
     http://www.yoctoproject.org/docs/current/yocto-project-qs/yocto-project-qs.html#resources
-    for the list of required packagaes for operating system. Also, take
+    for the list of required packages for operating system. Also, take
     a look to be sure your operating system is supported:
     https://wiki.yoctoproject.org/wiki/Distribution_Support
 
