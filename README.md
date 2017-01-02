@@ -116,14 +116,14 @@ Using the SDK
 
 Install it by running:
 
-        $ sudo sh ./tmp-glibc/deploy/sdk/oecore-x86_64-armv7ahf-vfp-neon-toolchain-nodistro.0.sh
+        $ sudo sh ./tmp-glibc/deploy/sdk/oecore-x86_64-armv7ahf-neon-toolchain-nodistro.0.sh
 
 
 This will ask you what directory to install the SDK into. Which directory doesn't matter, just make sure wherever it goes that you have enough disk space. The default is ```/usr/local```. You can also install it in your home directory if you do not have root access.
 
 Running the environment script will set up most of the variables we'll need to compile. You will need to do this each time you want to run the SDK (and since the environment variable are only set for the current shell, you need to source it for every console you will run the SDK from)
 
-        $ . /usr/local/oecore-x86_64/environment-setup-armv7ahf-vfp-neon-oe-linux-gnueabi
+        $ . /usr/local/oecore-x86_64/environment-setup-armv7ahf-neon-oe-linux-gnueabi
 
 Cross compile GNSS-SDR and install on target:
 
@@ -133,7 +133,7 @@ Cross compile GNSS-SDR and install on target:
         $ cd build
         $ cmake -DCMAKE_TOOLCHAIN_FILE=../cmake/Toolchains/oe-sdk_cross.cmake -DCMAKE_INSTALL_PREFIX=/usr ..
         $ make
-        $ sudo make install DESTDIR=/usr/local/oecore-x86_64/sysroots/armv7ahf-vfp-neon-oe-linux-gnueabi/
+        $ sudo make install DESTDIR=/usr/local/oecore-x86_64/sysroots/armv7ahf-neon-oe-linux-gnueabi/
 
 
 
@@ -147,7 +147,7 @@ In order to obtain a filesystem with GNSS-SDR already installed and ready to be 
 
 This will create a root filesystem at ```./tmp-glibc/deploy/images/zedboard-zynq7/gnss-sdr-demo-image-zedboard-zynq7-YYYYMMDDHHMMSS.rootfs.tar.gz```.
 
-As well, executing ```./tmp-glibc/deploy/sdk/oecore-x86_64-armv7ahf-neon-toolchain-nodistro.0.sh``` as sudo will install the SDK, providing the full root filesystem at ```/usr/local/oecore-x86_64/sysroots/armv7ahf-vfp-neon-oe-linux-gnueabi/```.
+As well, executing ```./tmp-glibc/deploy/sdk/oecore-x86_64-armv7ahf-neon-toolchain-nodistro.0.sh``` as sudo will install the SDK, providing the full root filesystem at ```/usr/local/oecore-x86_64/sysroots/armv7ahf-neon-oe-linux-gnueabi/```.
 
 Such filesystem, as in the case of the ```gnss-sdr-dev-image``` recipe, will have root access without password by default.
 
