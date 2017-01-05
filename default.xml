@@ -34,6 +34,7 @@
 	<project name="meta-fsl-arm" remote="freescale" path="meta-fsl-arm" revision="154ccf1e8b08e3d6219bd455b7dfe9ff7ab975b0" />
 	<project name="meta-freescale-3rdparty" remote="freescale" path="meta-freescale-3rdparty" revision="69ed94bb781a9c1bfbba4fb3026e4cbf3a194878" />
 	<project name="meta-ti" remote="yocto" path="meta-ti" revision="ae03bd2d26d306e21052743cd4cdb195a27b023a" />
+	<project name="meta-raspberrypi" remote="yocto" path="meta-raspberrypi" revision="031e26954b95d49a66ea4677b9e867d08441f450" />
 	<project name="meta-gnss-sdr" remote="gnss-sdr" path="meta-gnss-sdr" revision="master" />
 
 </manifest>
