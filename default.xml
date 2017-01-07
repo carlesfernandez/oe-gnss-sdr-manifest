@@ -31,7 +31,8 @@
 	<project name="meta-qt4" remote="yocto" path="meta-qt4" revision="2c7f8df9039be498f8a2232d1428adb7f4e5e800"  />
 	<project name="meta-xilinx" remote="Xilinx" path="meta-xilinx" revision="4885a05b6e78f8dbc99cb341367e3409829d72dd" />
 	<project name="meta-sdr" remote="balister" path="meta-sdr" revision="4a64ae5a823dd114499bbba43cf36f65cd31ccd4" />
-	<project name="meta-fsl-arm" remote="freescale" path="meta-fsl-arm" revision="154ccf1e8b08e3d6219bd455b7dfe9ff7ab975b0" />
+	<project name="meta-fsl-arm" remote="freescale" path="meta-fsl-arm" revision="9755c41ec02f671b5fed545db67f15b47fb4fdb4" />
+	<project name="meta-freescale" remote="freescale" path="meta-freescale" revision="38bd14cddf1ce325de43f1fb29f01551b48384bb" />
 	<project name="meta-freescale-3rdparty" remote="freescale" path="meta-freescale-3rdparty" revision="69ed94bb781a9c1bfbba4fb3026e4cbf3a194878" />
 	<project name="meta-ti" remote="yocto" path="meta-ti" revision="ae03bd2d26d306e21052743cd4cdb195a27b023a" />
 	<project name="meta-raspberrypi" remote="yocto" path="meta-raspberrypi" revision="031e26954b95d49a66ea4677b9e867d08441f450" />
