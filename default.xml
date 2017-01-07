@@ -16,6 +16,9 @@
 	<remote name="freescale"
 		fetch="git://github.com/Freescale" />
 
+	<remote name="akuster"
+		fetch="git://github.com/akuster" />
+
 	<remote name="yocto"
 		fetch="git://git.yoctoproject.org/" />
 
@@ -36,6 +39,7 @@
 	<project name="meta-freescale-3rdparty" remote="freescale" path="meta-freescale-3rdparty" revision="69ed94bb781a9c1bfbba4fb3026e4cbf3a194878" />
 	<project name="meta-ti" remote="yocto" path="meta-ti" revision="62e2f24fcf80771195bda6d976fa980b3f9eed3d" />
 	<project name="meta-raspberrypi" remote="yocto" path="meta-raspberrypi" revision="031e26954b95d49a66ea4677b9e867d08441f450" />
+	<project name="meta-odroid" remote="akuster" path="meta-odroid" revision="73a7364b43508c5ed957dca61ff55bfe71d14b06" />
 	<project name="meta-gnss-sdr" remote="gnss-sdr" path="meta-gnss-sdr" revision="master" />
 
 </manifest>
