@@ -148,7 +148,30 @@ This will create a root filesystem at ```./tmp-glibc/deploy/images/zedboard-zynq
 
 As well, executing ```./tmp-glibc/deploy/sdk/oecore-x86_64-armv7ahf-neon-toolchain-nodistro.0.sh``` as sudo will install the SDK, providing the full root filesystem at ```/usr/local/oecore-x86_64/sysroots/armv7ahf-vfp-neon-oe-linux-gnueabi/```.
 
-Such filesystem, as in the case of the ```gnss-sdr-dev-image``` recipe, will have root access without password by default.  
+Such filesystem, as in the case of the ```gnss-sdr-dev-image``` recipe, will have root access without password by default.
+
+
+Building a minimal image with GNSS-SDR installed
+---------------
+
+You can save some megabytes and building time by configuring an image with no GUI, no development, no debugging and no profiling tools, but still with GNSS-SDR installed. Edit the "GUI support"  and the "Extra image configuration defaults" sections of your ```./conf/local.conf``` file as:
+
+        # Comment this line to remove GUI support:
+        #DISTRO_FEATURES_append = " opengl x11"
+        # If you remove GUI support, please also uncomment the following two lines:
+        PACKAGECONFIG_pn-gnuradio = "uhd logging"
+        PACKAGECONFIG_pn-gr-ettus = ""
+
+and
+
+        #EXTRA_IMAGE_FEATURES = "debug-tweaks tools-profile tools-sdk dev-pkgs dbg-pkgs"
+        EXTRA_IMAGE_FEATURES = ""
+
+and then build the gnss-sdr-minimal-image:
+
+        $ bitbake gnss-sdr-minimal-image
+
+
 
 Staying Up to Date
 ------------------
