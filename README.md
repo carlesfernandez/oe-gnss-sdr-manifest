@@ -161,12 +161,12 @@ You can save some megabytes and building time by configuring an image with no GU
         #DISTRO_FEATURES_append = " opengl x11"
         # If you remove GUI support, please also uncomment the following two lines:
         PACKAGECONFIG_pn-gnuradio = "uhd logging"
-        PACKAGECONFIG_pn-gr-ettus = "
+        PACKAGECONFIG_pn-gr-ettus = ""
 
 and
 
         #EXTRA_IMAGE_FEATURES = "debug-tweaks tools-profile tools-sdk dev-pkgs dbg-pkgs"
-        EXTRA_IMAGE_FEATURES = “”
+        EXTRA_IMAGE_FEATURES = ""
 
 and then build the gnss-sdr-minimal-image:
 
