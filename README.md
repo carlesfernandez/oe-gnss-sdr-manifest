@@ -87,7 +87,7 @@ Getting Started
     directory and sets up some environment variables for OpenEmbedded.  You may
     wish to edit the configuration options at this point. The default target is ```MACHINE=zedboard-zynq7``` but you can override that defining an environment variable:
 
-        $ export MACHINE=raspberrypi3
+        $ export MACHINE=raspberrypi2
 
 5.  Build an image.
 
