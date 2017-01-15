@@ -183,9 +183,7 @@ Enter the OpenEmbedded environment:
 
     $ . oe-core/oe-init-build-env ./build ./bitbake
 
-    If you forget to setup these environment variables prior to running bitbake,
-    your OS will complain that it can't find bitbake on the path.  Don't try
-    to install bitbake using a package manager, just run the command.
+If you forget to setup these environment variables prior to running bitbake,your OS will complain that it can't find bitbake on the path.  Don't try to install bitbake using a package manager, just run the command.
 
 You can then rebuild as before:
 
@@ -197,11 +195,11 @@ So it is borked.  You're not really sure why.  But it doesn't work any more.
 
 There are several degrees of *starting fresh*.
 
- 1. clean a package: bitbake <package-name> -c cleansstate
- 2. re-download package: bitbake <package-name> -c cleanall
- 3. destroy everything but downloads: rm -rf build (or whereever your sstate and work directories are)
- 4. destroy it all (not recommended): rm -rf build && rm -rf sources
-There are several degrees of *starting fresh*.
+ 1. clean a package: ```bitbake <package-name> -c cleansstate```
+ 2. re-download package: ```bitbake <package-name> -c cleanall```
+ 3. destroy everything but downloads: ```rm -rf build``` (or whereever your sstate and work directories are)
+ 4. destroy it all (not recommended): ```rm -rf build && rm -rf sources```
+
 
 Customize
 ---------
