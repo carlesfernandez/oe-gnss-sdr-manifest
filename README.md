@@ -1,4 +1,26 @@
-### Environment
+Repo Manifests for building systems based on the meta-gnss-sdr layer
+====================================================================
+
+This repository provides Repo manifests to setup the OpenEmbedded build system
+with the meta-gnss-sdr layer.
+
+OpenEmbedded allows the creation of custom linux distributions for embedded
+systems. It is a collection of git repositories known as *layers* each of
+which provides *recipes* to build software packages as well as configuration
+information.
+
+Repo is a tool that enables the management of many git repositories given a
+single *manifest* file.  Tell repo to fetch a manifest from this repository and
+it will fetch the git repositories specified in the manifest and, by doing so,
+setup an OpenEmbedded build environment for you!
+
+
+Setting up the build host
+---------------
+
+The process described below is based on [OpenEmbedded](http://www.openembedded.org) (a build framework for embedded Linux) and the [Yocto Project](https://www.yoctoproject.org/) (a complete embedded Linux development environment covering several build profiles across multiple architectures including ARM, PPC, MIPS, x86, and x86-64). In order to set up a build host, you will need a machine with a minimum of 50 Gbytes of free disk space and running a supported Linux distribution. In general, if you have the current release minus one of Ubuntu, Fedora, openSUSE, CentOS or Debian you should have no problems. For a more detailed list of distributions that support the Yocto Project, see the [Supported Linux Distributions](http://www.yoctoproject.org/docs/2.2/ref-manual/ref-manual.html#detailed-supported-distros) section in the Yocto Project Reference Manual.
+
+### Tested Environment
 
 Ubuntu 16.04 64 bits in a Virtual Machine
 
@@ -13,23 +35,6 @@ Configure Git:
 $ git config --global user.name "Your Name"
 $ git config --global user.email your.name@example.com
 ```
-
-
-Repo Manifests for building systems based on the meta-gnss-sdr layer
-====================================================================
-
-This repository provides Repo manifests to setup the OpenEmbedded build system
-with meta-gnss-sdr and a Zedboard.
-
-OpenEmbedded allows the creation of custom linux distributions for embedded
-systems. It is a collection of git repositories known as *layers* each of
-which provides *recipes* to build software packages as well as configuration
-information.
-
-Repo is a tool that enables the management of many git repositories given a
-single *manifest* file.  Tell repo to fetch a manifest from this repository and
-it will fetch the git repositories specified in the manifest and, by doing so,
-setup an OpenEmbedded build environment for you!
 
 
 Getting Started
@@ -80,7 +85,9 @@ Getting Started
 
     This copies default configuration information into the ```./build/conf```
     directory and sets up some environment variables for OpenEmbedded.  You may
-    wish to edit the configuration options at this point.
+    wish to edit the configuration options at this point. The default target is ```MACHINE=zedboard-zynq7``` but you can override that defining an environment variable:
+
+        $ export MACHINE=raspberrypi3
 
 5.  Build an image.
 
