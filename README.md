@@ -206,7 +206,7 @@ Customize
 Sooner or later, you'll want to customize some aspect of the image either
 adding more packages, picking up some upstream patches, or tweaking your kernel.
 To this, you'll want to customize the Repo manifest to point at different
-repositories and branches or pull in additional meta-layers.
+repositories and branches or pull in additional meta-layers. Check out the [OpenEmbedded Layer Index](http://layers.openembedded.org/layerindex/branch/krogoth/layers/).
 
 Clone this repository (or fork it on github):
 
