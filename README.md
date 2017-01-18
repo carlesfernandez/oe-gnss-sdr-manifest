@@ -18,7 +18,7 @@ setup an OpenEmbedded build environment for you!
 Setting up the build host
 ---------------
 
-The process described below is based on [OpenEmbedded](http://www.openembedded.org) (a build framework for embedded Linux) and the [Yocto Project](https://www.yoctoproject.org/) (a complete embedded Linux development environment covering several build profiles across multiple architectures including ARM, PPC, MIPS, x86, and x86-64). In order to set up a build host, you will need a machine with a minimum of 50 Gbytes of free disk space and running a supported Linux distribution. In general, if you have the current release minus one of Ubuntu, Fedora, openSUSE, CentOS or Debian you should have no problems. For a more detailed list of distributions that support the Yocto Project, see the [Supported Linux Distributions](http://www.yoctoproject.org/docs/2.2/ref-manual/ref-manual.html#detailed-supported-distros) section in the Yocto Project Reference Manual.
+The process described below is based on [OpenEmbedded](http://www.openembedded.org) (a build framework for embedded Linux) and the [Yocto Project](https://www.yoctoproject.org/) (a complete embedded Linux development environment covering several build profiles across multiple architectures including ARM, PPC, MIPS, x86, and x86-64). In order to set up a build host, you will need a machine with a minimum of 50 Gbytes of free disk space and running a supported Linux distribution. In general, if you have the current release minus one of Ubuntu, Fedora, openSUSE, CentOS or Debian you should have no problems. For a more detailed list of distributions that support the Yocto Project, see the [Supported Linux Distributions](http://www.yoctoproject.org/docs/2.1/ref-manual/ref-manual.html#detailed-supported-distros) section in the Yocto Project Reference Manual.
 
 ### Tested Environment
 
@@ -62,7 +62,7 @@ Getting Started
 
     Tell Repo where to find the manifest
 
-        $ repo init -u git://github.com/carlesfernandez/oe-gnss-sdr-manifest.git -b master
+        $ repo init -u git://github.com/carlesfernandez/oe-gnss-sdr-manifest.git -b krogoth
 
     A successful initialization will end with a message stating that Repo is
     initialized in your working directory. Your client directory should now
@@ -137,12 +137,10 @@ Cross compile GNSS-SDR and install on target:
         $ make
         $ sudo make install DESTDIR=/usr/local/oecore-x86_64/sysroots/armv7ahf-neon-oe-linux-gnueabi/
 
-
-
-Building a root filesystem with GNSS-SDR already installed
+Build a root filesystem with GNSS-SDR already installed
 ---------------
 
-In order to obtain a development filesystem with GNSS-SDR already installed and ready to be copied to your SD card, you can bitbake the following image:
+In order to obtain a filesystem with GNSS-SDR already installed and ready to be copied to your SD card, you can bit bake the following image:
 
         $ bitbake gnss-sdr-demo-image
         $ bitbake -c populate_sdk gnss-sdr-demo-image
@@ -173,7 +171,6 @@ and
 and then build the gnss-sdr-minimal-image:
 
         $ bitbake gnss-sdr-minimal-image
-
 
 
 Staying Up to Date
@@ -209,7 +206,7 @@ Customize
 Sooner or later, you'll want to customize some aspect of the image either
 adding more packages, picking up some upstream patches, or tweaking your kernel.
 To this, you'll want to customize the Repo manifest to point at different
-repositories and branches or pull in additional meta-layers.
+repositories and branches or pull in additional meta-layers. Check out the [OpenEmbedded Layer Index](http://layers.openembedded.org/layerindex/branch/master/layers/).
 
 Clone this repository (or fork it on github):
 
