@@ -43,7 +43,7 @@ Getting Started
 
     Download the Repo script.
 
-        $ curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > repo
+        $ curl http://storage.googleapis.com/git-repo-downloads/repo > repo
 
     Make it executable.
 
@@ -100,11 +100,7 @@ Getting Started
     If everything goes well, you should have a compressed root filesystem
     tarball as well as kernel and bootloader binaries available in your
     *work/deploy* directory.  If you run into problems, the most likely
-    candidate is missing packages.  Check out
-    http://www.yoctoproject.org/docs/current/yocto-project-qs/yocto-project-qs.html#resources
-    for the list of required packages for operating system. Also, take
-    a look to be sure your operating system is supported:
-    https://wiki.yoctoproject.org/wiki/Distribution_Support
+    candidate is missing packages.  Check out the [list of required packages for each operating system](http://www.yoctoproject.org/docs/2.2/ref-manual/ref-manual.html#required-packages-for-the-host-development-system).
 
 6.  Build an SDK for cross compiling GNSS-SDR on an x86 machine.
 
@@ -112,9 +108,9 @@ Getting Started
 
         $ bitbake -c populate_sdk gnss-sdr-dev-image
 
-    When this completes the sdk is in ./tmp-glibc/deploy/sdk/ as an .sh file
+    When this completes the SDK is in ```./tmp-glibc/deploy/sdk/``` as an .sh file
     you copy to the machine you want to cross compile on and run the file.
-    It will default to installing the sdk in /usr/local, and you can ask it to
+    It will default to installing the SDK in ```/usr/local```, and you can ask it to
     install anywhere you have write access to.
 
 Using the SDK
