@@ -157,10 +157,11 @@ Building a minimal image with GNSS-SDR installed
 
 You can save some megabytes and building time by configuring an image with no GUI, no development, no debugging and no profiling tools, but still with GNSS-SDR installed. Edit the "GUI support"  and the "Extra image configuration defaults" sections of your ```./conf/local.conf``` file as:
 
-        # Comment this line to remove GUI support:
-        #DISTRO_FEATURES_append = " opengl x11"
+        # Comment these two lines to remove GUI support:
+        # DISTRO_FEATURES_append = " opengl x11"
+        # PACKAGECONFIG_pn-gnuradio = "qtgui grc uhd"
         # If you remove GUI support, please also uncomment the following two lines:
-        PACKAGECONFIG_pn-gnuradio = "uhd logging"
+        PACKAGECONFIG_pn-gnuradio = "uhd"
         PACKAGECONFIG_pn-gr-ettus = ""
 
 and

@@ -30,18 +30,18 @@
 
 	<default remote="openembedded" revision="master"  />
 
-	<project name="bitbake" path="bitbake" revision="70e297e5c285ce0a02e9efd3117ff62cdc77ec12" />
-	<project name="openembedded-core" path="oe-core" revision="ce5c7075d530c0950f2feed35f95fbcd9f50721f" />
-	<project name="meta-openembedded" path="meta-oe" revision="def2483db69afdf8799b86ac0234a9ba52e8debf"  />
+	<project name="bitbake" path="bitbake" revision="master" />
+	<project name="openembedded-core" path="oe-core" revision="master" />
+	<project name="meta-openembedded" path="meta-oe" revision="master"  />
 	<project name="meta-qt4" remote="yocto" path="meta-qt4" revision="2c7f8df9039be498f8a2232d1428adb7f4e5e800"  />
-	<project name="meta-sdr" remote="balister" path="meta-sdr" revision="4a64ae5a823dd114499bbba43cf36f65cd31ccd4" />
+	<project name="meta-sdr" remote="balister" path="meta-sdr" revision="master" />
 	<project name="meta-ettus" remote="ettus" path="meta-ettus" revision="89f45fc324baec245767e85c0c1c71f1ef3b1c98" />
-	<project name="meta-xilinx" remote="Xilinx" path="meta-xilinx" revision="664e624af47e4c54319aa9dff854bf1d2cc2c333" />
+	<project name="meta-xilinx" remote="Xilinx" path="meta-xilinx" revision="master" />
 	<project name="meta-fsl-arm" remote="freescale" path="meta-fsl-arm" revision="9755c41ec02f671b5fed545db67f15b47fb4fdb4" />
-	<project name="meta-freescale" remote="freescale" path="meta-freescale" revision="a99b95c899e6c20b9f46fa04766c155e3a32949a" />
+	<project name="meta-freescale" remote="freescale" path="meta-freescale" revision="master" />
 	<project name="meta-freescale-3rdparty" remote="freescale" path="meta-freescale-3rdparty" revision="69ed94bb781a9c1bfbba4fb3026e4cbf3a194878" />
-	<project name="meta-ti" remote="yocto" path="meta-ti" revision="dd1d21e48310c1656e46193cd74328434c3527ac" />
-	<project name="meta-raspberrypi" remote="yocto" path="meta-raspberrypi" revision="ec28a0d5b3fd10a07a0ec31deb92a6e4c0536f0c" />
+	<project name="meta-ti" remote="yocto" path="meta-ti" revision="master" />
+	<project name="meta-raspberrypi" remote="yocto" path="meta-raspberrypi" revision="master" />
 	<project name="meta-odroid" remote="akuster" path="meta-odroid" revision="73a7364b43508c5ed957dca61ff55bfe71d14b06" />
 	<project name="meta-swupdate" remote="sbabic" path="meta-swupdate" revision="cff58596ed6329c2fd383091fe5fe72ec0ec90ca" />
 	<project name="meta-gnss-sdr" remote="gnss-sdr" path="meta-gnss-sdr" revision="master" />
