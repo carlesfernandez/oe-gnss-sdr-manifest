@@ -31,19 +31,16 @@
 	<default remote="openembedded" revision="master"  />
 
 	<project name="bitbake" path="bitbake" revision="1.34" />
-	<project name="openembedded-core" path="oe-core" revision="92bda0024d85ae78345665cc2f9646c9881ed61b" />
+	<project name="openembedded-core" path="oe-core" revision="d532735e608e32ef1f5a7307c344e528e8fa2f01" />
 	<project name="meta-openembedded" path="meta-oe" revision="dfbdd28d206a74bf264c2f7ee0f7b3e5af587796"  />
 	<project name="meta-qt4" remote="yocto" path="meta-qt4" revision="88989ae3abe98b30089e7518d3adabe990c40a10"  />
 	<project name="meta-sdr" remote="balister" path="meta-sdr" revision="bba0afb3b3e10ab6097dcddade3fd15e44316071" />
 	<project name="meta-ettus" remote="ettus" path="meta-ettus" revision="89f45fc324baec245767e85c0c1c71f1ef3b1c98" />
-	<project name="meta-xilinx" remote="Xilinx" path="meta-xilinx" revision="18097af3120a394a8e6933b7abc85e73e508c7e3" />
-	<project name="meta-fsl-arm" remote="freescale" path="meta-fsl-arm" revision="154ccf1e8b08e3d6219bd455b7dfe9ff7ab975b0" />
-	<project name="meta-freescale" remote="freescale" path="meta-freescale" revision="06178400afbd641a6709473fd21d893dcd3cfbfa" />
-	<project name="meta-freescale-3rdparty" remote="freescale" path="meta-freescale-3rdparty" revision="9613dbc02ca970122a01c935bc9e5789ced73a9d" />
+	<project name="meta-xilinx" remote="Xilinx" path="meta-xilinx" revision="07783c3cea24768ffc08d9102de6ae0c666a841e" />
 	<project name="meta-ti" remote="yocto" path="meta-ti" revision="a781f18fce87a7efe94f14a94402223be7d511e7" />
-	<project name="meta-raspberrypi" remote="yocto" path="meta-raspberrypi" revision="40447de4782d76f1e23e67ba05e272c27f6ec250" />
-	<project name="meta-odroid" remote="akuster" path="meta-odroid" revision="73a7364b43508c5ed957dca61ff55bfe71d14b06" />
-	<project name="meta-swupdate" remote="sbabic" path="meta-swupdate" revision="cff58596ed6329c2fd383091fe5fe72ec0ec90ca" />
+	<project name="meta-raspberrypi" remote="yocto" path="meta-raspberrypi" revision="6786c0709d2b072decd9383de38436d4befbcfbf" />
+	<project name="meta-odroid" remote="akuster" path="meta-odroid" revision="1c0210e1b3a6e96b9db17025e5f2ec35622b1755" />
+	<project name="meta-swupdate" remote="sbabic" path="meta-swupdate" revision="e3c05e4c9da121bd98e2326e0a9ccd86be495d62" />
 	<project name="meta-gnss-sdr" remote="gnss-sdr" path="meta-gnss-sdr" revision="pyro" />
 
 </manifest>
