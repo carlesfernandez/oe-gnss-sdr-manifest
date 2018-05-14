@@ -18,7 +18,7 @@ setup an OpenEmbedded build environment for you!
 Setting up the build host
 ---------------
 
-The process described below is based on [OpenEmbedded](http://www.openembedded.org) (a build framework for embedded Linux) and the [Yocto Project](https://www.yoctoproject.org/) (a complete embedded Linux development environment covering several build profiles across multiple architectures including ARM, PPC, MIPS, x86, and x86-64). In order to set up a build host, you will need a machine with a minimum of 50 Gbytes of free disk space and running a supported Linux distribution. In general, if you have the current release minus one of Ubuntu, Fedora, openSUSE, CentOS or Debian you should have no problems. For a more detailed list of distributions that support the Yocto Project, see the [Supported Linux Distributions](http://www.yoctoproject.org/docs/2.1/ref-manual/ref-manual.html#detailed-supported-distros) section in the Yocto Project Reference Manual.
+The process described below is based on [OpenEmbedded](http://www.openembedded.org) (a build framework for embedded Linux) and the [Yocto Project](https://www.yoctoproject.org/) (a complete embedded Linux development environment covering several build profiles across multiple architectures including ARM, PPC, MIPS, x86, and x86-64). In order to set up a build host, you will need a machine with a minimum of 50 Gbytes of free disk space and running a supported Linux distribution. In general, if you have the current release minus one of Ubuntu, Fedora, openSUSE, CentOS or Debian you should have no problems. For a more detailed list of distributions that support the Yocto Project, see the [Supported Linux Distributions](https://www.yoctoproject.org/docs/2.1/ref-manual/ref-manual.html#detailed-supported-distros) section in the Yocto Project Reference Manual.
 
 ### Tested Environment
 
@@ -43,7 +43,7 @@ Getting Started
 
     Download the Repo script.
 
-        $ curl http://storage.googleapis.com/git-repo-downloads/repo > repo
+        $ curl https://storage.googleapis.com/git-repo-downloads/repo > repo
 
     Make it executable.
 
@@ -100,7 +100,7 @@ Getting Started
     If everything goes well, you should have a compressed root filesystem
     tarball as well as kernel and bootloader binaries available in your
     *work/deploy* directory.  If you run into problems, the most likely
-    candidate is missing packages.  Check out the [list of required packages for each operating system](http://www.yoctoproject.org/docs/2.2/ref-manual/ref-manual.html#required-packages-for-the-host-development-system).
+    candidate is missing packages.  Check out the [list of required packages for each operating system](https://www.yoctoproject.org/docs/2.2/ref-manual/ref-manual.html#required-packages-for-the-host-development-system).
 
 6.  Build an SDK for cross compiling GNSS-SDR on an x86 machine.
 
@@ -207,7 +207,7 @@ Customize
 Sooner or later, you'll want to customize some aspect of the image either
 adding more packages, picking up some upstream patches, or tweaking your kernel.
 To this, you'll want to customize the Repo manifest to point at different
-repositories and branches or pull in additional meta-layers. Check out the [OpenEmbedded Layer Index](http://layers.openembedded.org/layerindex/branch/master/layers/).
+repositories and branches or pull in additional meta-layers. Check out the [OpenEmbedded Layer Index](https://layers.openembedded.org/layerindex/branch/master/layers/).
 
 Clone this repository (or fork it on github):
 
