@@ -25,6 +25,9 @@
 	<remote name="L4B-Software"
 		fetch="git://github.com/L4B-Software" />
 
+	<remote name="qt5"
+		fetch="git://github.com/meta-qt5" />
+
 	<remote name="gnss-sdr"
 		fetch="git://github.com/carlesfernandez" />
 
@@ -33,8 +36,8 @@
 	<project name="bitbake" path="bitbake" revision="1.36" />
 	<project name="openembedded-core" path="oe-core" revision="276ff1f22d00edd6c9728e44ed5d6692a6c9e04f" />
 	<project name="meta-openembedded" path="meta-oe" revision="6e3fc5b8d904d06e3aa77e9ec9968ab37a798188"  />
-	<project name="meta-qt4" remote="yocto" path="meta-qt4" revision="f313dbee2ac3d5fcc9801407947d3cb6cfb90b5d"  />
-	<project name="meta-sdr" remote="balister" path="meta-sdr" revision="bba0afb3b3e10ab6097dcddade3fd15e44316071" />
+	<project name="meta-qt5" remote="qt5" path="meta-qt5" revision="cfe02f26de53e5c20e6f9555059cbaaf5ab9b22f"  />
+	<project name="meta-sdr" remote="balister" path="meta-sdr" revision="2962db3ca6520268acda4753d00d81f1cf5fbf64" />
 	<project name="meta-ettus" remote="ettus" path="meta-ettus" revision="89f45fc324baec245767e85c0c1c71f1ef3b1c98" />
 	<project name="meta-xilinx" remote="Xilinx" path="meta-xilinx" revision="d6aaa8a9406e1b2b1545c804fd64807543fa6808" />
 	<project name="meta-raspberrypi" remote="yocto" path="meta-raspberrypi" revision="a1cfeb3324c458a73507e34ffcf28c25591b8052" />
