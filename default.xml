@@ -28,6 +28,9 @@
 	<remote name="qt5"
 		fetch="git://github.com/meta-qt5" />
 
+	<remote name="schnitzeltony"
+	    fetch="git://github.com/schnitzeltony" />
+
 	<remote name="gnss-sdr"
 		fetch="git://github.com/carlesfernandez" />
 
@@ -37,7 +40,8 @@
 	<project name="openembedded-core" path="oe-core" revision="82b018956763bf85b90d512c8a6bc96d59fa67fd" />
 	<project name="meta-openembedded" path="meta-oe" revision="be79b8b111a968efdbe5e1482d0c246d0b24763e"  />
 	<project name="meta-qt5" remote="qt5" path="meta-qt5" revision="c429cedc9d6babf41feb70211285662356c4125d"  />
-	<project name="meta-sdr" remote="balister" path="meta-sdr" revision="8db03082992aec65862ddfcb70ce79a33d1d30ac" />
+	<project name="meta-qt5-extra" remote="schnitzeltony" path="meta-qt5-extra" revision="6f51cb2e970a834485e8e57a30db8f582bc32cd6"  />
+	<project name="meta-sdr" remote="balister" path="meta-sdr" revision="64bc09596ed2717c72b794b300d59f4285b7a80a" />
 	<project name="meta-ettus" remote="ettus" path="meta-ettus" revision="4d19b351c57a10c87dc909fa7212ae8715d52b81" />
 	<project name="meta-xilinx" remote="Xilinx" path="meta-xilinx" revision="5fccc46503e468ed024185ed032891799a31db58" />
 	<project name="meta-raspberrypi" remote="yocto" path="meta-raspberrypi" revision="2d40b000021bc8a9ef7f329ed0ad410f8d227b97" />
