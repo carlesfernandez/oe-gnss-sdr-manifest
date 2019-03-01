@@ -36,19 +36,19 @@
 
 	<default remote="openembedded" revision="master"  />
 
-	<project name="bitbake" path="bitbake" revision="1.38" />
-	<project name="openembedded-core" path="oe-core" revision="82b018956763bf85b90d512c8a6bc96d59fa67fd" />
-	<project name="meta-openembedded" path="meta-oe" revision="be79b8b111a968efdbe5e1482d0c246d0b24763e"  />
-	<project name="meta-qt5" remote="qt5" path="meta-qt5" revision="c429cedc9d6babf41feb70211285662356c4125d"  />
-	<project name="meta-qt5-extra" remote="schnitzeltony" path="meta-qt5-extra" revision="6f51cb2e970a834485e8e57a30db8f582bc32cd6"  />
-	<project name="meta-sdr" remote="balister" path="meta-sdr" revision="64bc09596ed2717c72b794b300d59f4285b7a80a" />
+	<project name="bitbake" path="bitbake" revision="1.40" />
+	<project name="openembedded-core" path="oe-core" revision="6c9b23b77e62ed382d44f94849c13c1f831e64a7" />
+	<project name="meta-openembedded" path="meta-oe" revision="6ef9657068492d4644079c88f2adee9c3cac9543"  />
+	<project name="meta-qt5" remote="qt5" path="meta-qt5" revision="fb4ef4dd7bccfb53a5186c031105ea29320420ce"  />
+	<project name="meta-qt5-extra" remote="schnitzeltony" path="meta-qt5-extra" revision="5092528e6317f919949dbe3a6a1cfbe4ca7b390d"  />
+	<project name="meta-sdr" remote="balister" path="meta-sdr" revision="c4b326f2c69196055ca7e145edd270e71c6d96b7" />
 	<project name="meta-ettus" remote="ettus" path="meta-ettus" revision="4d19b351c57a10c87dc909fa7212ae8715d52b81" />
-	<project name="meta-xilinx" remote="Xilinx" path="meta-xilinx" revision="5fccc46503e468ed024185ed032891799a31db58" />
-	<project name="meta-raspberrypi" remote="yocto" path="meta-raspberrypi" revision="2d40b000021bc8a9ef7f329ed0ad410f8d227b97" />
-	<project name="meta-ti" remote="yocto" path="meta-ti" revision="a781f18fce87a7efe94f14a94402223be7d511e7" />
-	<project name="meta-odroid" remote="akuster" path="meta-odroid" revision="a517be8872bf47ae1bc7eb97a83a417200543cce" />
-	<project name="meta-swupdate" remote="sbabic" path="meta-swupdate" revision="f2d65d87485ada5a2d3a744fd7b9e46ec7e6b9f2" />
+	<project name="meta-xilinx" remote="Xilinx" path="meta-xilinx" revision="d2cccbabeceec246e92132151d71831f50f74bf1" />
+	<project name="meta-raspberrypi" remote="yocto" path="meta-raspberrypi" revision="c71d79efc5a06a0c896c278c94f5b14413bb4d69" />
+	<project name="meta-ti" remote="yocto" path="meta-ti" revision="4905be9164889cde6e73b022724192cb21beb1bc" />
+	<project name="meta-odroid" remote="akuster" path="meta-odroid" revision="f43a28ca491c7fd560173c6a8616c50d246488c7" />
+	<project name="meta-swupdate" remote="sbabic" path="meta-swupdate" revision="4ab05dff6a2a0c5c898b33af0905d2cebcaf6767" />
 	<project name="meta-docker" remote="L4B-Software" path="meta-docker" revision="7c31c6d1bec01086bf91f76aa09a2ffe9794072c" />
-	<project name="meta-gnss-sdr" remote="gnss-sdr" path="meta-gnss-sdr" revision="sumo" />
+	<project name="meta-gnss-sdr" remote="gnss-sdr" path="meta-gnss-sdr" revision="thud" />
 
 </manifest>
