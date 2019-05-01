@@ -22,11 +22,11 @@
 	<remote name="yocto"
 		fetch="git://git.yoctoproject.org/" />
 
+	<remote name="L4B-Software"
+		fetch="git://github.com/L4B-Software" />
+
 	<remote name="qt5"
 		fetch="git://github.com/meta-qt5" />
-
-	<remote name="schnitzeltony"
-	    fetch="git://github.com/schnitzeltony" />
 
 	<remote name="gnss-sdr"
 		fetch="git://github.com/carlesfernandez" />
