@@ -37,10 +37,9 @@
 	<default remote="openembedded" revision="master"  />
 
 	<project name="bitbake" path="bitbake" revision="1.40" />
-	<project name="openembedded-core" path="oe-core" revision="6c9b23b77e62ed382d44f94849c13c1f831e64a7" />
-	<project name="meta-openembedded" path="meta-oe" revision="6ef9657068492d4644079c88f2adee9c3cac9543"  />
-	<project name="meta-qt5" remote="qt5" path="meta-qt5" revision="fb4ef4dd7bccfb53a5186c031105ea29320420ce"  />
-	<project name="meta-qt5-extra" remote="schnitzeltony" path="meta-qt5-extra" revision="5092528e6317f919949dbe3a6a1cfbe4ca7b390d"  />
+	<project name="openembedded-core" path="oe-core" revision="7b5a069d4f11e36a1c407c4212aba5aafaf4ee7f" />
+	<project name="meta-openembedded" path="meta-oe" revision="4cd3a39f22a2712bfa8fc657d09fe2c7765a4005"  />
+	<project name="meta-qt5" remote="qt5" path="meta-qt5" revision="0630018c0033c91fddda62a49f59a82ba6ec6850"  />
 	<project name="meta-sdr" remote="balister" path="meta-sdr" revision="c4b326f2c69196055ca7e145edd270e71c6d96b7" />
 	<project name="meta-ettus" remote="ettus" path="meta-ettus" revision="4d19b351c57a10c87dc909fa7212ae8715d52b81" />
 	<project name="meta-xilinx" remote="Xilinx" path="meta-xilinx" revision="d2cccbabeceec246e92132151d71831f50f74bf1" />
