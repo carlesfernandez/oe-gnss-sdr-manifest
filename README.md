@@ -62,7 +62,7 @@ Getting Started
 
     Tell Repo where to find the manifest
 
-        $ repo init -u git://github.com/carlesfernandez/oe-gnss-sdr-manifest.git -b thud
+        $ repo init -u git://github.com/carlesfernandez/oe-gnss-sdr-manifest.git -b warrior
 
     A successful initialization will end with a message stating that Repo is
     initialized in your working directory. Your client directory should now
