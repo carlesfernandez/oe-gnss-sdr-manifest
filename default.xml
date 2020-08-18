@@ -34,18 +34,17 @@
 	<default remote="openembedded" revision="master"  />
 
 	<project name="bitbake" path="bitbake" revision="1.46" />
-	<project name="openembedded-core" path="oe-core" revision="6fa967f194edd314c9026c80f8d93360ac6d9efa" />
-	<project name="meta-openembedded" path="meta-oe" revision="cc155826b0b4f202a8fa4ac103b7c38368d32734"  />
-	<project name="meta-qt5" remote="qt5" path="meta-qt5" revision="fdd19517e17240b0b61765bd02fc483a1bde986f"  />
+	<project name="openembedded-core" path="oe-core" revision="b95d6aeafb70765e22d2e1254e749a48f508d489" />
+	<project name="meta-openembedded" path="meta-oe" revision="654ad8bea49f142d20b2b96c0dd44810a6be233a"  />
+	<project name="meta-qt5" remote="qt5" path="meta-qt5" revision="0e7015f7a86dda995a39662edbb5c26da647c496"  />
 	<project name="meta-sdr" remote="balister" path="meta-sdr" revision="d55280a4840e3857e65fb178cdfa47af4ee969dc" />
 	<project name="meta-ettus" remote="ettus" path="meta-ettus" revision="22f79542d7c48ec7348586701e4485b53f3bb723" />
-	<!--
-	<project name="meta-xilinx" remote="Xilinx" path="meta-xilinx" revision="391c7054e88ae77abf18fe8a705ac7ff34c7dc79" />
-    -->
-	<project name="meta-raspberrypi" remote="yocto" path="meta-raspberrypi" revision="8066fac91d4167504147886fe0caf429e7271466" />
-	<project name="meta-ti" remote="yocto" path="meta-ti" revision="4905be9164889cde6e73b022724192cb21beb1bc" />
-	<project name="meta-odroid" remote="akuster" path="meta-odroid" revision="a9b6c0d49a850f8cc4d9aa25c45a36ab41d27250" />
-	<project name="meta-swupdate" remote="sbabic" path="meta-swupdate" revision="68673ce34725ea9cbd09a6d784ac38352e06b524" />
+	<!-- Update meta-xilinx to dunfell when available -->
+	<project name="meta-xilinx" remote="Xilinx" path="meta-xilinx" revision="fa72812585023bba487502d89b16656246ce6086" />
+	<project name="meta-raspberrypi" remote="yocto" path="meta-raspberrypi" revision="bc7a06604d5232c57545bc7b2f57b9cce2699575" />
+	<project name="meta-ti" remote="yocto" path="meta-ti" revision="deedc7882cde0496776fed17b20b6225d0558264" />
+	<project name="meta-odroid" remote="akuster" path="meta-odroid" revision="3ed143c8b801530cf15cec5dfa159fa39ff2e848" />
+	<project name="meta-swupdate" remote="sbabic" path="meta-swupdate" revision="4c82d83feacb1ad24f8e15ded5ed1a651708dd98" />
 	<project name="meta-docker" remote="L4B-Software" path="meta-docker" revision="7c31c6d1bec01086bf91f76aa09a2ffe9794072c" />
 	<project name="meta-gnss-sdr" remote="gnss-sdr" path="meta-gnss-sdr" revision="dunfell" />
 
