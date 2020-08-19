@@ -37,7 +37,7 @@
 	<project name="openembedded-core" path="oe-core" revision="b95d6aeafb70765e22d2e1254e749a48f508d489" />
 	<project name="meta-openembedded" path="meta-oe" revision="654ad8bea49f142d20b2b96c0dd44810a6be233a"  />
 	<project name="meta-qt5" remote="qt5" path="meta-qt5" revision="0e7015f7a86dda995a39662edbb5c26da647c496"  />
-	<project name="meta-sdr" remote="balister" path="meta-sdr" revision="d55280a4840e3857e65fb178cdfa47af4ee969dc" />
+	<project name="meta-sdr" remote="balister" path="meta-sdr" revision="ac8d48cb22b4c029e1cd7b80b84cf61b67e88f1c" />
 	<project name="meta-ettus" remote="ettus" path="meta-ettus" revision="22f79542d7c48ec7348586701e4485b53f3bb723" />
 	<!-- Update meta-xilinx to dunfell when available -->
 	<project name="meta-xilinx" remote="Xilinx" path="meta-xilinx" revision="fa72812585023bba487502d89b16656246ce6086" />
