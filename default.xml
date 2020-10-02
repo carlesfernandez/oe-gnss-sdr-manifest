@@ -7,6 +7,9 @@
 	<remote name="Xilinx"
 		fetch="git://github.com/Xilinx" />
 
+	<remote name="adi"
+		fetch="git://github.com/analogdevicesinc" />
+
 	<remote name="balister"
 		fetch="git://github.com/balister" />
 
@@ -40,6 +43,7 @@
 	<project name="meta-sdr" remote="balister" path="meta-sdr" revision="e1f2b15197b1b03b9f3848b491d2b04e74f28739" />
 	<project name="meta-ettus" remote="ettus" path="meta-ettus" revision="900774bb49d5d95ee12af09f257d2e6387653c48" />
 	<project name="meta-xilinx" remote="Xilinx" path="meta-xilinx" revision="b82343ac5f013926839627cee9dae7106c008ae9" />
+	<project name="meta-adi" remote="adi" path="meta-adi" revision="035aa65e89c62efd6e26175c3f00c67b95fd863d"  />
 	<project name="meta-raspberrypi" remote="yocto" path="meta-raspberrypi" revision="0e05098853eea77032bff9cf81955679edd2f35d" />
 	<project name="meta-ti" remote="yocto" path="meta-ti" revision="f6e024415b42adaa0d6ca04da83c86dcf92dfd87" />
 	<project name="meta-odroid" remote="akuster" path="meta-odroid" revision="e868761e1cd8ed13ba880150faff543230349685" />
