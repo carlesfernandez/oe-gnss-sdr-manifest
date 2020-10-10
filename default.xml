@@ -41,7 +41,7 @@
 	<project name="meta-sdr" remote="balister" path="meta-sdr" revision="c4b326f2c69196055ca7e145edd270e71c6d96b7" />
 	<project name="meta-ettus" remote="ettus" path="meta-ettus" revision="4d19b351c57a10c87dc909fa7212ae8715d52b81" />
 	<project name="meta-xilinx" remote="Xilinx" path="meta-xilinx" revision="d2cccbabeceec246e92132151d71831f50f74bf1" />
-	<project name="meta-raspberrypi" remote="yocto" path="meta-raspberrypi" revision="c71d79efc5a06a0c896c278c94f5b14413bb4d69" />
+	<project name="meta-raspberrypi" remote="yocto" path="meta-raspberrypi" revision="4e5be97d75668804694412f9b86e9291edb38b9d" />
 	<project name="meta-ti" remote="yocto" path="meta-ti" revision="4905be9164889cde6e73b022724192cb21beb1bc" />
 	<project name="meta-odroid" remote="akuster" path="meta-odroid" revision="f43a28ca491c7fd560173c6a8616c50d246488c7" />
 	<project name="meta-swupdate" remote="sbabic" path="meta-swupdate" revision="26cc2024db44532dbc192d313c3b47795cd94870" />
