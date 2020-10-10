@@ -44,7 +44,7 @@
 	<project name="meta-raspberrypi" remote="yocto" path="meta-raspberrypi" revision="5551792e642d6cc32e22dfe6dbfd29ac3e2390cd" />
 	<project name="meta-ti" remote="yocto" path="meta-ti" revision="4905be9164889cde6e73b022724192cb21beb1bc" />
 	<project name="meta-odroid" remote="akuster" path="meta-odroid" revision="a9b6c0d49a850f8cc4d9aa25c45a36ab41d27250" />
-	<project name="meta-swupdate" remote="sbabic" path="meta-swupdate" revision="09c4868b90e44c0982fd3bb08353801bd5fa0345" />
+	<project name="meta-swupdate" remote="sbabic" path="meta-swupdate" revision="26cc2024db44532dbc192d313c3b47795cd94870" />
 	<project name="meta-gnss-sdr" remote="gnss-sdr" path="meta-gnss-sdr" revision="warrior" />
 
 </manifest>
