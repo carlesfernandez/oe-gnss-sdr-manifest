@@ -34,8 +34,8 @@
 	<default remote="openembedded" revision="master"  />
 
 	<project name="bitbake" path="bitbake" revision="1.46" />
-	<project name="openembedded-core" path="oe-core" revision="b95d6aeafb70765e22d2e1254e749a48f508d489" />
-	<project name="meta-openembedded" path="meta-oe" revision="654ad8bea49f142d20b2b96c0dd44810a6be233a"  />
+	<project name="openembedded-core" path="oe-core" revision="552739383321bd9b4780bd0026d6107ece530522" />
+	<project name="meta-openembedded" path="meta-oe" revision="144077083457ccb75700777d5e6b1da9aaff01aa"  />
 	<project name="meta-qt5" remote="qt5" path="meta-qt5" revision="0e7015f7a86dda995a39662edbb5c26da647c496"  />
 	<project name="meta-sdr" remote="balister" path="meta-sdr" revision="e1f2b15197b1b03b9f3848b491d2b04e74f28739" />
 	<project name="meta-ettus" remote="ettus" path="meta-ettus" revision="22f79542d7c48ec7348586701e4485b53f3bb723" />
