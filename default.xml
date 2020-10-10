@@ -25,9 +25,6 @@
 	<remote name="yocto"
 		fetch="git://git.yoctoproject.org/" />
 
-	<remote name="L4B-Software"
-		fetch="git://github.com/L4B-Software" />
-
 	<remote name="qt5"
 		fetch="git://github.com/meta-qt5" />
 
@@ -52,7 +49,6 @@
 	<project name="meta-ti" remote="yocto" path="meta-ti" revision="a781f18fce87a7efe94f14a94402223be7d511e7" />
 	<project name="meta-odroid" remote="akuster" path="meta-odroid" revision="a517be8872bf47ae1bc7eb97a83a417200543cce" />
 	<project name="meta-swupdate" remote="sbabic" path="meta-swupdate" revision="f2d65d87485ada5a2d3a744fd7b9e46ec7e6b9f2" />
-	<project name="meta-docker" remote="L4B-Software" path="meta-docker" revision="7c31c6d1bec01086bf91f76aa09a2ffe9794072c" />
 	<project name="meta-gnss-sdr" remote="gnss-sdr" path="meta-gnss-sdr" revision="sumo" />
 
 </manifest>
