@@ -7,7 +7,7 @@
 	<remote name="Xilinx"
 		fetch="git://github.com/Xilinx" />
 
-	<remote name="ADI"
+	<remote name="adi"
 		fetch="git://github.com/analogdevicesinc" />
 
 	<remote name="balister"
@@ -36,7 +36,7 @@
 	<project name="bitbake" path="bitbake" revision="1.40" />
 	<project name="openembedded-core" path="oe-core" revision="7b5a069d4f11e36a1c407c4212aba5aafaf4ee7f" />
 	<project name="meta-openembedded" path="meta-oe" revision="4cd3a39f22a2712bfa8fc657d09fe2c7765a4005"  />
-	<project name="meta-adi" remote="ADI" path="meta-adi" revision="035aa65e89c62efd6e26175c3f00c67b95fd863d"  />
+	<project name="meta-adi" remote="adi" path="meta-adi" revision="035aa65e89c62efd6e26175c3f00c67b95fd863d"  />
 	<project name="meta-qt5" remote="qt5" path="meta-qt5" revision="0630018c0033c91fddda62a49f59a82ba6ec6850"  />
 	<project name="meta-sdr" remote="balister" path="meta-sdr" revision="c4b326f2c69196055ca7e145edd270e71c6d96b7" />
 	<project name="meta-ettus" remote="ettus" path="meta-ettus" revision="4d19b351c57a10c87dc909fa7212ae8715d52b81" />
