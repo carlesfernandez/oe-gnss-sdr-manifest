@@ -33,16 +33,16 @@
 	<remote name="gnss-sdr"
 		fetch="git://github.com/carlesfernandez" />
 
-	<default remote="openembedded" revision="master"  />
+	<default remote="openembedded" revision="master" />
 
 	<project name="bitbake" path="bitbake" revision="1.42" />
 	<project name="openembedded-core" path="oe-core" revision="856674d6f75e2b99ae961d5ab869ff071ff5c362" />
-	<project name="meta-openembedded" path="meta-oe" revision="a24acf94d48d635eca668ea34598c6e5c857e3f8"  />
-	<project name="meta-qt5" remote="qt5" path="meta-qt5" revision="9248dc741f4e051d8d8578b7e04681cbae182c69"  />
+	<project name="meta-openembedded" path="meta-oe" revision="a24acf94d48d635eca668ea34598c6e5c857e3f8" />
+	<project name="meta-qt5" remote="qt5" path="meta-qt5" revision="9248dc741f4e051d8d8578b7e04681cbae182c69" />
 	<project name="meta-sdr" remote="balister" path="meta-sdr" revision="e1f2b15197b1b03b9f3848b491d2b04e74f28739" />
 	<project name="meta-ettus" remote="ettus" path="meta-ettus" revision="22f79542d7c48ec7348586701e4485b53f3bb723" />
 	<project name="meta-xilinx" remote="Xilinx" path="meta-xilinx" revision="391c7054e88ae77abf18fe8a705ac7ff34c7dc79" />
-	<project name="meta-adi" remote="adi" path="meta-adi" revision="035aa65e89c62efd6e26175c3f00c67b95fd863d"  />
+	<project name="meta-adi" remote="adi" path="meta-adi" revision="05cd3724fab3a7f16248faa0f1fe7c70f80c00e9" />
 	<project name="meta-raspberrypi" remote="yocto" path="meta-raspberrypi" revision="5551792e642d6cc32e22dfe6dbfd29ac3e2390cd" />
 	<project name="meta-ti" remote="yocto" path="meta-ti" revision="4905be9164889cde6e73b022724192cb21beb1bc" />
 	<project name="meta-odroid" remote="akuster" path="meta-odroid" revision="a9b6c0d49a850f8cc4d9aa25c45a36ab41d27250" />
