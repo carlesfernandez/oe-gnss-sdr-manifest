@@ -38,7 +38,6 @@
 	<project name="bitbake" path="bitbake" revision="1.36" />
 	<project name="openembedded-core" path="oe-core" revision="3638cb32ba9ba32b4d498fc31ab7fdf82f0d2495" />
 	<project name="meta-openembedded" path="meta-oe" revision="eae996301d9c097bcbeb8046f08041dc82bb62f8" />
-	<project name="meta-qt4" remote="yocto" path="meta-qt4" revision="e290738759ef3f39c9e079eaa9b606a62107e5ba" />
 	<project name="meta-qt5" remote="qt5" path="meta-qt5" revision="180edd66444db330301f22266cac7d588fd48c6a" />
 	<project name="meta-sdr" remote="balister" path="meta-sdr" revision="7ee0473a50301ac95b8c418dde8e0bbaecb8b9e5" />
 	<project name="meta-ettus" remote="ettus" path="meta-ettus" revision="89f45fc324baec245767e85c0c1c71f1ef3b1c98" />
@@ -48,6 +47,7 @@
 	<project name="meta-ti" remote="yocto" path="meta-ti" revision="02e852b1a069463f937ea594e13fe5f88ce9b74d" />
 	<project name="meta-odroid" remote="akuster" path="meta-odroid" revision="989f022a77718f2f64cd37ac381a6216ff913117" />
 	<project name="meta-swupdate" remote="sbabic" path="meta-swupdate" revision="26cc2024db44532dbc192d313c3b47795cd94870" />
+	<project name="hdl" remote="adi" path="hdl" revision="3608381fb28040c2ae24010fb6345d5790a08175" />
 	<project name="meta-gnss-sdr" remote="gnss-sdr" path="meta-gnss-sdr" revision="rocko" />
 
 </manifest>
