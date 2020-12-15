@@ -15,9 +15,6 @@
 	<remote name="adi"
 		fetch="git://github.com/analogdevicesinc" />
 
-	<remote name="ettus"
-		fetch="git://github.com/EttusResearch" />
-
 	<remote name="akuster"
 		fetch="git://github.com/akuster" />
 
@@ -40,7 +37,6 @@
 	<project name="meta-openembedded" path="meta-oe" revision="f2d02cb71eaff8eb285a1997b30be52486c160ae" />
 	<project name="meta-qt5" remote="qt5" path="meta-qt5" revision="0d8eb956015acdea7e77cd6672d08dce18061510" />
 	<project name="meta-sdr" remote="balister" path="meta-sdr" revision="5a5b7afedd777cea56871bac50834e5a9746e02f" />
-	<project name="meta-ettus" remote="ettus" path="meta-ettus" revision="22f79542d7c48ec7348586701e4485b53f3bb723" />
 	<!-- Update meta-xilinx to dunfell when available -->
 	<project name="meta-xilinx" remote="Xilinx" path="meta-xilinx" revision="9617797779556cfda71e5a5790cce3e29852e56f" />
 	<project name="meta-xilinx-tools" remote="Xilinx" path="meta-xilinx-tools" revision="6f15ebaddb86898d3d34053283ca9d0a5dc8d67b" />
