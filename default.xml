@@ -15,9 +15,6 @@
 	<remote name="balister"
 		fetch="git://github.com/balister" />
 
-	<remote name="ettus"
-		fetch="git://github.com/EttusResearch" />
-
 	<remote name="akuster"
 		fetch="git://github.com/akuster" />
 
@@ -41,7 +38,6 @@
 	<project name="meta-qt4" remote="yocto" path="meta-qt4" revision="e290738759ef3f39c9e079eaa9b606a62107e5ba" />
 	<project name="meta-qt5" remote="qt5" path="meta-qt5" revision="180edd66444db330301f22266cac7d588fd48c6a" />
 	<project name="meta-sdr" remote="balister" path="meta-sdr" revision="7ee0473a50301ac95b8c418dde8e0bbaecb8b9e5" />
-	<project name="meta-ettus" remote="ettus" path="meta-ettus" revision="89f45fc324baec245767e85c0c1c71f1ef3b1c98" />
 	<project name="meta-xilinx" remote="Xilinx" path="meta-xilinx" revision="7935ef724cd7359ed97e6ae3d90ebc8f07dd7e1f" />
 	<project name="meta-adi" remote="adi" path="meta-adi" revision="035aa65e89c62efd6e26175c3f00c67b95fd863d" />
 	<project name="meta-raspberrypi" remote="yocto" path="meta-raspberrypi" revision="9e08912bbaadaac9e1a15a3d003ca66d769cc9b9" />
