@@ -265,8 +265,8 @@ and then re-initialize your repo client
 
     $ repo init -u <file:///path/to/your/git/repository.git>
 
-## License and Credits
+## Copyright and License
 
-Copyright: &copy; 2016-2021 Carles Fernandez-Prades. All rights reserved.
+Copyright: &copy; 2016-2021 Carles Fern&aacute;ndez-Prades. All rights reserved.
 
-The content of this repository is released under the [MIT](LICENSE) license.
+The content of this repository is released under the [MIT](./LICENSE) license.
