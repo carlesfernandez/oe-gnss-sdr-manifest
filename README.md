@@ -38,6 +38,16 @@ the Yocto Project, see the
 [Supported Linux Distributions](https://www.yoctoproject.org/docs/2.1/ref-manual/ref-manual.html#detailed-supported-distros)
 section in the Yocto Project Reference Manual.
 
+Instead of setting up your machine for building images or the SDK defined by the
+meta-gnss-sdr layer, you might prefer building them on a virtualized
+environment, so your machine does not need to be on a specific state in order to
+enforce reproducibility. To that end, the
+https://github.com/carlesfernandez/yocto-geniux repository provides a
+`Dockerfile` and a script that automatically sets up a building environment and
+builds the images and the SDK for you. Please check the
+[README.md](https://github.com/carlesfernandez/yocto-geniux/blob/master/README.md)
+file on that repo for more details on its usage and options.
+
 ### Tested Environment
 
 Ubuntu 16.04 64 bits in a Virtual Machine
