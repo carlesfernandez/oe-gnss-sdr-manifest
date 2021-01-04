@@ -265,8 +265,8 @@ and then re-initialize your repo client
 
     $ repo init -u <file:///path/to/your/git/repository.git>
 
-## Credits
+## License and Credits
 
-This repo is based on https://github.com/balister/oe-gnuradio-manifest
+Copyright: &copy; 2016-2021 Carles Fernandez-Prades. All rights reserved.
 
-In case of success, you own philip@balister.org a cold beer.
+The content of this repository is released under the [MIT](LICENSE) license.
