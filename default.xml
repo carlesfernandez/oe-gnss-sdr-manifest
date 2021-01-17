@@ -37,8 +37,8 @@
 	<project name="meta-openembedded" path="meta-oe" revision="b9dcf17700014dec679307dc1247882dccd439ca" />
 	<project name="meta-qt5" remote="qt5" path="meta-qt5" revision="7a9f639fbd632dbe23af95c7b8123a0b907c6179" />
 	<project name="meta-sdr" remote="balister" path="meta-sdr" revision="5a5b7afedd777cea56871bac50834e5a9746e02f" />
-	<project name="meta-xilinx" remote="Xilinx" path="meta-xilinx" revision="c4df43e8b4b965a6deb13ed108fb6da96cdaffb4" />
-	<project name="meta-xilinx-tools" remote="Xilinx" path="meta-xilinx-tools" revision="6f15ebaddb86898d3d34053283ca9d0a5dc8d67b" />
+	<project name="meta-xilinx" remote="Xilinx" path="meta-xilinx" revision="3743215be11e1e0c30f0e87c83ea50448d063e6b" />
+	<project name="meta-xilinx-tools" remote="Xilinx" path="meta-xilinx-tools" revision="d29d8fc8edaccd97117a69b541b401272fe8b763" />
 	<project name="meta-adi" remote="adi" path="meta-adi" revision="05cd3724fab3a7f16248faa0f1fe7c70f80c00e9" />
 	<project name="meta-raspberrypi" remote="yocto" path="meta-raspberrypi" revision="09a3c11696c75593f8e475da5dfb401016c6aaca" />
 	<project name="meta-odroid" remote="akuster" path="meta-odroid" revision="e8c47851cf3dbe1ac1174efe337fdf363dfa6586" />
