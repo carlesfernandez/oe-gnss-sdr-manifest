@@ -1,6 +1,8 @@
 Repo Manifests for building systems based on the meta-gnss-sdr layer
 ====================================================================
 
+**NOTE: THIS BRANCH HAS BEEN ABANDONED. DO NOT USE IT.**
+
 This repository provides Repo manifests to setup the OpenEmbedded build system
 with the meta-gnss-sdr layer.
 
