@@ -12,9 +12,6 @@
 	<remote name="balister"
 		fetch="git://github.com/balister" />
 
-	<remote name="adi"
-		fetch="git://github.com/analogdevicesinc" />
-
 	<remote name="akuster"
 		fetch="git://github.com/akuster" />
 
@@ -36,10 +33,9 @@
 	<project name="openembedded-core" path="oe-core" revision="a8debddd6cbdd70db74e096d72f97fbee008ee63" />
 	<project name="meta-openembedded" path="meta-oe" revision="de37512b25c1f8c6bb6ab2b3782ac0fe01443483" />
 	<project name="meta-qt5" remote="qt5" path="meta-qt5" revision="0d8eb956015acdea7e77cd6672d08dce18061510" />
-	<project name="meta-sdr" remote="balister" path="meta-sdr" revision="4b088df71fc9ec35b7544b087e416703dcfe6415" />
-	<project name="meta-xilinx" remote="Xilinx" path="meta-xilinx" revision="9617797779556cfda71e5a5790cce3e29852e56f" />
-	<project name="meta-xilinx-tools" remote="Xilinx" path="meta-xilinx-tools" revision="6f15ebaddb86898d3d34053283ca9d0a5dc8d67b" />
-	<project name="meta-adi" remote="adi" path="meta-adi" revision="05cd3724fab3a7f16248faa0f1fe7c70f80c00e9" />
+	<project name="meta-sdr" remote="balister" path="meta-sdr" revision="22eaf73803fd80f3c5e04e20e11aa59f84e17db7" />
+	<project name="meta-xilinx" remote="Xilinx" path="meta-xilinx" revision="626d11fc1c8dfeaf67ef4db55280ef13cc0cab28" />
+	<project name="meta-xilinx-tools" remote="Xilinx" path="meta-xilinx-tools" revision="37e0988018e95cdcf2684a77d4e9e8cd5610ccaf" />
 	<project name="meta-raspberrypi" remote="yocto" path="meta-raspberrypi" revision="987993209716302eb8f314f69a2a3340555f94d8" />
 	<project name="meta-ti" remote="yocto" path="meta-ti" revision="deedc7882cde0496776fed17b20b6225d0558264" />
 	<project name="meta-odroid" remote="akuster" path="meta-odroid" revision="3ed143c8b801530cf15cec5dfa159fa39ff2e848" />
