@@ -35,7 +35,7 @@
 	<project name="meta-qt5" remote="qt5" path="meta-qt5" revision="2b33a5d5e888370bb56685b86aa82b73624f19f0" />
 	<project name="meta-sdr" remote="balister" path="meta-sdr" revision="22eaf73803fd80f3c5e04e20e11aa59f84e17db7" />
 	<project name="meta-xilinx" remote="Xilinx" path="meta-xilinx" revision="626d11fc1c8dfeaf67ef4db55280ef13cc0cab28" />
-	<project name="meta-xilinx-tools" remote="Xilinx" path="meta-xilinx-tools" revision="f2de39704de069af393212f5cc2f34bf02870c49" />
+	<project name="meta-xilinx-tools" remote="Xilinx" path="meta-xilinx-tools" revision="37e0988018e95cdcf2684a77d4e9e8cd5610ccaf" />
 	<project name="meta-raspberrypi" remote="yocto" path="meta-raspberrypi" revision="09a3c11696c75593f8e475da5dfb401016c6aaca" />
 	<project name="meta-odroid" remote="akuster" path="meta-odroid" revision="e8c47851cf3dbe1ac1174efe337fdf363dfa6586" />
 	<project name="meta-swupdate" remote="sbabic" path="meta-swupdate" revision="9995157cd8babb3c155b0894f51317feaaca4148" />
