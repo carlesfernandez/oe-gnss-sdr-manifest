@@ -12,9 +12,6 @@
 	<remote name="balister"
 		fetch="git://github.com/balister" />
 
-	<remote name="akuster"
-		fetch="git://github.com/akuster" />
-
 	<remote name="sbabic"
 		fetch="git://github.com/sbabic" />
 
@@ -35,11 +32,8 @@
 	<project name="meta-qt5" remote="qt5" path="meta-qt5" revision="2b33a5d5e888370bb56685b86aa82b73624f19f0" />
 	<project name="meta-sdr" remote="balister" path="meta-sdr" revision="22eaf73803fd80f3c5e04e20e11aa59f84e17db7" />
 	<project name="meta-xilinx" remote="Xilinx" path="meta-xilinx" revision="626d11fc1c8dfeaf67ef4db55280ef13cc0cab28" />
-	<project name="meta-xilinx-tools" remote="Xilinx" path="meta-xilinx-tools" revision="37e0988018e95cdcf2684a77d4e9e8cd5610ccaf" />
-	<project name="meta-raspberrypi" remote="yocto" path="meta-raspberrypi" revision="987993209716302eb8f314f69a2a3340555f94d8" />
-	<project name="meta-ti" remote="yocto" path="meta-ti" revision="deedc7882cde0496776fed17b20b6225d0558264" />
-	<project name="meta-odroid" remote="akuster" path="meta-odroid" revision="3ed143c8b801530cf15cec5dfa159fa39ff2e848" />
-	<project name="meta-swupdate" remote="sbabic" path="meta-swupdate" revision="26cc2024db44532dbc192d313c3b47795cd94870" />
+	<project name="meta-raspberrypi" remote="yocto" path="meta-raspberrypi" revision="77190af02d48adc2b28216775e6318e9eeda571c" />
+	<project name="meta-swupdate" remote="sbabic" path="meta-swupdate" revision="be283cb6be560dee5e16451ad5f31ec9db2b1dbd" />
 	<project name="meta-gnss-sdr" remote="gnss-sdr" path="meta-gnss-sdr" revision="dunfell" />
 
 </manifest>
