@@ -12,12 +12,6 @@
 	<remote name="balister"
 		fetch="git://github.com/balister" />
 
-	<remote name="adi"
-		fetch="git://github.com/analogdevicesinc" />
-
-	<remote name="akuster"
-		fetch="git://github.com/akuster" />
-
 	<remote name="sbabic"
 		fetch="git://github.com/sbabic" />
 
@@ -32,17 +26,14 @@
 
 	<default remote="openembedded" revision="master" />
 
-	<project name="bitbake" path="bitbake" revision="1.48" />
-	<project name="openembedded-core" path="oe-core" revision="12bee66a42a7c2a38789ddb37cb098bcbf0b3841" />
-	<project name="meta-openembedded" path="meta-oe" revision="b9dcf17700014dec679307dc1247882dccd439ca" />
-	<project name="meta-qt5" remote="qt5" path="meta-qt5" revision="7a9f639fbd632dbe23af95c7b8123a0b907c6179" />
-	<project name="meta-sdr" remote="balister" path="meta-sdr" revision="62bccb514ab9b490584a9be3d8d638c64f5abfe5" />
-	<project name="meta-xilinx" remote="Xilinx" path="meta-xilinx" revision="c4df43e8b4b965a6deb13ed108fb6da96cdaffb4" />
-	<project name="meta-xilinx-tools" remote="Xilinx" path="meta-xilinx-tools" revision="6f15ebaddb86898d3d34053283ca9d0a5dc8d67b" />
-	<project name="meta-adi" remote="adi" path="meta-adi" revision="05cd3724fab3a7f16248faa0f1fe7c70f80c00e9" />
-	<project name="meta-raspberrypi" remote="yocto" path="meta-raspberrypi" revision="09a3c11696c75593f8e475da5dfb401016c6aaca" />
-	<project name="meta-odroid" remote="akuster" path="meta-odroid" revision="e8c47851cf3dbe1ac1174efe337fdf363dfa6586" />
-	<project name="meta-swupdate" remote="sbabic" path="meta-swupdate" revision="9995157cd8babb3c155b0894f51317feaaca4148" />
+	<project name="bitbake" path="bitbake" revision="master" />
+	<project name="openembedded-core" path="oe-core" revision="master" />
+	<project name="meta-openembedded" path="meta-oe" revision="master" />
+	<project name="meta-qt5" remote="qt5" path="meta-qt5" revision="master" />
+	<project name="meta-sdr" remote="balister" path="meta-sdr" revision="master" />
+	<project name="meta-xilinx" remote="Xilinx" path="meta-xilinx" revision="master" />
+	<project name="meta-raspberrypi" remote="yocto" path="meta-raspberrypi" revision="master" />
+	<project name="meta-swupdate" remote="sbabic" path="meta-swupdate" revision="master" />
 	<project name="meta-gnss-sdr" remote="gnss-sdr" path="meta-gnss-sdr" revision="master" />
 
 </manifest>
