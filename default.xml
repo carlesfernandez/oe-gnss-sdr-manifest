@@ -44,6 +44,6 @@
 	<project name="meta-ti" remote="yocto" path="meta-ti" revision="b27317ab4f9be931a66344ca502c7e3f4ec780e5" />
 	<project name="meta-odroid" remote="akuster" path="meta-odroid" revision="f43a28ca491c7fd560173c6a8616c50d246488c7" />
 	<project name="meta-swupdate" remote="sbabic" path="meta-swupdate" revision="5c4eaaa659346c3e36b6f28637698bec39dbf0eb" />
-	<project name="meta-gnss-sdr" remote="gnss-sdr" path="meta-gnss-sdr" revision="thud" />
+	<project name="meta-gnss-sdr" remote="gnss-sdr" path="meta-gnss-sdr" revision="d474fb5d49f83b443e78c1cbcb9a1103f2d0feb6" />
 
 </manifest>
