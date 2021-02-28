@@ -45,6 +45,6 @@
 	<project name="meta-odroid" remote="akuster" path="meta-odroid" revision="989f022a77718f2f64cd37ac381a6216ff913117" />
 	<project name="meta-swupdate" remote="sbabic" path="meta-swupdate" revision="26cc2024db44532dbc192d313c3b47795cd94870" />
 	<project name="hdl" remote="adi" path="hdl" revision="3608381fb28040c2ae24010fb6345d5790a08175" />
-	<project name="meta-gnss-sdr" remote="gnss-sdr" path="meta-gnss-sdr" revision="ef259aaf41a240e7a117f299512e5014d8d9a2e6" />
+	<project name="meta-gnss-sdr" remote="gnss-sdr" path="meta-gnss-sdr" revision="rocko" />
 
 </manifest>
