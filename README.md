@@ -152,7 +152,7 @@ $ git config --global user.email your.name@example.com
 
 Install it by running:
 
-        $ sudo sh ./tmp-glibc/deploy/sdk/oecore-x86_64-armv7ahf-neon-toolchain-nodistro.0.sh
+        $ sudo sh ./tmp-glibc/deploy/sdk/geniux-x86_64-gnss-sdr-dev-image-zedboard-zynq7-toolchain-sumo-21.02.1.sh
 
 This will ask you what directory to install the SDK into. Which directory
 doesn't matter, just make sure wherever it goes that you have enough disk space.
@@ -188,8 +188,8 @@ This will create a root filesystem at
 `./tmp-glibc/deploy/images/zedboard-zynq7/gnss-sdr-demo-image-zedboard-zynq7-YYYYMMDDHHMMSS.rootfs.tar.gz`.
 
 As well, executing
-`./tmp-glibc/deploy/sdk/oecore-x86_64-armv7ahf-neon-toolchain-nodistro.0.sh` as
-sudo will install the SDK, providing the full root filesystem at
+`./tmp-glibc/deploy/sdk/geniux-x86_64-gnss-sdr-demo-image-zedboard-zynq7-toolchain-sudo-21.02.1.sh`
+as sudo will install the SDK, providing the full root filesystem at
 `/usr/local/oecore-x86_64/sysroots/armv7ahf-neon-oe-linux-gnueabi/`.
 
 Such filesystem, as in the case of the `gnss-sdr-dev-image` recipe, will have
