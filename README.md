@@ -188,7 +188,7 @@ This will create a root filesystem at
 `./tmp-glibc/deploy/images/zedboard-zynq7/gnss-sdr-demo-image-zedboard-zynq7-YYYYMMDDHHMMSS.rootfs.tar.gz`.
 
 As well, executing
-`./tmp-glibc/deploy/sdk/geniux-x86_64-gnss-sdr-dev-demo-zedboard-zynq7-toolchain-warrior-21.02.1.sh`
+`./tmp-glibc/deploy/sdk/geniux-x86_64-gnss-sdr-demo-zedboard-zynq7-toolchain-warrior-21.02.1.sh`
 as sudo will install the SDK, providing the full root filesystem at
 `/usr/local/oecore-x86_64/sysroots/armv7ahf-neon-oe-linux-gnueabi/`.
 
