@@ -15,9 +15,6 @@
 	<remote name="balister"
 		fetch="git://github.com/balister" />
 
-	<remote name="akuster"
-		fetch="git://github.com/akuster" />
-
 	<remote name="sbabic"
 		fetch="git://github.com/sbabic" />
 
@@ -44,8 +41,6 @@
 	<project name="meta-sdr" remote="balister" path="meta-sdr" revision="64bc09596ed2717c72b794b300d59f4285b7a80a" />
 	<project name="meta-xilinx" remote="Xilinx" path="meta-xilinx" revision="5fccc46503e468ed024185ed032891799a31db58" />
 	<project name="meta-raspberrypi" remote="yocto" path="meta-raspberrypi" revision="2d40b000021bc8a9ef7f329ed0ad410f8d227b97" />
-	<project name="meta-ti" remote="yocto" path="meta-ti" revision="a781f18fce87a7efe94f14a94402223be7d511e7" />
-	<project name="meta-odroid" remote="akuster" path="meta-odroid" revision="a517be8872bf47ae1bc7eb97a83a417200543cce" />
 	<project name="meta-swupdate" remote="sbabic" path="meta-swupdate" revision="26cc2024db44532dbc192d313c3b47795cd94870" />
 	<project name="meta-gnss-sdr" remote="gnss-sdr" path="meta-gnss-sdr" revision="sumo" />
 
