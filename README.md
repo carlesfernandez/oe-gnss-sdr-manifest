@@ -48,7 +48,7 @@ enforce reproducibility. To that end, the
 https://github.com/carlesfernandez/yocto-geniux repository provides a
 `Dockerfile` and a script that automatically sets up a building environment and
 builds the images and the SDK for you. Please check the
-[README.md](https://github.com/carlesfernandez/yocto-geniux/blob/master/README.md)
+[README.md](https://github.com/carlesfernandez/yocto-geniux/blob/main/README.md)
 file on that repo for more details on its usage and options.
 
 ### Tested Environment
