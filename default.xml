@@ -32,11 +32,12 @@
 	<project name="bitbake" path="bitbake" revision="1.40" />
 	<project name="openembedded-core" path="oe-core" revision="1351f9be973cfbd043f9b10d218e3cecaa0ab372" />
 	<project name="meta-openembedded" path="meta-oe" revision="446bd615fd7cb9bc7a159fe5c2019ed08d1a7a93"  />
-	<project name="meta-adi" remote="adi" path="meta-adi" revision="05cd3724fab3a7f16248faa0f1fe7c70f80c00e9"  />
 	<project name="meta-qt5" remote="qt5" path="meta-qt5" revision="e6e464c9ed9266ce46452f953c1bdcb0e7b2d95f"  />
 	<project name="meta-sdr" remote="balister" path="meta-sdr" revision="c4b326f2c69196055ca7e145edd270e71c6d96b7" />
-	<project name="meta-xilinx" remote="Xilinx" path="meta-xilinx" revision="52f5379a2ac37f1806c00ccbbdd106221063b5a4" />
-	<project name="meta-xilinx-tools" remote="Xilinx" path="meta-xilinx-tools" revision="881132b62dc01e57b8d9ace458a0005528179e14" />
+	<project name="meta-xilinx" remote="Xilinx" path="meta-xilinx" revision="586e4001cdd90e3db67692b14bbe5daabc565478" />
+	<project name="meta-xilinx-tools" remote="Xilinx" path="meta-xilinx-tools" revision="1f0161a321aac36b0dfe6d742f2019abd146d998" />
+	<project name="meta-adi" remote="adi" path="meta-adi" revision="4ced89ade2a7a8c28d242bad73173dce179eba15"  />
+	<project name="hdl" remote="adi" path="hdl" revision="061d024d596ef84c6a819854bf2472e6b43a2d5d" />
 	<project name="meta-raspberrypi" remote="yocto" path="meta-raspberrypi" revision="4e5be97d75668804694412f9b86e9291edb38b9d" />
 	<project name="meta-swupdate" remote="sbabic" path="meta-swupdate" revision="3095ad68e76814f2478a7a116b1a18bb8f4fc3fa" />
 	<project name="meta-gnss-sdr" remote="gnss-sdr" path="meta-gnss-sdr" revision="thud" />
