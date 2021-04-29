@@ -35,7 +35,7 @@
 	<project name="meta-qt5" remote="qt5" path="meta-qt5" revision="c7ec5568d86396de9571e1de111b92c9e6f86f20" />
 	<project name="meta-sdr" remote="balister" path="meta-sdr" revision="03035da6c6c0c839578774a0067b1dedf83d8a59" />
 	<project name="meta-xilinx" remote="Xilinx" path="meta-xilinx" revision="391c7054e88ae77abf18fe8a705ac7ff34c7dc79" />
-	<project name="meta-adi" remote="adi" path="meta-adi" revision="05cd3724fab3a7f16248faa0f1fe7c70f80c00e9" />
+	<project name="meta-adi" remote="adi" path="meta-adi" revision="16a2ac9ede57a2b5edd89f1a9584699d3195d45b" />
 	<project name="meta-raspberrypi" remote="yocto" path="meta-raspberrypi" revision="65b95ce742ae973b856a62974d0ec22e2caf03a3" />
 	<project name="meta-swupdate" remote="sbabic" path="meta-swupdate" revision="7ebe40f1a9b312476580fc74541231ac202feaa4" />
 	<project name="meta-gnss-sdr" remote="gnss-sdr" path="meta-gnss-sdr" revision="warrior" />
