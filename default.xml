@@ -31,9 +31,10 @@
 	<project name="meta-openembedded" path="meta-oe" revision="2b5dd1eb81cd08bc065bc76125f2856e9383e98b" />
 	<project name="meta-qt5" remote="qt5" path="meta-qt5" revision="91e6e3b1f5aebd17f895caac3dee32a14630da99" />
 	<project name="meta-sdr" remote="balister" path="meta-sdr" revision="03035da6c6c0c839578774a0067b1dedf83d8a59" />
-	<project name="meta-xilinx" remote="Xilinx" path="meta-xilinx" revision="b82343ac5f013926839627cee9dae7106c008ae9" />
+	<project name="meta-xilinx" remote="Xilinx" path="meta-xilinx" revision="e32c768b7e30c2f949b0b98e807afe82ac213556" />
+	<project name="meta-xilinx-tools" remote="Xilinx" path="meta-xilinx-tools" revision="f2de39704de069af393212f5cc2f34bf02870c49" />
 	<project name="meta-raspberrypi" remote="yocto" path="meta-raspberrypi" revision="0e05098853eea77032bff9cf81955679edd2f35d" />
-	<project name="meta-swupdate" remote="sbabic" path="meta-swupdate" revision="42585b459a8103bd9f1c4473a9647d1013a2ef7d" />
+	<project name="meta-swupdate" remote="sbabic" path="meta-swupdate" revision="6704d88ce152fbb0b0a839ae6be7a447a84c207c" />
 	<project name="meta-gnss-sdr" remote="gnss-sdr" path="meta-gnss-sdr" revision="zeus" />
 
 </manifest>
