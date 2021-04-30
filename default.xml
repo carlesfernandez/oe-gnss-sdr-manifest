@@ -32,6 +32,7 @@
 	<project name="meta-qt5" remote="qt5" path="meta-qt5" revision="a00af3eae082b772469d9dd21b2371dd4d237684" />
 	<project name="meta-sdr" remote="balister" path="meta-sdr" revision="d04f25e8c8c457d8195f4c68c7846b56050b68ab" />
 	<project name="meta-raspberrypi" remote="yocto" path="meta-raspberrypi" revision="8cffbf5e8534e824c81541802d7a2298100054b5" />
+	<project name="meta-intel" remote="yocto" path="meta-intel" revision="4d5791d9ff515ba1660234b1987eae4d4e90eeca" />
 	<project name="meta-swupdate" remote="sbabic" path="meta-swupdate" revision="71cbd3e0fbb529a279955cc9b0e03990ad632c5a" />
 	<project name="meta-gnss-sdr" remote="gnss-sdr" path="meta-gnss-sdr" revision="hardknott" />
 
