@@ -48,13 +48,14 @@ builds the images and the SDK for you. Please check the
 [README.md](https://github.com/carlesfernandez/yocto-geniux/blob/main/README.md)
 file on that repo for more details on its usage and options.
 
-### Tested Environment
+### Install the required tools
 
-Ubuntu 16.04 64 bits in a Virtual Machine
+Tested on Ubuntu 18.04 64 bits. Install the basic packages:
 
 ```
 $ sudo apt-get install gawk wget git-core diffstat unzip texinfo gcc-multilib \
-    build-essential chrpath libsdl1.2-dev xterm
+  build-essential chrpath socat cpio python python3 python3-pip python3-pexpect \
+  xz-utils debianutils iputils-ping libsdl1.2-dev xterm curl nano
 ```
 
 Configure Git:
@@ -258,7 +259,7 @@ repositories and branches or pull in additional meta-layers. Check out the
 
 Clone this repository (or fork it on github):
 
-    $ git clone git://github.com/carlesfernandez/oe-gnss-sdr-manifest.git
+    $ git clone https://github.com/carlesfernandez/oe-gnss-sdr-manifest.git
 
 Make your changes (and contribute them back if they are generally useful :) ),
 and then re-initialize your repo client
@@ -267,7 +268,8 @@ and then re-initialize your repo client
 
 ## Copyright and License
 
-Copyright: &copy; 2016-2021 Carles Fern&aacute;ndez-Prades. All rights reserved.
+Copyright: &copy; 2016-2021 Carles Fern&aacute;ndez-Prades,
+[CTTC](http://www.cttc.es/). All rights reserved.
 
 The content of this repository is released under the [MIT](./LICENSE) license.
 
