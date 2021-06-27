@@ -39,7 +39,7 @@
 	<project name="meta-adi" remote="adi" path="meta-adi" revision="4ced89ade2a7a8c28d242bad73173dce179eba15"  />
 	<project name="hdl" remote="adi" path="hdl" revision="061d024d596ef84c6a819854bf2472e6b43a2d5d" />
 	<project name="meta-raspberrypi" remote="yocto" path="meta-raspberrypi" revision="4e5be97d75668804694412f9b86e9291edb38b9d" />
-	<project name="meta-swupdate" remote="sbabic" path="meta-swupdate" revision="3095ad68e76814f2478a7a116b1a18bb8f4fc3fa" />
+	<project name="meta-swupdate" remote="sbabic" path="meta-swupdate" revision="43a9e0f9ac7ea8a5db0f71670382f49f2ed2f99c" />
 	<project name="meta-gnss-sdr" remote="gnss-sdr" path="meta-gnss-sdr" revision="thud" />
 
 </manifest>
