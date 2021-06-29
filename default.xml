@@ -40,6 +40,6 @@
 	<project name="hdl" remote="adi" path="hdl" revision="061d024d596ef84c6a819854bf2472e6b43a2d5d" />
 	<project name="meta-raspberrypi" remote="yocto" path="meta-raspberrypi" revision="4e5be97d75668804694412f9b86e9291edb38b9d" />
 	<project name="meta-swupdate" remote="sbabic" path="meta-swupdate" revision="43a9e0f9ac7ea8a5db0f71670382f49f2ed2f99c" />
-	<project name="meta-gnss-sdr" remote="gnss-sdr" path="meta-gnss-sdr" revision="69f0bb20d930246e64b81f4a172bad27013d6d96" />
+	<project name="meta-gnss-sdr" remote="gnss-sdr" path="meta-gnss-sdr" revision="thud" />
 
 </manifest>
