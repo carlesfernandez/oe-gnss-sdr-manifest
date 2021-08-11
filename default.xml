@@ -31,10 +31,10 @@
 	<project name="meta-openembedded" path="meta-oe" revision="2b5dd1eb81cd08bc065bc76125f2856e9383e98b" />
 	<project name="meta-qt5" remote="qt5" path="meta-qt5" revision="91e6e3b1f5aebd17f895caac3dee32a14630da99" />
 	<project name="meta-sdr" remote="balister" path="meta-sdr" revision="03035da6c6c0c839578774a0067b1dedf83d8a59" />
-	<project name="meta-xilinx" remote="Xilinx" path="meta-xilinx" revision="e32c768b7e30c2f949b0b98e807afe82ac213556" />
-	<project name="meta-xilinx-tools" remote="Xilinx" path="meta-xilinx-tools" revision="f2de39704de069af393212f5cc2f34bf02870c49" />
+	<project name="meta-xilinx" remote="Xilinx" path="meta-xilinx" revision="5417b9f25f71cb902dddb143b684b0e74e97ba79" />
+	<project name="meta-xilinx-tools" remote="Xilinx" path="meta-xilinx-tools" revision="ff69b201522fec7416f2c5ee631368a8e6afb260" />
 	<project name="meta-raspberrypi" remote="yocto" path="meta-raspberrypi" revision="0e05098853eea77032bff9cf81955679edd2f35d" />
-	<project name="meta-swupdate" remote="sbabic" path="meta-swupdate" revision="42763d4d170bddb6deefbf8bb57155b1f7fcdd75" />
+	<project name="meta-swupdate" remote="sbabic" path="meta-swupdate" revision="c06067a0e10fe59d0fecbca629495ecbcdd1d5a2" />
 	<project name="meta-gnss-sdr" remote="gnss-sdr" path="meta-gnss-sdr" revision="zeus" />
 
 </manifest>
