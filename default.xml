@@ -36,8 +36,8 @@
 	<project name="meta-sdr" remote="balister" path="meta-sdr" revision="c4b326f2c69196055ca7e145edd270e71c6d96b7" />
 	<project name="meta-xilinx" remote="Xilinx" path="meta-xilinx" revision="586e4001cdd90e3db67692b14bbe5daabc565478" />
 	<project name="meta-xilinx-tools" remote="Xilinx" path="meta-xilinx-tools" revision="1f0161a321aac36b0dfe6d742f2019abd146d998" />
-	<project name="meta-adi" remote="adi" path="meta-adi" revision="4ced89ade2a7a8c28d242bad73173dce179eba15"  />
-	<project name="hdl" remote="adi" path="hdl" revision="061d024d596ef84c6a819854bf2472e6b43a2d5d" />
+	<project name="meta-adi" remote="adi" path="meta-adi" revision="3c798ebf0eba329fec0af3bae6152a6d70d86a58"  />
+	<project name="hdl" remote="adi" path="hdl" revision="43cdc6263baf3edb166a3def6fab15bc81c4c729" />
 	<project name="meta-raspberrypi" remote="yocto" path="meta-raspberrypi" revision="4e5be97d75668804694412f9b86e9291edb38b9d" />
 	<project name="meta-swupdate" remote="sbabic" path="meta-swupdate" revision="43a9e0f9ac7ea8a5db0f71670382f49f2ed2f99c" />
 	<project name="meta-gnss-sdr" remote="gnss-sdr" path="meta-gnss-sdr" revision="thud" />
