@@ -367,33 +367,134 @@ if [ -d "meta-swupdate" ]
 fi
 cd ..
 
+# Warning color bold magenta: maybe it's time to update
+COLOR_WARNING="\033[1m\033[35m"
+
+# Info color bold green: take it a look, it's probably fine as it is.
+COLOR_INFO="\033[1m\033[32m"
+
+COLOR_RESET="\033[0m"
+
 echo -e "\nSummary of updated commits for branch ${BRANCH}:\n"
-echo -e "openembedded-core last commit: ${COMMIT_OPENEMBEDDED_CORE}"
-echo -e "meta-openembedded last commit: ${COMMIT_META_OPENEMBEDDED}"
+
+# Display latest commit for openembedded-core
+if grep -q ${COMMIT_OPENEMBEDDED_CORE} "${BASEDIR}/../default.xml"
+    then
+        echo -e "openembedded-core last commit: ${COMMIT_OPENEMBEDDED_CORE}"
+    else
+        echo -e "openembedded-core last commit: ${COLOR_WARNING}${COMMIT_OPENEMBEDDED_CORE}${COLOR_RESET}"
+fi
+
+# Display latest commit for meta-openembedded
+if grep -q ${COMMIT_META_OPENEMBEDDED} "${BASEDIR}/../default.xml"
+    then
+        echo -e "meta-openembedded last commit: ${COMMIT_META_OPENEMBEDDED}"
+    else
+        echo -e "meta-openembedded last commit: ${COLOR_WARNING}${COMMIT_META_OPENEMBEDDED}${COLOR_RESET}"
+fi
+
+# Display latest commit for meta-qt4
 if [ ${BRANCH} == "rocko" ]
    then
        echo -e "meta-qt4 last commit:          ${COMMIT_META_QT4}"
+       if grep -q ${COMMIT_META_QT4} "${BASEDIR}/../default.xml"
+           then
+               echo -e "meta-qt4 last commit:          ${COMMIT_META_QT4}"
+           else
+               echo -e "meta-qt4 last commit:          ${COLOR_WARNING}${COMMIT_META_QT4}${COLOR_RESET}"
+       fi
 fi
-echo -e "meta-qt5 last commit:          ${COMMIT_META_QT5}"
+
+# Display latest commit for meta-qt5
+if grep -q ${COMMIT_META_QT5} "${BASEDIR}/../default.xml"
+    then
+        echo -e "meta-qt5 last commit:          ${COMMIT_META_QT5}"
+    else
+        echo -e "meta-qt5 last commit:          ${COLOR_WARNING}${COMMIT_META_QT5}${COLOR_RESET}"
+fi
+
+# Display latest commit for meta-qt5-extra
 if [ ${BRANCH} == "sumo" ]
    then
-       echo -e "meta-qt5-extra last commit:    ${COMMIT_META_QT5_EXTRA}"
+       if grep -q ${COMMIT_META_QT5_EXTRA} "${BASEDIR}/../default.xml"
+           then
+               echo -e "meta-qt5-extra last commit:    ${COMMIT_META_QT5_EXTRA}"
+           else
+               echo -e "meta-qt5-extra last commit:    ${COLOR_WARNING}${COMMIT_META_QT5_EXTRA}${COLOR_RESET}"
+       fi
 fi
-echo -e "meta-sdr last commit:          ${COMMIT_META_SDR}"
-echo -e "meta-xilinx last commit:       ${COMMIT_META_XILINX}"
+
+# Display latest commit for meta-sdr
+if grep -q ${COMMIT_META_SDR} "${BASEDIR}/../default.xml"
+    then
+        echo -e "meta-sdr last commit:          ${COMMIT_META_SDR}"
+    else
+        echo -e "meta-sdr last commit:          ${COLOR_INFO}${COMMIT_META_SDR}${COLOR_INFO}"
+fi
+
+# Display latest commit for meta-xilinx
+if grep -q ${COMMIT_META_XILINX} "${BASEDIR}/../default.xml"
+    then
+        echo -e "meta-xilinx last commit:       ${COMMIT_META_XILINX}"
+    else
+        echo -e "meta-xilinx last commit:       ${COLOR_INFO}${COMMIT_META_XILINX}${COLOR_RESET}"
+fi
+
+# Display latest commit for meta-xilinx-tools
 if [ ${BRANCH} == "thud" ] || [ ${BRANCH} == "zeus" ]
     then
-        echo -e "meta-xilinx-tools last commit: ${COMMIT_META_XILINX_TOOLS}"
+        if grep -q ${COMMIT_META_XILINX_TOOLS} "${BASEDIR}/../default.xml"
+            then
+                echo -e "meta-xilinx-tools last commit: ${COMMIT_META_XILINX_TOOLS}"
+            else
+                echo -e "meta-xilinx-tools last commit: ${COLOR_WARNING}${COMMIT_META_XILINX_TOOLS}${COLOR_RESET}"
+        fi
 fi
+
+# Display latest commit for meta-adi
 if [ ${BRANCH} == "rocko" ] || [ ${BRANCH} == "sumo" ] || [ ${BRANCH} == "thud" ]
     then
-        echo -e "meta-adi last commit:          ${COMMIT_META_ADI}"
+        if grep -q ${COMMIT_META_ADI} "${BASEDIR}/../default.xml"
+            then
+                echo -e "meta-adi last commit:          ${COMMIT_META_ADI}"
+            else
+                echo -e "meta-adi last commit:          ${COLOR_WARNING}${COMMIT_META_ADI}${COLOR_RESET}"
+        fi
 fi
+
+# Display latest commit for hdl
 if [ ${BRANCH} == "rocko" ] || [ ${BRANCH} == "thud" ]
     then
-        echo -e "hdl last commit:               ${COMMIT_HDL}"
+        if grep -q ${COMMIT_HDL} "${BASEDIR}/../default.xml"
+            then
+                echo -e "hdl last commit:               ${COMMIT_HDL}"
+            else
+                echo -e "hdl last commit:               ${COLOR_WARNING}${COMMIT_HDL}${COLOR_RESET}"
+        fi
 fi
-echo -e "meta-raspberrypi last commit:  ${COMMIT_META_RASPI}"
-echo -e "meta-intel last commit:        ${COMMIT_META_INTEL}"
-echo -e "meta-swupdate last commit:     ${COMMIT_META_SWUPDATE}"
+
+# Display latest commit for meta-raspberrypi
+if grep -q ${COMMIT_META_RASPI} "${BASEDIR}/../default.xml"
+    then
+        echo -e "meta-raspberrypi last commit:  ${COMMIT_META_RASPI}"
+    else
+        echo -e "meta-raspberrypi last commit:  ${COLOR_WARNING}${COMMIT_META_RASPI}${COLOR_RESET}"
+fi
+
+# Display latest commit for meta-intel
+if grep -q ${COMMIT_META_INTEL} "${BASEDIR}/../default.xml"
+    then
+        echo -e "meta-intel last commit:        ${COMMIT_META_INTEL}"
+    else
+        echo -e "meta-intel last commit:        ${COLOR_WARNING}${COMMIT_META_INTEL}${COLOR_RESET}"
+fi
+
+# Display latest commit for meta-swupdate
+if grep -q ${COMMIT_META_SWUPDATE} "${BASEDIR}/../default.xml"
+    then
+        echo -e "meta-swupdate last commit:     ${COMMIT_META_SWUPDATE}"
+    else
+        echo -e "meta-swupdate last commit:     ${COLOR_WARNING}${COMMIT_META_SWUPDATE}${COLOR_RESET}"
+fi
+
 cd $BASEDIR
