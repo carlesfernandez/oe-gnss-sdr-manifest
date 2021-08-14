@@ -429,7 +429,7 @@ if grep -q ${COMMIT_META_SDR} "${BASEDIR}/../default.xml"
     then
         echo -e "meta-sdr last commit:          ${COMMIT_META_SDR}"
     else
-        echo -e "meta-sdr last commit:          ${COLOR_INFO}${COMMIT_META_SDR}${COLOR_INFO}"
+        echo -e "meta-sdr last commit:          ${COLOR_INFO}${COMMIT_META_SDR}${COLOR_RESET}"
 fi
 
 # Display latest commit for meta-xilinx
