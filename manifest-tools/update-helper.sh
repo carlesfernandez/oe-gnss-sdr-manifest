@@ -127,10 +127,6 @@ cd ..
 
 # meta-xilinx
 SPECIAL_XILINX_BRANCH=${BRANCH}
-if [ ${BRANCH} == "rocko" ]
-    then
-        SPECIAL_XILINX_BRANCH="rel-v2018.3"
-fi
 if [ ${BRANCH} == "thud" ]
     then
         SPECIAL_XILINX_BRANCH="rel-v2019.2"
