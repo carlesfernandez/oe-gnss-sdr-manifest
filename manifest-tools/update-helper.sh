@@ -18,6 +18,24 @@ fi
 
 BRANCH=$(git rev-parse --abbrev-ref HEAD)
 BASEDIR=$PWD
+
+REPO_OE_CORE="https://github.com/openembedded/openembedded-core"
+REPO_META_OE="https://github.com/openembedded/meta-openembedded"
+REPO_META_QT4="git://git.yoctoproject.org/meta-qt4"
+REPO_META_QT4_BROWSER="https://git.yoctoproject.org/cgit/cgit.cgi/meta-qt4"
+REPO_META_QT5="https://github.com/meta-qt5/meta-qt5"
+REPO_META_QT5_EXTRA="https://github.com/schnitzeltony/meta-qt5-extra"
+REPO_META_SDR="https://github.com/balister/meta-sdr"
+REPO_META_XILINX="https://github.com/Xilinx/meta-xilinx"
+REPO_META_XILINX_TOOLS="https://github.com/Xilinx/meta-xilinx-tools"
+REPO_META_ADI="https://github.com/analogdevicesinc/meta-adi"
+REPO_HDL="https://github.com/analogdevicesinc/hdl"
+REPO_META_RASPBERRYPI="git://git.yoctoproject.org/meta-raspberrypi"
+REPO_META_RASPBERRYPI_BROWSER="https://git.yoctoproject.org/cgit/cgit.cgi/meta-raspberrypi"
+REPO_META_INTEL="git://git.yoctoproject.org/meta-intel"
+REPO_META_INTEL_BROWSER="https://git.yoctoproject.org/cgit/cgit.cgi/meta-intel"
+REPO_META_SW_UPDATE="https://github.com/sbabic/meta-swupdate"
+
 echo -e "Getting the latest commits in the ${BRANCH} branch..."
 mkdir -p sources
 cd sources
@@ -29,7 +47,7 @@ if [ -d "openembedded-core" ]
         git checkout ${BRANCH}
         git pull origin ${BRANCH}
     else
-        git clone https://github.com/openembedded/openembedded-core
+        git clone ${REPO_OE_CORE}
         cd openembedded-core
         git checkout $BRANCH
 fi
@@ -43,7 +61,7 @@ if [ -d "meta-openembedded" ]
         git checkout ${BRANCH}
         git pull origin ${BRANCH}
     else
-        git clone https://github.com/openembedded/meta-openembedded
+        git clone ${REPO_META_OE}
         cd meta-openembedded
         git checkout $BRANCH
 fi
@@ -59,7 +77,7 @@ if [ ${BRANCH} == "rocko" ]
                git checkout ${BRANCH}
                git pull origin ${BRANCH}
            else
-               git clone git://git.yoctoproject.org/meta-qt4
+               git clone ${REPO_META_QT4}
                cd meta-qt4
                git checkout $BRANCH
        fi
@@ -74,7 +92,7 @@ if [ -d "meta-qt5" ]
         git checkout ${BRANCH}
         git pull origin ${BRANCH}
     else
-        git clone https://github.com/meta-qt5/meta-qt5
+        git clone ${REPO_META_QT5}
         cd meta-qt5
         git checkout $BRANCH
 fi
@@ -90,7 +108,7 @@ if [ ${BRANCH} == "sumo" ]
                 git checkout ${BRANCH}
                 git pull origin ${BRANCH}
             else
-                git clone https://github.com/schnitzeltony/meta-qt5-extra
+                git clone ${REPO_META_QT5_EXTRA}
                 cd meta-qt5-extra
                 git checkout $BRANCH
         fi
@@ -112,7 +130,7 @@ if [ -d "meta-sdr" ]
                COMMIT_META_SDR=$(git rev-parse HEAD)
         fi
     else
-        git clone https://github.com/balister/meta-sdr
+        git clone ${REPO_META_SDR}
         cd meta-sdr
         exists_in_remote=$(git ls-remote --heads origin ${BRANCH})
         if [[ -z ${exists_in_remote} ]]
@@ -152,7 +170,7 @@ if [ -d "meta-xilinx" ]
                COMMIT_META_XILINX=$(git rev-parse HEAD)
         fi
     else
-        git clone https://github.com/Xilinx/meta-xilinx
+        git clone ${REPO_META_XILINX}
         cd meta-xilinx
         exists_in_remote=$(git ls-remote --heads origin ${SPECIAL_XILINX_BRANCH})
         if [[ -z ${exists_in_remote} ]]
@@ -191,7 +209,7 @@ if [ ${BRANCH} == "thud" ] || [ ${BRANCH} == "zeus" ]
                       COMMIT_META_XILINX_TOOLS=$(git rev-parse HEAD)
                fi
            else
-               git clone https://github.com/Xilinx/meta-xilinx-tools
+               git clone ${REPO_META_XILINX_TOOLS}
                cd meta-xilinx-tools
                exists_in_remote=$(git ls-remote --heads origin ${SPECIAL_XILINX_TOOLS_BRANCH})
                if [[ -z ${exists_in_remote} ]]
@@ -229,7 +247,7 @@ if [ ${BRANCH} == "rocko" ] || [ ${BRANCH} == "sumo" ] || [ ${BRANCH} == "thud" 
                        COMMIT_META_ADI=$(git rev-parse HEAD)
                 fi
             else
-                git clone https://github.com/analogdevicesinc/meta-adi
+                git clone ${REPO_META_ADI}
                 cd meta-adi
                 exists_in_remote=$(git ls-remote --heads origin ${SPECIAL_ADI_BRANCH})
                 if [[ -z ${exists_in_remote} ]]
@@ -268,7 +286,7 @@ if [ ${BRANCH} == "rocko" ] || [ ${BRANCH} == "thud" ]
                        COMMIT_HDL=$(git rev-parse HEAD)
                 fi
             else
-                git clone https://github.com/analogdevicesinc/hdl
+                git clone ${REPO_HDL}
                 cd hdl
                 exists_in_remote=$(git ls-remote --heads origin ${SPECIAL_HDL_BRANCH})
                 if [[ -z ${exists_in_remote} ]]
@@ -296,7 +314,7 @@ if [ -d "meta-raspberrypi" ]
                COMMIT_META_RASPI=$(git rev-parse HEAD)
         fi
     else
-        git clone git://git.yoctoproject.org/meta-raspberrypi
+        git clone ${REPO_META_RASPBERRYPI}
         cd meta-raspberrypi
         exists_in_remote=$(git ls-remote --heads origin ${BRANCH})
         if [[ -z ${exists_in_remote} ]]
@@ -323,7 +341,7 @@ if [ -d "meta-intel" ]
                COMMIT_META_INTEL=$(git rev-parse HEAD)
         fi
     else
-        git clone git://git.yoctoproject.org/meta-intel
+        git clone ${REPO_META_INTEL}
         cd meta-intel
         exists_in_remote=$(git ls-remote --heads origin ${BRANCH})
         if [[ -z ${exists_in_remote} ]]
@@ -350,7 +368,7 @@ if [ -d "meta-swupdate" ]
                COMMIT_META_SWUPDATE=$(git rev-parse HEAD)
         fi
     else
-        git clone https://github.com/sbabic/meta-swupdate
+        git clone ${REPO_META_SW_UPDATE}
         cd meta-swupdate
         exists_in_remote=$(git ls-remote --heads origin ${BRANCH})
         if [[ -z ${exists_in_remote} ]]
@@ -372,13 +390,17 @@ COLOR_INFO="\033[1m\033[32m"
 COLOR_RESET="\033[0m"
 
 echo -e "\nSummary of updated commits for branch ${BRANCH}:\n"
+echo -e "Color legend:"
+echo -e "  * The manifest points to the latest commit."
+echo -e "  * ${COLOR_INFO}The commit does not match, but it's probably made on purpose.${COLOR_RESET}"
+echo -e "  * ${COLOR_WARNING}The commit does not match, time to update?${COLOR_RESET}\n"
 
 # Display latest commit for openembedded-core
 if grep -q ${COMMIT_OPENEMBEDDED_CORE} "${BASEDIR}/../default.xml"
     then
         echo -e "openembedded-core last commit: ${COMMIT_OPENEMBEDDED_CORE}"
     else
-        echo -e "openembedded-core last commit: ${COLOR_WARNING}${COMMIT_OPENEMBEDDED_CORE}${COLOR_RESET}"
+        echo -e "openembedded-core last commit: ${COLOR_WARNING}${COMMIT_OPENEMBEDDED_CORE}${COLOR_RESET} Check ${REPO_OE_CORE}"
 fi
 
 # Display latest commit for meta-openembedded
@@ -386,7 +408,7 @@ if grep -q ${COMMIT_META_OPENEMBEDDED} "${BASEDIR}/../default.xml"
     then
         echo -e "meta-openembedded last commit: ${COMMIT_META_OPENEMBEDDED}"
     else
-        echo -e "meta-openembedded last commit: ${COLOR_WARNING}${COMMIT_META_OPENEMBEDDED}${COLOR_RESET}"
+        echo -e "meta-openembedded last commit: ${COLOR_WARNING}${COMMIT_META_OPENEMBEDDED}${COLOR_RESET} Check ${REPO_META_OE}"
 fi
 
 # Display latest commit for meta-qt4
@@ -397,7 +419,7 @@ if [ ${BRANCH} == "rocko" ]
            then
                echo -e "meta-qt4 last commit:          ${COMMIT_META_QT4}"
            else
-               echo -e "meta-qt4 last commit:          ${COLOR_WARNING}${COMMIT_META_QT4}${COLOR_RESET}"
+               echo -e "meta-qt4 last commit:          ${COLOR_WARNING}${COMMIT_META_QT4}${COLOR_RESET} Check ${REPO_META_QT4_BROWSER}"
        fi
 fi
 
@@ -406,7 +428,7 @@ if grep -q ${COMMIT_META_QT5} "${BASEDIR}/../default.xml"
     then
         echo -e "meta-qt5 last commit:          ${COMMIT_META_QT5}"
     else
-        echo -e "meta-qt5 last commit:          ${COLOR_WARNING}${COMMIT_META_QT5}${COLOR_RESET}"
+        echo -e "meta-qt5 last commit:          ${COLOR_WARNING}${COMMIT_META_QT5}${COLOR_RESET} Check ${REPO_META_QT5}"
 fi
 
 # Display latest commit for meta-qt5-extra
@@ -416,7 +438,7 @@ if [ ${BRANCH} == "sumo" ]
            then
                echo -e "meta-qt5-extra last commit:    ${COMMIT_META_QT5_EXTRA}"
            else
-               echo -e "meta-qt5-extra last commit:    ${COLOR_WARNING}${COMMIT_META_QT5_EXTRA}${COLOR_RESET}"
+               echo -e "meta-qt5-extra last commit:    ${COLOR_WARNING}${COMMIT_META_QT5_EXTRA}${COLOR_RESET} Check ${REPO_META_QT5_EXTRA}"
        fi
 fi
 
@@ -425,7 +447,12 @@ if grep -q ${COMMIT_META_SDR} "${BASEDIR}/../default.xml"
     then
         echo -e "meta-sdr last commit:          ${COMMIT_META_SDR}"
     else
-        echo -e "meta-sdr last commit:          ${COLOR_INFO}${COMMIT_META_SDR}${COLOR_INFO}"
+        if [ ${COMMIT_META_SDR} == "Unknown" ]
+            then
+                echo -e "meta-sdr last commit:          ${COLOR_INFO}${COMMIT_META_SDR}${COLOR_RESET}"
+            else
+                echo -e "meta-sdr last commit:          ${COLOR_INFO}${COMMIT_META_SDR}${COLOR_RESET} Check ${REPO_META_SDR}"
+        fi
 fi
 
 # Display latest commit for meta-xilinx
@@ -433,7 +460,12 @@ if grep -q ${COMMIT_META_XILINX} "${BASEDIR}/../default.xml"
     then
         echo -e "meta-xilinx last commit:       ${COMMIT_META_XILINX}"
     else
-        echo -e "meta-xilinx last commit:       ${COLOR_INFO}${COMMIT_META_XILINX}${COLOR_RESET}"
+        if [ ${COMMIT_META_XILINX} == "Unknown" ]
+            then
+                echo -e "meta-xilinx last commit:       ${COLOR_INFO}${COMMIT_META_XILINX}${COLOR_RESET}"
+            else
+                echo -e "meta-xilinx last commit:       ${COLOR_WARNING}${COMMIT_META_XILINX}${COLOR_RESET} Check ${REPO_META_XILINX}"
+        fi
 fi
 
 # Display latest commit for meta-xilinx-tools
@@ -443,7 +475,7 @@ if [ ${BRANCH} == "thud" ] || [ ${BRANCH} == "zeus" ]
             then
                 echo -e "meta-xilinx-tools last commit: ${COMMIT_META_XILINX_TOOLS}"
             else
-                echo -e "meta-xilinx-tools last commit: ${COLOR_WARNING}${COMMIT_META_XILINX_TOOLS}${COLOR_RESET}"
+                echo -e "meta-xilinx-tools last commit: ${COLOR_WARNING}${COMMIT_META_XILINX_TOOLS}${COLOR_RESET} Check ${REPO_META_XILINX_TOOLS}"
         fi
 fi
 
@@ -454,7 +486,7 @@ if [ ${BRANCH} == "rocko" ] || [ ${BRANCH} == "sumo" ] || [ ${BRANCH} == "thud" 
             then
                 echo -e "meta-adi last commit:          ${COMMIT_META_ADI}"
             else
-                echo -e "meta-adi last commit:          ${COLOR_WARNING}${COMMIT_META_ADI}${COLOR_RESET}"
+                echo -e "meta-adi last commit:          ${COLOR_WARNING}${COMMIT_META_ADI}${COLOR_RESET} Check ${REPO_META_ADI}"
         fi
 fi
 
@@ -465,7 +497,7 @@ if [ ${BRANCH} == "rocko" ] || [ ${BRANCH} == "thud" ]
             then
                 echo -e "hdl last commit:               ${COMMIT_HDL}"
             else
-                echo -e "hdl last commit:               ${COLOR_WARNING}${COMMIT_HDL}${COLOR_RESET}"
+                echo -e "hdl last commit:               ${COLOR_WARNING}${COMMIT_HDL}${COLOR_RESET} Check ${REPO_HDL}"
         fi
 fi
 
@@ -474,7 +506,7 @@ if grep -q ${COMMIT_META_RASPI} "${BASEDIR}/../default.xml"
     then
         echo -e "meta-raspberrypi last commit:  ${COMMIT_META_RASPI}"
     else
-        echo -e "meta-raspberrypi last commit:  ${COLOR_WARNING}${COMMIT_META_RASPI}${COLOR_RESET}"
+        echo -e "meta-raspberrypi last commit:  ${COLOR_WARNING}${COMMIT_META_RASPI}${COLOR_RESET} Check ${REPO_META_RASPBERRYPI_BROWSER}"
 fi
 
 # Display latest commit for meta-intel
@@ -482,7 +514,7 @@ if grep -q ${COMMIT_META_INTEL} "${BASEDIR}/../default.xml"
     then
         echo -e "meta-intel last commit:        ${COMMIT_META_INTEL}"
     else
-        echo -e "meta-intel last commit:        ${COLOR_WARNING}${COMMIT_META_INTEL}${COLOR_RESET}"
+        echo -e "meta-intel last commit:        ${COLOR_WARNING}${COMMIT_META_INTEL}${COLOR_RESET} Check ${REPO_META_INTEL_BROWSER}"
 fi
 
 # Display latest commit for meta-swupdate
@@ -490,7 +522,7 @@ if grep -q ${COMMIT_META_SWUPDATE} "${BASEDIR}/../default.xml"
     then
         echo -e "meta-swupdate last commit:     ${COMMIT_META_SWUPDATE}"
     else
-        echo -e "meta-swupdate last commit:     ${COLOR_WARNING}${COMMIT_META_SWUPDATE}${COLOR_RESET}"
+        echo -e "meta-swupdate last commit:     ${COLOR_INFO}${COMMIT_META_SWUPDATE}${COLOR_RESET} Check ${REPO_META_SW_UPDATE}"
 fi
 
 cd $BASEDIR
