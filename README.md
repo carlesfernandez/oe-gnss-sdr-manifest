@@ -53,11 +53,15 @@ file on that repo for more details on its usage and options.
 
 ### Tested Environment
 
-Ubuntu 16.04 64 bits in a Virtual Machine
+Ubuntu 16.08 64 bits in a Virtual Machine
 
 ```
-$ sudo apt-get install gawk wget git-core diffstat unzip texinfo gcc-multilib \
-    build-essential chrpath libsdl1.2-dev xterm
+$ sudo apt-get install apt-transport-https bc build-essential ca-certificates \
+    chrpath cpio curl debianutils diffstat gawk gcc-multilib git-core git-lfs \
+    gnupg-agent iputils-ping libegl1-mesa liblz4-tool libsdl1.2-dev locales \
+    nano pylint3 python python3 python3-git python3-jinja2 python3-pexpect \
+    python3-pip socat software-properties-common sudo texinfo unzip wget \
+    xterm xxd xz-utils zstd
 ```
 
 Configure Git:
