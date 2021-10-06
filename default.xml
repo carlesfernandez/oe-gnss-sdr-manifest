@@ -32,7 +32,7 @@
 	<project name="bitbake" path="bitbake" revision="1.42" />
 	<project name="openembedded-core" path="oe-core" revision="856674d6f75e2b99ae961d5ab869ff071ff5c362" />
 	<project name="meta-openembedded" path="meta-oe" revision="a24acf94d48d635eca668ea34598c6e5c857e3f8" />
-	<project name="meta-qt5" remote="qt5" path="meta-qt5" revision="6310c5c17380ad5e3bdaf1938e025d713066e7ee" />
+	<project name="meta-qt5" remote="qt5" path="meta-qt5" revision="66d68aea0bfc18d1d8f41a3fbbc2df9180a89d6a" />
 	<project name="meta-sdr" remote="balister" path="meta-sdr" revision="03035da6c6c0c839578774a0067b1dedf83d8a59" />
 	<project name="meta-xilinx" remote="Xilinx" path="meta-xilinx" revision="391c7054e88ae77abf18fe8a705ac7ff34c7dc79" />
 	<project name="meta-raspberrypi" remote="yocto" path="meta-raspberrypi" revision="65b95ce742ae973b856a62974d0ec22e2caf03a3" />
