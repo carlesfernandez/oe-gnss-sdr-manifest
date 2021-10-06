@@ -69,7 +69,7 @@ COMMIT_META_OPENEMBEDDED=$(git rev-parse HEAD)
 cd ..
 
 # meta-qt4
-if [ ${BRANCH} == "rocko" ]
+if [ ${BRANCH} == "rocko" ] || [ ${BRANCH} == "sumo" ] || [ ${BRANCH} == "thud" ]
    then
        if [ -d "meta-qt4" ]
            then
@@ -412,9 +412,8 @@ if grep -q ${COMMIT_META_OPENEMBEDDED} "${BASEDIR}/../default.xml"
 fi
 
 # Display latest commit for meta-qt4
-if [ ${BRANCH} == "rocko" ]
+if [ ${BRANCH} == "rocko" ] || [ ${BRANCH} == "sumo" ] || [ ${BRANCH} == "thud" ]
    then
-       echo -e "meta-qt4 last commit:          ${COMMIT_META_QT4}"
        if grep -q ${COMMIT_META_QT4} "${BASEDIR}/../default.xml"
            then
                echo -e "meta-qt4 last commit:          ${COMMIT_META_QT4}"
