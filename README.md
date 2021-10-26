@@ -13,9 +13,6 @@ SPDX-FileCopyrightText: 2016-2021 Carles Fernandez-Prades <carles.fernandez@cttc
 This repository provides Repo manifests to setup the OpenEmbedded build system
 with the meta-gnss-sdr layer.
 
-**NOTE: PLEASE DO NOT USE THE master BRANCH OF THIS REPO TO BUILD IMAGES, USE
-ONE OF THE AVAILABLE BRANCHES INSTEAD.**
-
 OpenEmbedded allows the creation of custom linux distributions for embedded
 systems. It is a collection of git repositories known as _layers_ each of which
 provides _recipes_ to build software packages as well as configuration
@@ -96,7 +93,7 @@ $ git config --global user.email your.name@example.com
 
     Tell Repo where to find the manifest
 
-        $ repo init -u git://github.com/carlesfernandez/oe-gnss-sdr-manifest.git -b master
+        $ repo init -u git://github.com/carlesfernandez/oe-gnss-sdr-manifest.git -b honister
 
     A successful initialization will end with a message stating that Repo is
     initialized in your working directory. Your client directory should now
