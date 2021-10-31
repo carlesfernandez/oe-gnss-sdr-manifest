@@ -155,7 +155,7 @@ if [ ${BRANCH} == "zeus" ]
 fi
 if [ ${BRANCH} == "gatesgarth" ]
     then
-        SPECIAL_XILINX_BRANCH="rel-v2021.1"
+        SPECIAL_XILINX_BRANCH="rel-v2021.2"
 fi
 if [ -d "meta-xilinx" ]
     then
