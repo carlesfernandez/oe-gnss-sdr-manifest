@@ -117,27 +117,40 @@ if [ ${BRANCH} == "sumo" ]
 fi
 
 # meta-sdr
+SPECIAL_SDR_BRANCH=${BRANCH}
+if [ ${BRANCH} == "thud" ]
+    then
+        SPECIAL_SDR_BRANCH="sumo"
+fi
+if [ ${BRANCH} == "warrior" ]
+    then
+        SPECIAL_SDR_BRANCH="zeus"
+fi
+if [ ${BRANCH} == "gatesgarth" ]
+    then
+        SPECIAL_SDR_BRANCH="dunfell"
+fi
 if [ -d "meta-sdr" ]
     then
         cd meta-sdr
-        exists_in_remote=$(git ls-remote --heads origin ${BRANCH})
+        exists_in_remote=$(git ls-remote --heads origin ${SPECIAL_SDR_BRANCH})
         if [[ -z ${exists_in_remote} ]]
            then
                COMMIT_META_SDR="Unknown"
            else
-               git checkout ${BRANCH}
-               git pull origin ${BRANCH}
+               git checkout ${SPECIAL_SDR_BRANCH}
+               git pull origin ${SPECIAL_SDR_BRANCH}
                COMMIT_META_SDR=$(git rev-parse HEAD)
         fi
     else
         git clone ${REPO_META_SDR}
         cd meta-sdr
-        exists_in_remote=$(git ls-remote --heads origin ${BRANCH})
+        exists_in_remote=$(git ls-remote --heads origin ${SPECIAL_SDR_BRANCH})
         if [[ -z ${exists_in_remote} ]]
            then
                COMMIT_META_SDR="Unknown"
            else
-               git checkout ${BRANCH}
+               git checkout ${SPECIAL_SDR_BRANCH}
                COMMIT_META_SDR=$(git rev-parse HEAD)
         fi
 fi
@@ -450,7 +463,7 @@ if grep -q ${COMMIT_META_SDR} "${BASEDIR}/../default.xml"
             then
                 echo -e "meta-sdr last commit:          ${COLOR_INFO}${COMMIT_META_SDR}${COLOR_RESET}"
             else
-                echo -e "meta-sdr last commit:          ${COLOR_INFO}${COMMIT_META_SDR}${COLOR_RESET} Check ${REPO_META_SDR}/tree/${BRANCH}"
+                echo -e "meta-sdr last commit:          ${COLOR_INFO}${COMMIT_META_SDR}${COLOR_RESET} Check ${REPO_META_SDR}/tree/${SPECIAL_SDR_BRANCH}"
         fi
 fi
 
