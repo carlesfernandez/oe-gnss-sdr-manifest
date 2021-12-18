@@ -199,6 +199,10 @@ if [ ${BRANCH} == "zeus" ]
     then
         SPECIAL_XILINX_BRANCH="rel-v2020.3"
 fi
+if [ ${BRANCH} == "dunfell" ]
+    then
+        SPECIAL_XILINX_BRANCH="gatesgarth"
+fi
 if [ ${BRANCH} == "gatesgarth" ]
     then
         SPECIAL_XILINX_BRANCH="rel-v2021.2"
