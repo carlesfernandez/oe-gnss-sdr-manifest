@@ -35,7 +35,7 @@
 	<project name="meta-xilinx" remote="Xilinx" path="meta-xilinx" revision="294482da9a3dffbbe503e0ed281952659dea4da6" />
 	<project name="meta-raspberrypi" remote="yocto" path="meta-raspberrypi" revision="1584bddcf31f4bf3acc2304aa8dae927e8bec970" />
 	<project name="meta-intel" remote="yocto" path="meta-intel" revision="d0f1c1ebfd9b7fe8d22c6a62208f78bccc6f3bf6" />
-	<project name="meta-swupdate" remote="sbabic" path="meta-swupdate" revision="773a2df867a78ccd025cac0a4c4f836039a9f8aa" />
+	<project name="meta-swupdate" remote="sbabic" path="meta-swupdate" revision="f5fda9ec9e07ef9a04f967231545d1ae1871aacd" />
 	<project name="meta-gnss-sdr" remote="gnss-sdr" path="meta-gnss-sdr" revision="honister" />
 
 </manifest>
