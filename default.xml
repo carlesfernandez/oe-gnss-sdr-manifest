@@ -33,6 +33,7 @@
 	<project name="meta-sdr" remote="balister" path="meta-sdr" revision="master" />
 	<project name="meta-virtualization" remote="yocto" path="meta-virtualization" revision="master" />
 	<project name="meta-xilinx" remote="Xilinx" path="meta-xilinx" revision="master" />
+	<project name="meta-xilinx-tools" remote="Xilinx" path="meta-xilinx-tools" revision="master" />
 	<project name="meta-raspberrypi" remote="yocto" path="meta-raspberrypi" revision="master" />
 	<project name="meta-intel" remote="yocto" path="meta-intel" revision="master" />
 	<project name="meta-swupdate" remote="sbabic" path="meta-swupdate" revision="master" />
