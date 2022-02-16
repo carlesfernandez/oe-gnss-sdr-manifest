@@ -33,6 +33,7 @@
 	<project name="meta-sdr" remote="balister" path="meta-sdr" revision="be3ae4a7b77ecd657d6fec13cd5e667c803fa51c" />
 	<project name="meta-virtualization" remote="yocto" path="meta-virtualization" revision="71efeb8cdce968378d6d69e7cd9532499506fa3f" />
 	<project name="meta-xilinx" remote="Xilinx" path="meta-xilinx" revision="f7d26af60681af1d44ca1b25593924e55b931d69" />
+	<project name="meta-xilinx-tools" remote="Xilinx" path="meta-xilinx-tools" revision="fa689ad7e2b97951f12f3ef7a52685f9555d162d" />
 	<project name="meta-raspberrypi" remote="yocto" path="meta-raspberrypi" revision="1584bddcf31f4bf3acc2304aa8dae927e8bec970" />
 	<project name="meta-intel" remote="yocto" path="meta-intel" revision="5a30dcefa54040dd05099549a56156a83263554c" />
 	<project name="meta-swupdate" remote="sbabic" path="meta-swupdate" revision="dcbef31919b39acf26ed793f2cf5c2e06f5ec70e" />
