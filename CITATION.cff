@@ -17,6 +17,7 @@ authors:
     given-names: Toby
 cff-version: "1.2.0"
 date-released: "2022-02-19"
+doi: 10.5281/zenodo.6174806
 identifiers:
   - description: "The concept DOI of the work. This is a DOI always pointing to the latest stable release."
     type: doi
