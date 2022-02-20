@@ -4,7 +4,7 @@ SPDX-License-Identifier: MIT
 )
 
 [comment]: # (
-SPDX-FileCopyrightText: 2016-2021 Carles Fernandez-Prades <carles.fernandez@cttc.es>
+SPDX-FileCopyrightText: 2016-2022 Carles Fernandez-Prades <carles.fernandez@cttc.es>
 )
 <!-- prettier-ignore-end -->
 
@@ -13,7 +13,7 @@ SPDX-FileCopyrightText: 2016-2021 Carles Fernandez-Prades <carles.fernandez@cttc
 This repository provides Repo manifests to setup the OpenEmbedded build system
 with the meta-gnss-sdr layer.
 
-OpenEmbedded allows the creation of custom linux distributions for embedded
+OpenEmbedded allows the creation of custom GNU/Linux distributions for embedded
 systems. It is a collection of git repositories known as _layers_ each of which
 provides _recipes_ to build software packages as well as configuration
 information.
@@ -271,7 +271,7 @@ and then re-initialize your repo client
 
 ## Copyright and License
 
-Copyright: &copy; 2016-2021 Carles Fern&aacute;ndez-Prades. All rights reserved.
+Copyright: &copy; 2016-2022 Carles Fern&aacute;ndez-Prades. All rights reserved.
 
 The content of this repository is released under the [MIT](./LICENSE) license.
 
