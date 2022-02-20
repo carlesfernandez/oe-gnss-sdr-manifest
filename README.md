@@ -4,7 +4,7 @@ SPDX-License-Identifier: MIT
 )
 
 [comment]: # (
-SPDX-FileCopyrightText: 2016-2021 Carles Fernandez-Prades <carles.fernandez@cttc.es>
+SPDX-FileCopyrightText: 2016-2022 Carles Fernandez-Prades <carles.fernandez@cttc.es>
 )
 <!-- prettier-ignore-end -->
 
@@ -16,7 +16,7 @@ with the meta-gnss-sdr layer.
 **NOTE: PLEASE DO NOT USE THE master BRANCH OF THIS REPO TO BUILD IMAGES, USE
 ONE OF THE AVAILABLE BRANCHES INSTEAD.**
 
-OpenEmbedded allows the creation of custom linux distributions for embedded
+OpenEmbedded allows the creation of custom GNU/Linux distributions for embedded
 systems. It is a collection of git repositories known as _layers_ each of which
 provides _recipes_ to build software packages as well as configuration
 information.
@@ -51,230 +51,9 @@ builds the images and the SDK for you. Please check the
 [README.md](https://github.com/carlesfernandez/yocto-geniux/blob/main/README.md)
 file on that repo for more details on its usage and options.
 
-### Tested Environment
-
-Ubuntu 16.08 64 bits in a Virtual Machine
-
-```
-$ sudo apt-get install apt-transport-https bc build-essential ca-certificates \
-    chrpath cpio curl debianutils diffstat gawk gcc-multilib git-core git-lfs \
-    gnupg-agent iputils-ping libegl1-mesa liblz4-tool libsdl1.2-dev locales \
-    nano pylint3 python python3 python3-git python3-jinja2 python3-pexpect \
-    python3-pip socat software-properties-common sudo texinfo unzip wget \
-    xterm xxd xz-utils zstd
-```
-
-Configure Git:
-
-```
-$ git config --global user.name "Your Name"
-$ git config --global user.email your.name@example.com
-```
-
-## Getting Started
-
-1.  Install Repo.
-
-    Download the Repo script.
-
-        $ curl https://storage.googleapis.com/git-repo-downloads/repo > repo
-
-    Make it executable.
-
-        $ chmod a+x repo
-
-    Move it on to your system path.
-
-        $ sudo mv repo /usr/local/bin/
-
-2.  Initialize a Repo client.
-
-    Create an empty directory to hold your working files.
-
-        $ mkdir oe-repo
-        $ cd oe-repo
-
-    Tell Repo where to find the manifest
-
-        $ repo init -u git://github.com/carlesfernandez/oe-gnss-sdr-manifest.git -b master
-
-    A successful initialization will end with a message stating that Repo is
-    initialized in your working directory. Your client directory should now
-    contain a .repo directory where files such as the manifest will be kept.
-
-    **Note on the branch name**: This repository has several branches, which
-    names follow those of
-    [Yocto Project Releases](https://wiki.yoctoproject.org/wiki/Releases). Each
-    branch will download and build different versions of the software packages.
-    Most recent stuff is in the `master` branch, but it can be unstable.
-
-    To learn more about repo, look at
-    https://source.android.com/source/using-repo.html
-
-3.  Fetch all the repositories.
-
-        $ repo sync
-
-    Now go put on the coffee machine as this may take 20 minutes depending on
-    your connection.
-
-4.  Initialize the OpenEmbedded Environment.
-
-        $ TEMPLATECONF=`pwd`/meta-gnss-sdr/conf source ./oe-core/oe-init-build-env ./build ./bitbake
-
-    This copies default configuration information into the `./build/conf`
-    directory and sets up some environment variables for OpenEmbedded. You may
-    wish to edit the configuration options at this point. The default target is
-    `MACHINE=zedboard-zynq7` but you can override that defining an environment
-    variable:
-
-        $ export MACHINE=raspberrypi3
-
-5.  Build an image.
-
-    This process downloads several gigabytes of source code and then proceeds to
-    do an awful lot of compilation so make sure you have plenty of space (25 GB
-    minimum). Go drink some beer.
-
-        $ bitbake gnss-sdr-dev-image
-
-    If everything goes well, you should have a compressed root filesystem
-    tarball as well as kernel and bootloader binaries available in your
-    _work/deploy_ directory. If you run into problems, the most likely candidate
-    is missing packages. Check out the
-    [list of required packages for each operating system](https://www.yoctoproject.org/docs/2.2/ref-manual/ref-manual.html#required-packages-for-the-host-development-system).
-
-6.  Build an SDK for cross compiling GNSS-SDR on an x86 machine.
-
-    Run:
-
-        $ bitbake -c populate_sdk gnss-sdr-dev-image
-
-    When this completes the SDK is in `./tmp-glibc/deploy/sdk/` as an .sh file
-    you copy to the machine you want to cross compile on and run the file. It
-    will default to installing the SDK in `/usr/local`, and you can ask it to
-    install anywhere you have write access to.
-
-## Using the SDK
-
-Install it by running:
-
-        $ sudo sh ./tmp-glibc/deploy/sdk/geniux-x86_64-gnss-sdr-dev-image-zedboard-zynq7-toolchain-gatesgarth-21.02.1.sh
-
-This will ask you what directory to install the SDK into. Which directory
-doesn't matter, just make sure wherever it goes that you have enough disk space.
-The default is `/usr/local`. You can also install it in your home directory if
-you do not have root access.
-
-Running the environment script will set up most of the variables we'll need to
-compile. You will need to do this each time you want to run the SDK (and since
-the environment variable are only set for the current shell, you need to source
-it for every console you will run the SDK from)
-
-        $ . /usr/local/oecore-x86_64/environment-setup-armv7ahf-neon-oe-linux-gnueabi
-
-Cross compile GNSS-SDR and install on target:
-
-        $ git clone https://github.com/gnss-sdr/gnss-sdr.git
-        $ cd gnss-sdr
-        $ git checkout next
-        $ cd build
-        $ cmake -DCMAKE_TOOLCHAIN_FILE=../cmake/Toolchains/oe-sdk_cross.cmake -DCMAKE_INSTALL_PREFIX=/usr ..
-        $ make
-        $ sudo make install DESTDIR=/usr/local/oecore-x86_64/sysroots/armv7ahf-neon-oe-linux-gnueabi/
-
-## Build a root filesystem with GNSS-SDR already installed
-
-In order to obtain a filesystem with GNSS-SDR already installed and ready to be
-copied to your SD card, you can bit bake the following image:
-
-        $ bitbake gnss-sdr-demo-image
-        $ bitbake -c populate_sdk gnss-sdr-demo-image
-
-This will create a root filesystem at
-`./tmp-glibc/deploy/images/zedboard-zynq7/gnss-sdr-demo-image-zedboard-zynq7-YYYYMMDDHHMMSS.rootfs.tar.gz`.
-
-As well, executing
-`./tmp-glibc/deploy/sdk/geniux-x86_64-gnss-sdr-demo-image-zedboard-zynq7-toolchain-gatesgarth-21.02.1.sh`
-as sudo will install the SDK, providing the full root filesystem at
-`/usr/local/oecore-x86_64/sysroots/armv7ahf-neon-oe-linux-gnueabi/`.
-
-Such filesystem, as in the case of the `gnss-sdr-dev-image` recipe, will have
-root access without password by default.
-
-## Building a minimal image with GNSS-SDR installed
-
-You can save some megabytes and building time by configuring an image with no
-GUI, no development, no debugging and no profiling tools, but still with
-GNSS-SDR installed. Edit the "GUI support" and the "Extra image configuration
-defaults" sections of your `./conf/local.conf` file as:
-
-        # Comment these two lines to remove GUI support:
-        # DISTRO_FEATURES_append = " opengl x11"
-        # PACKAGECONFIG_pn-gnuradio = "qtgui grc uhd"
-        # If you remove GUI support, please also uncomment the following two lines:
-        PACKAGECONFIG_pn-gnuradio = "uhd"
-        PACKAGECONFIG_pn-gr-ettus = ""
-
-and
-
-        #EXTRA_IMAGE_FEATURES = "debug-tweaks tools-profile tools-sdk dev-pkgs dbg-pkgs"
-        EXTRA_IMAGE_FEATURES = ""
-
-and then build the gnss-sdr-minimal-image:
-
-        $ bitbake gnss-sdr-minimal-image
-
-## Staying Up to Date
-
-To pick up the latest changes for all source repositories, run:
-
-    $ repo sync
-
-Enter the OpenEmbedded environment:
-
-    $ . oe-core/oe-init-build-env ./build ./bitbake
-
-If you forget to setup these environment variables prior to running bitbake,
-your OS will complain that it can't find bitbake on the path. Don't try to
-install bitbake using a package manager, just run the command.
-
-You can then rebuild as before:
-
-    $ bitbake gnss-sdr-dev-image
-
-## Starting from Fresh
-
-So it is borked. You're not really sure why. But it doesn't work any more.
-
-There are several degrees of _starting fresh_.
-
-1.  clean a package: `bitbake <package-name> -c cleansstate`
-2.  re-download package: `bitbake <package-name> -c cleanall`
-3.  destroy everything but downloads: `rm -rf build` (or whereever your sstate
-    and work directories are)
-4.  destroy it all (not recommended): `rm -rf build && rm -rf sources`
-
-## Customize
-
-Sooner or later, you'll want to customize some aspect of the image either adding
-more packages, picking up some upstream patches, or tweaking your kernel. To
-this, you'll want to customize the Repo manifest to point at different
-repositories and branches or pull in additional meta-layers. Check out the
-[OpenEmbedded Layer Index](https://layers.openembedded.org/layerindex/branch/master/layers/).
-
-Clone this repository (or fork it on github):
-
-    $ git clone git://github.com/carlesfernandez/oe-gnss-sdr-manifest.git
-
-Make your changes (and contribute them back if they are generally useful :) ),
-and then re-initialize your repo client
-
-    $ repo init -u <file:///path/to/your/git/repository.git>
-
 ## Copyright and License
 
-Copyright: &copy; 2016-2021 Carles Fern&aacute;ndez-Prades. All rights reserved.
+Copyright: &copy; 2016-2022 Carles Fern&aacute;ndez-Prades. All rights reserved.
 
 The content of this repository is released under the [MIT](./LICENSE) license.
 
