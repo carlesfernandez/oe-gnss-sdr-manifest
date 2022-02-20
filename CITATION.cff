@@ -29,8 +29,9 @@ keywords:
   - GNSS
   - SDR
   - yocto
-  - docker
-  - Dockerfile
+  - Geniux
+  - manifest
+  - SDK
 license: MIT
 message: "If you use this software, please cite it using the metadata from this file."
 repository-code: "https://github.com/carlesfernandez/oe-gnss-sdr-manifest"
