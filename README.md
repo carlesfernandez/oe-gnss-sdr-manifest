@@ -1,4 +1,4 @@
-<!-- prettier-ignore-start -->
+https:<!-- prettier-ignore-start -->
 [comment]: # (
 SPDX-License-Identifier: MIT
 )
@@ -90,7 +90,7 @@ $ git config --global user.email your.name@example.com
 
     Tell Repo where to find the manifest
 
-        $ repo init -u git://github.com/carlesfernandez/oe-gnss-sdr-manifest.git -b sumo
+        $ repo init -u https://github.com/carlesfernandez/oe-gnss-sdr-manifest.git -b sumo
 
     A successful initialization will end with a message stating that Repo is
     initialized in your working directory. Your client directory should now

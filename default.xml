@@ -4,31 +4,31 @@
 
 <manifest>
 	<remote name="openembedded"
-		fetch="git://github.com/openembedded" />
+		fetch="https://github.com/openembedded" />
 
 	<remote name="Xilinx"
-		fetch="git://github.com/Xilinx" />
+		fetch="https://github.com/Xilinx" />
 
 	<remote name="adi"
-		fetch="git://github.com/analogdevicesinc" />
+		fetch="https://github.com/analogdevicesinc" />
 
 	<remote name="balister"
-		fetch="git://github.com/balister" />
+		fetch="https://github.com/balister" />
 
 	<remote name="sbabic"
-		fetch="git://github.com/sbabic" />
+		fetch="https://github.com/sbabic" />
 
 	<remote name="yocto"
-		fetch="git://git.yoctoproject.org/" />
+		fetch="https://git.yoctoproject.org/" />
 
 	<remote name="qt5"
-		fetch="git://github.com/meta-qt5" />
+		fetch="https://github.com/meta-qt5" />
 
 	<remote name="schnitzeltony"
-	    fetch="git://github.com/schnitzeltony" />
+	    fetch="https://github.com/schnitzeltony" />
 
 	<remote name="gnss-sdr"
-		fetch="git://github.com/carlesfernandez" />
+		fetch="https://github.com/carlesfernandez" />
 
 	<default remote="openembedded" revision="master"  />
 
