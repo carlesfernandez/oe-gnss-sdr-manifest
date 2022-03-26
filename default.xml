@@ -33,7 +33,7 @@
 	<project name="meta-sdr" remote="balister" path="meta-sdr" revision="23b89d899311613ca8c30b15d7327db631ad7810" />
 	<project name="meta-raspberrypi" remote="yocto" path="meta-raspberrypi" revision="b4ec97e4eb8e36efd1f7e2f8ae020a9e55cfc239" />
 	<project name="meta-intel" remote="yocto" path="meta-intel" revision="b3c971f4903de3c036a98861076795133636473d" />
-	<project name="meta-swupdate" remote="sbabic" path="meta-swupdate" revision="9e1c305f09874a761f963207f6678b2d29c4fb94" />
+	<project name="meta-swupdate" remote="sbabic" path="meta-swupdate" revision="f1b10b90707fd1247a9a84120c7217667484ff14" />
 	<project name="meta-gnss-sdr" remote="gnss-sdr" path="meta-gnss-sdr" revision="hardknott" />
 
 </manifest>
