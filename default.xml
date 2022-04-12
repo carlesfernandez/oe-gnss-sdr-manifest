@@ -30,10 +30,10 @@
 	<project name="openembedded-core" path="oe-core" revision="fbbb689c8df7f82644b8a9bc5bb6884bc6516660" />
 	<project name="meta-openembedded" path="meta-oe" revision="d6a8a24a1a7e1cedcfb9d7d2b32c4ba43863c11a" />
 	<project name="meta-qt5" remote="qt5" path="meta-qt5" revision="43f8f539d40070a70fe89136db89bf5bb1dfe7ed" />
-	<project name="meta-sdr" remote="balister" path="meta-sdr" revision="01c6501f6d4d4636567485b156b993c669fbeea5" />
+	<project name="meta-sdr" remote="balister" path="meta-sdr" revision="42a930de1ce148fdc697dbdf52ad6f9993993794" />
 	<project name="meta-raspberrypi" remote="yocto" path="meta-raspberrypi" revision="b4ec97e4eb8e36efd1f7e2f8ae020a9e55cfc239" />
 	<project name="meta-intel" remote="yocto" path="meta-intel" revision="16bfef2d1e0d0c8c596741d0bbb820541c432f6d" />
-	<project name="meta-swupdate" remote="sbabic" path="meta-swupdate" revision="f1b10b90707fd1247a9a84120c7217667484ff14" />
+	<project name="meta-swupdate" remote="sbabic" path="meta-swupdate" revision="7c2c51861110aa33497b193f9fb6248196296871" />
 	<project name="meta-gnss-sdr" remote="gnss-sdr" path="meta-gnss-sdr" revision="hardknott" />
 
 </manifest>
