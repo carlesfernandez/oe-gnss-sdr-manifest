@@ -271,7 +271,8 @@ and then re-initialize your repo client
 
 ## Copyright and License
 
-Copyright: &copy; 2016-2022 Carles Fern&aacute;ndez-Prades. All rights reserved.
+Copyright: &copy; 2016-2022 Carles Fern&aacute;ndez-Prades,
+[CTTC](https://www.cttc.cat). All rights reserved.
 
 The content of this repository is released under the [MIT](./LICENSE) license.
 
