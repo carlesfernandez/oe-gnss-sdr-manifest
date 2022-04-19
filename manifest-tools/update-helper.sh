@@ -21,21 +21,17 @@ BASEDIR=$PWD
 
 REPO_OE_CORE="https://github.com/openembedded/openembedded-core"
 REPO_META_OE="https://github.com/openembedded/meta-openembedded"
-REPO_META_QT4="git://git.yoctoproject.org/meta-qt4"
-REPO_META_QT4_BROWSER="https://git.yoctoproject.org/cgit/cgit.cgi/meta-qt4"
+REPO_META_QT4="https://git.yoctoproject.org/meta-qt4"
 REPO_META_QT5="https://github.com/meta-qt5/meta-qt5"
 REPO_META_QT5_EXTRA="https://github.com/schnitzeltony/meta-qt5-extra"
 REPO_META_SDR="https://github.com/balister/meta-sdr"
-REPO_META_VIRTUALIZATION="git://git.yoctoproject.org/meta-virtualization"
-REPO_META_VIRTUALIZATION_BROWSER="https://git.yoctoproject.org/meta-virtualization"
+REPO_META_VIRTUALIZATION="https://git.yoctoproject.org/meta-virtualization"
 REPO_META_XILINX="https://github.com/Xilinx/meta-xilinx"
 REPO_META_XILINX_TOOLS="https://github.com/Xilinx/meta-xilinx-tools"
 REPO_META_ADI="https://github.com/analogdevicesinc/meta-adi"
 REPO_HDL="https://github.com/analogdevicesinc/hdl"
-REPO_META_RASPBERRYPI="git://git.yoctoproject.org/meta-raspberrypi"
-REPO_META_RASPBERRYPI_BROWSER="https://git.yoctoproject.org/cgit/cgit.cgi/meta-raspberrypi"
-REPO_META_INTEL="git://git.yoctoproject.org/meta-intel"
-REPO_META_INTEL_BROWSER="https://git.yoctoproject.org/cgit/cgit.cgi/meta-intel"
+REPO_META_RASPBERRYPI="https://git.yoctoproject.org/meta-raspberrypi"
+REPO_META_INTEL="https://git.yoctoproject.org/meta-intel"
 REPO_META_SW_UPDATE="https://github.com/sbabic/meta-swupdate"
 
 echo -e "Getting the latest commits in the ${BRANCH} branch..."
@@ -240,7 +236,7 @@ if [ ${BRANCH} == "zeus" ]
        SPECIAL_XILINX_TOOLS_BRANCH="rel-v2020.3"
 fi
 
-if [ ${BRANCH} == "thud" ] || [ ${BRANCH} == "zeus" ]
+if [ ${BRANCH} == "thud" ] || [ ${BRANCH} == "zeus" ] || [ ${BRANCH} == "honister" ]
    then
        if [ -d "meta-xilinx-tools" ]
            then
@@ -464,7 +460,7 @@ if [ ${BRANCH} == "rocko" ] || [ ${BRANCH} == "sumo" ] || [ ${BRANCH} == "thud" 
            then
                echo -e "meta-qt4 last commit:            ${COMMIT_META_QT4}"
            else
-               echo -e "meta-qt4 last commit:            ${COLOR_WARNING}${COMMIT_META_QT4}${COLOR_RESET} Check ${REPO_META_QT4_BROWSER}/log/?h=${BRANCH}"
+               echo -e "meta-qt4 last commit:            ${COLOR_WARNING}${COMMIT_META_QT4}${COLOR_RESET} Check ${REPO_META_QT4}/log/?h=${BRANCH}"
        fi
 fi
 
@@ -507,7 +503,7 @@ if [ ${BRANCH} == "honister" ]
            then
                echo -e "meta-virtualization last commit: ${COMMIT_META_VIRTUALIZATION}"
            else
-               echo -e "meta-virtualization last commit: ${COLOR_WARNING}${COMMIT_META_VIRTUALIZATION}${COLOR_RESET} Check ${REPO_META_VIRTUALIZATION_BROWSER}/log/?h=${BRANCH}"
+               echo -e "meta-virtualization last commit: ${COLOR_WARNING}${COMMIT_META_VIRTUALIZATION}${COLOR_RESET} Check ${REPO_META_VIRTUALIZATION}/log/?h=${BRANCH}"
        fi
 fi
 
@@ -525,7 +521,7 @@ if grep -q ${COMMIT_META_XILINX} "${BASEDIR}/../default.xml"
 fi
 
 # Display latest commit for meta-xilinx-tools
-if [ ${BRANCH} == "thud" ] || [ ${BRANCH} == "zeus" ]
+if [ ${BRANCH} == "thud" ] || [ ${BRANCH} == "zeus" ] || [ ${BRANCH} == "honister" ]
     then
         if grep -q ${COMMIT_META_XILINX_TOOLS} "${BASEDIR}/../default.xml"
             then
@@ -562,7 +558,7 @@ if grep -q ${COMMIT_META_RASPI} "${BASEDIR}/../default.xml"
     then
         echo -e "meta-raspberrypi last commit:    ${COMMIT_META_RASPI}"
     else
-        echo -e "meta-raspberrypi last commit:    ${COLOR_WARNING}${COMMIT_META_RASPI}${COLOR_RESET} Check ${REPO_META_RASPBERRYPI_BROWSER}/log/?h=${BRANCH}"
+        echo -e "meta-raspberrypi last commit:    ${COLOR_WARNING}${COMMIT_META_RASPI}${COLOR_RESET} Check ${REPO_META_RASPBERRYPI}/log/?h=${BRANCH}"
 fi
 
 # Display latest commit for meta-intel
@@ -570,7 +566,7 @@ if grep -q ${COMMIT_META_INTEL} "${BASEDIR}/../default.xml"
     then
         echo -e "meta-intel last commit:          ${COMMIT_META_INTEL}"
     else
-        echo -e "meta-intel last commit:          ${COLOR_WARNING}${COMMIT_META_INTEL}${COLOR_RESET} Check ${REPO_META_INTEL_BROWSER}/log/?h=${BRANCH}"
+        echo -e "meta-intel last commit:          ${COLOR_WARNING}${COMMIT_META_INTEL}${COLOR_RESET} Check ${REPO_META_INTEL}/log/?h=${BRANCH}"
 fi
 
 # Display latest commit for meta-swupdate
