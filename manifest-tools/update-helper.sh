@@ -32,6 +32,8 @@ REPO_META_ADI="https://github.com/analogdevicesinc/meta-adi"
 REPO_HDL="https://github.com/analogdevicesinc/hdl"
 REPO_META_RASPBERRYPI="https://git.yoctoproject.org/meta-raspberrypi"
 REPO_META_INTEL="https://git.yoctoproject.org/meta-intel"
+REPO_META_TI="https://git.yoctoproject.org/meta-ti"
+REPO_META_ARM="https://git.yoctoproject.org/meta-arm"
 REPO_META_SW_UPDATE="https://github.com/sbabic/meta-swupdate"
 
 echo -e "Getting the latest commits in the ${BRANCH} branch..."
@@ -396,6 +398,66 @@ if [ -d "meta-intel" ]
 fi
 cd ..
 
+# meta-ti
+if [ ${BRANCH} == "dunfell" ]
+    then
+        if [ -d "meta-ti" ]
+            then
+                cd meta-ti
+                exists_in_remote=$(git ls-remote --heads origin ${BRANCH})
+                if [[ -z ${exists_in_remote} ]]
+                   then
+                       COMMIT_META_TI="Unknown"
+                   else
+                       git checkout ${BRANCH}
+                       git pull origin ${BRANCH}
+                       COMMIT_META_TI=$(git rev-parse HEAD)
+                fi
+        else
+            git clone ${REPO_META_TI}
+            cd meta-ti
+            exists_in_remote=$(git ls-remote --heads origin ${BRANCH})
+            if [[ -z ${exists_in_remote} ]]
+                then
+                    COMMIT_META_TI="Unknown"
+                else
+                    git checkout ${BRANCH}
+                    COMMIT_META_TI=$(git rev-parse HEAD)
+            fi
+        fi
+    cd ..
+fi
+
+# meta-arm
+if [ ${BRANCH} == "dunfell" ]
+    then
+        if [ -d "meta-ti" ]
+            then
+                cd meta-arm
+                exists_in_remote=$(git ls-remote --heads origin ${BRANCH})
+                if [[ -z ${exists_in_remote} ]]
+                   then
+                       COMMIT_META_ARM="Unknown"
+                   else
+                       git checkout ${BRANCH}
+                       git pull origin ${BRANCH}
+                       COMMIT_META_ARM=$(git rev-parse HEAD)
+                fi
+        else
+            git clone ${REPO_META_ARM}
+            cd meta-arm
+            exists_in_remote=$(git ls-remote --heads origin ${BRANCH})
+            if [[ -z ${exists_in_remote} ]]
+                then
+                    COMMIT_META_ARM="Unknown"
+                else
+                    git checkout ${BRANCH}
+                    COMMIT_META_ARM=$(git rev-parse HEAD)
+            fi
+        fi
+    cd ..
+fi
+
 # meta-swupdate
 if [ -d "meta-swupdate" ]
     then
@@ -567,6 +629,28 @@ if grep -q ${COMMIT_META_INTEL} "${BASEDIR}/../default.xml"
         echo -e "meta-intel last commit:          ${COMMIT_META_INTEL}"
     else
         echo -e "meta-intel last commit:          ${COLOR_WARNING}${COMMIT_META_INTEL}${COLOR_RESET} Check ${REPO_META_INTEL}/log/?h=${BRANCH}"
+fi
+
+# Display latest commit for meta-ti
+if [ ${BRANCH} == "dunfell" ]
+    then
+        if grep -q ${COMMIT_META_TI} "${BASEDIR}/../default.xml"
+            then
+                echo -e "meta-ti last commit:             ${COMMIT_META_TI}"
+            else
+                echo -e "meta-ti last commit:             ${COLOR_WARNING}${COMMIT_META_TI}${COLOR_RESET} Check ${REPO_META_TI}/log/?h=${BRANCH}"
+        fi
+fi
+
+# Display latest commit for meta-arm
+if [ ${BRANCH} == "dunfell" ]
+    then
+        if grep -q ${COMMIT_META_ARM} "${BASEDIR}/../default.xml"
+            then
+                echo -e "meta-arm last commit:            ${COMMIT_META_ARM}"
+            else
+                echo -e "meta-arm last commit:            ${COLOR_WARNING}${COMMIT_META_ARM}${COLOR_RESET} Check ${REPO_META_ARM}/log/?h=${BRANCH}"
+        fi
 fi
 
 # Display latest commit for meta-swupdate
