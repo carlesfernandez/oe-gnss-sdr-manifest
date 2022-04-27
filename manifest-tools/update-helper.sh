@@ -130,6 +130,10 @@ if [ ${BRANCH} == "gatesgarth" ]
     then
         SPECIAL_SDR_BRANCH="dunfell"
 fi
+if [ ${BRANCH} == "kirkstone" ]
+    then
+        SPECIAL_SDR_BRANCH="master"
+fi
 if [ -d "meta-sdr" ]
     then
         cd meta-sdr
@@ -201,31 +205,34 @@ if [ ${BRANCH} == "gatesgarth" ]
     then
         SPECIAL_XILINX_BRANCH="rel-v2021.2"
 fi
-if [ -d "meta-xilinx" ]
+if [ ${BRANCH} != "kirkstone" ]
     then
-        cd meta-xilinx
-        exists_in_remote=$(git ls-remote --heads origin ${SPECIAL_XILINX_BRANCH})
-        if [[ -z ${exists_in_remote} ]]
-           then
-               COMMIT_META_XILINX="Unknown"
-           else
-               git checkout ${SPECIAL_XILINX_BRANCH}
-               git pull origin ${SPECIAL_XILINX_BRANCH}
-               COMMIT_META_XILINX=$(git rev-parse HEAD)
-        fi
-    else
-        git clone ${REPO_META_XILINX}
-        cd meta-xilinx
-        exists_in_remote=$(git ls-remote --heads origin ${SPECIAL_XILINX_BRANCH})
-        if [[ -z ${exists_in_remote} ]]
+        if [ -d "meta-xilinx" ]
             then
-                COMMIT_META_XILINX="Unknown"
+                cd meta-xilinx
+                exists_in_remote=$(git ls-remote --heads origin ${SPECIAL_XILINX_BRANCH})
+                if [[ -z ${exists_in_remote} ]]
+                   then
+                       COMMIT_META_XILINX="Unknown"
+                   else
+                       git checkout ${SPECIAL_XILINX_BRANCH}
+                       git pull origin ${SPECIAL_XILINX_BRANCH}
+                       COMMIT_META_XILINX=$(git rev-parse HEAD)
+                fi
             else
-                git checkout ${SPECIAL_XILINX_BRANCH}
-                COMMIT_META_XILINX=$(git rev-parse HEAD)
+                git clone ${REPO_META_XILINX}
+                cd meta-xilinx
+                exists_in_remote=$(git ls-remote --heads origin ${SPECIAL_XILINX_BRANCH})
+                if [[ -z ${exists_in_remote} ]]
+                    then
+                        COMMIT_META_XILINX="Unknown"
+                    else
+                        git checkout ${SPECIAL_XILINX_BRANCH}
+                        COMMIT_META_XILINX=$(git rev-parse HEAD)
+                fi
         fi
+        cd ..
 fi
-cd ..
 
 # meta-xilinx-tools
 SPECIAL_XILINX_TOOLS_BRANCH=${BRANCH}
@@ -570,15 +577,18 @@ if [ ${BRANCH} == "honister" ]
 fi
 
 # Display latest commit for meta-xilinx
-if grep -q ${COMMIT_META_XILINX} "${BASEDIR}/../default.xml"
+if [ ${BRANCH} != "kirkstone" ]
     then
-        echo -e "meta-xilinx last commit:         ${COMMIT_META_XILINX}"
-    else
-        if [ ${COMMIT_META_XILINX} == "Unknown" ]
+        if grep -q ${COMMIT_META_XILINX} "${BASEDIR}/../default.xml"
             then
-                echo -e "meta-xilinx last commit:         ${COLOR_INFO}${COMMIT_META_XILINX}${COLOR_RESET}"
+                echo -e "meta-xilinx last commit:         ${COMMIT_META_XILINX}"
             else
-                echo -e "meta-xilinx last commit:         ${COLOR_WARNING}${COMMIT_META_XILINX}${COLOR_RESET} Check ${REPO_META_XILINX}/tree/${SPECIAL_XILINX_BRANCH}"
+                if [ ${COMMIT_META_XILINX} == "Unknown" ]
+                    then
+                        echo -e "meta-xilinx last commit:         ${COLOR_INFO}${COMMIT_META_XILINX}${COLOR_RESET}"
+                    else
+                        echo -e "meta-xilinx last commit:         ${COLOR_WARNING}${COMMIT_META_XILINX}${COLOR_RESET} Check ${REPO_META_XILINX}/tree/${SPECIAL_XILINX_BRANCH}"
+                fi
         fi
 fi
 
@@ -654,11 +664,14 @@ if [ ${BRANCH} == "dunfell" ]
 fi
 
 # Display latest commit for meta-swupdate
-if grep -q ${COMMIT_META_SWUPDATE} "${BASEDIR}/../default.xml"
+if [ ${BRANCH} != "kirkstone" ]
     then
-        echo -e "meta-swupdate last commit:       ${COMMIT_META_SWUPDATE}"
-    else
-        echo -e "meta-swupdate last commit:       ${COLOR_INFO}${COMMIT_META_SWUPDATE}${COLOR_RESET} Check ${REPO_META_SW_UPDATE}/tree/${BRANCH}"
+        if grep -q ${COMMIT_META_SWUPDATE} "${BASEDIR}/../default.xml"
+            then
+                echo -e "meta-swupdate last commit:       ${COMMIT_META_SWUPDATE}"
+            else
+                echo -e "meta-swupdate last commit:       ${COLOR_INFO}${COMMIT_META_SWUPDATE}${COLOR_RESET} Check ${REPO_META_SW_UPDATE}/tree/${BRANCH}"
+        fi
 fi
 
 cd $BASEDIR
