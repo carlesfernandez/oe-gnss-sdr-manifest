@@ -30,9 +30,9 @@
 	<project name="openembedded-core" path="oe-core" revision="741064d6e9001c1cc933fea192c8c99a6892bd83" />
 	<project name="meta-openembedded" path="meta-oe" revision="bb2b5b31a80eb164e47649036878773614e4dbdf" />
 	<project name="meta-qt5" remote="qt5" path="meta-qt5" revision="5b71df60e523423b9df6793de9387f87a149ac42" />
-	<project name="meta-sdr" remote="balister" path="meta-sdr" revision="5d97df1e38d1837aee10c1b46bab22d52439412a" />
+	<project name="meta-sdr" remote="balister" path="meta-sdr" revision="0d8779c3694c712afd10b71fb02a5ffbec251e10" />
 	<project name="meta-raspberrypi" remote="yocto" path="meta-raspberrypi" revision="0135a02ea577bd39dd552236ead2c5894d89da1d" />
-	<project name="meta-intel" remote="yocto" path="meta-intel" revision="c7172add029936be391c7883156c50c3a98ffbe1" />
+	<project name="meta-intel" remote="yocto" path="meta-intel" revision="33421d8a0f74f1d879f6228fcdedce39eb34420b" />
 	<project name="meta-gnss-sdr" remote="gnss-sdr" path="meta-gnss-sdr" revision="kirkstone" />
 
 </manifest>
