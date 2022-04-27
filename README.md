@@ -4,7 +4,7 @@ SPDX-License-Identifier: MIT
 )
 
 [comment]: # (
-SPDX-FileCopyrightText: 2016-2021 Carles Fernandez-Prades <carles.fernandez@cttc.es>
+SPDX-FileCopyrightText: 2016-2022 Carles Fernandez-Prades <carles.fernandez@cttc.es>
 )
 <!-- prettier-ignore-end -->
 
@@ -13,7 +13,7 @@ SPDX-FileCopyrightText: 2016-2021 Carles Fernandez-Prades <carles.fernandez@cttc
 This repository provides Repo manifests to setup the OpenEmbedded build system
 with the meta-gnss-sdr layer.
 
-OpenEmbedded allows the creation of custom linux distributions for embedded
+OpenEmbedded allows the creation of custom GNU/Linux distributions for embedded
 systems. It is a collection of git repositories known as _layers_ each of which
 provides _recipes_ to build software packages as well as configuration
 information.
@@ -93,7 +93,7 @@ $ git config --global user.email your.name@example.com
 
     Tell Repo where to find the manifest
 
-        $ repo init -u git://github.com/carlesfernandez/oe-gnss-sdr-manifest.git -b honister
+        $ repo init -u https://github.com/carlesfernandez/oe-gnss-sdr-manifest.git -b kirkstone
 
     A successful initialization will end with a message stating that Repo is
     initialized in your working directory. Your client directory should now
@@ -258,11 +258,11 @@ Sooner or later, you'll want to customize some aspect of the image either adding
 more packages, picking up some upstream patches, or tweaking your kernel. To
 this, you'll want to customize the Repo manifest to point at different
 repositories and branches or pull in additional meta-layers. Check out the
-[OpenEmbedded Layer Index](https://layers.openembedded.org/layerindex/branch/honister/layers/).
+[OpenEmbedded Layer Index](https://layers.openembedded.org/layerindex/branch/kirkstone/layers/).
 
 Clone this repository (or fork it on github):
 
-    $ git clone git://github.com/carlesfernandez/oe-gnss-sdr-manifest.git
+    $ git clone https://github.com/carlesfernandez/oe-gnss-sdr-manifest.git
 
 Make your changes (and contribute them back if they are generally useful :) ),
 and then re-initialize your repo client
@@ -271,7 +271,8 @@ and then re-initialize your repo client
 
 ## Copyright and License
 
-Copyright: &copy; 2016-2021 Carles Fern&aacute;ndez-Prades. All rights reserved.
+Copyright: &copy; 2016-2022 Carles Fern&aacute;ndez-Prades,
+[CTTC](https://www.cttc.cat). All rights reserved.
 
 The content of this repository is released under the [MIT](./LICENSE) license.
 
