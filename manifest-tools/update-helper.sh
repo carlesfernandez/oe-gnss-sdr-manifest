@@ -205,6 +205,10 @@ if [ ${BRANCH} == "gatesgarth" ]
     then
         SPECIAL_XILINX_BRANCH="rel-v2021.2"
 fi
+if [ ${BRANCH} == "honister" ]
+    then
+        SPECIAL_XILINX_BRANCH="rel-v2022.1"
+fi
 if [ ${BRANCH} != "kirkstone" ]
     then
         if [ -d "meta-xilinx" ]
@@ -243,6 +247,10 @@ fi
 if [ ${BRANCH} == "zeus" ]
    then
        SPECIAL_XILINX_TOOLS_BRANCH="rel-v2020.3"
+fi
+if [ ${BRANCH} == "honister" ]
+   then
+       SPECIAL_XILINX_TOOLS_BRANCH="rel-v2022.1"
 fi
 
 if [ ${BRANCH} == "thud" ] || [ ${BRANCH} == "zeus" ] || [ ${BRANCH} == "honister" ]
