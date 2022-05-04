@@ -32,8 +32,10 @@
 	<project name="meta-qt5" remote="qt5" path="meta-qt5" revision="5d70466cc7d74369956dceacdfd89f41516860d0" />
 	<project name="meta-sdr" remote="balister" path="meta-sdr" revision="50e8378f4912a56047edac0d7ec54e7b9b6b8904" />
 	<project name="meta-xilinx" remote="Xilinx" path="meta-xilinx" revision="054cb2cb4c3ffe868ade68369433027989571cf6" />
+	<project name="meta-xilinx-tools" remote="Xilinx" path="meta-xilinx-tools" revision="9be31b43df41ec245f969c2fc65f56c6e910d752" />
 	<project name="meta-raspberrypi" remote="yocto" path="meta-raspberrypi" revision="e5e976da0bed8eb9d3c4dc61e8ee3a6a864ff56b" />
 	<project name="meta-intel" remote="yocto" path="meta-intel" revision="adf3288b9890cbeb2519b57ca548a025ef7a82b0" />
+	<project name="meta-virtualization" remote="yocto" path="meta-virtualization" revision="2e5df1cd76265587e6db67f020a06566c4ed6dc4" />
 	<project name="meta-swupdate" remote="sbabic" path="meta-swupdate" revision="744d6b96fc0290a7df9045e60c734c4924abfd4a" />
 	<project name="meta-gnss-sdr" remote="gnss-sdr" path="meta-gnss-sdr" revision="gatesgarth" />
 
