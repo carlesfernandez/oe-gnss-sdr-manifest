@@ -161,7 +161,7 @@ fi
 cd ..
 
 # meta-virtualization
-if [ ${BRANCH} == "honister" ]
+if [ ${BRANCH} == "gatesgarth" ] || [ ${BRANCH} == "honister" ]
     then
         if [ -d "meta-virtualization" ]
             then
@@ -248,12 +248,16 @@ if [ ${BRANCH} == "zeus" ]
    then
        SPECIAL_XILINX_TOOLS_BRANCH="rel-v2020.3"
 fi
+if [ ${BRANCH} == "gatesgarth" ]
+    then
+        SPECIAL_XILINX_TOOLS_BRANCH="rel-v2021.2"
+fi
 if [ ${BRANCH} == "honister" ]
    then
        SPECIAL_XILINX_TOOLS_BRANCH="rel-v2022.1"
 fi
 
-if [ ${BRANCH} == "thud" ] || [ ${BRANCH} == "zeus" ] || [ ${BRANCH} == "honister" ]
+if [ ${BRANCH} == "thud" ] || [ ${BRANCH} == "zeus" ] || [ ${BRANCH} == "gatesgarth" ] || [ ${BRANCH} == "honister" ]
    then
        if [ -d "meta-xilinx-tools" ]
            then
@@ -574,7 +578,7 @@ if grep -q ${COMMIT_META_SDR} "${BASEDIR}/../default.xml"
 fi
 
 # Display latest commit for meta-virtualization
-if [ ${BRANCH} == "honister" ]
+if [ ${BRANCH} == "gatesgarth" ] || [ ${BRANCH} == "honister" ]
    then
        if grep -q ${COMMIT_META_VIRTUALIZATION} "${BASEDIR}/../default.xml"
            then
@@ -601,7 +605,7 @@ if [ ${BRANCH} != "kirkstone" ]
 fi
 
 # Display latest commit for meta-xilinx-tools
-if [ ${BRANCH} == "thud" ] || [ ${BRANCH} == "zeus" ] || [ ${BRANCH} == "honister" ]
+if [ ${BRANCH} == "thud" ] || [ ${BRANCH} == "zeus" ] || [ ${BRANCH} == "gatesgarth" ] || [ ${BRANCH} == "honister" ]
     then
         if grep -q ${COMMIT_META_XILINX_TOOLS} "${BASEDIR}/../default.xml"
             then
