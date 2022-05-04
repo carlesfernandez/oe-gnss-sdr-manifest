@@ -676,14 +676,11 @@ if [ ${BRANCH} == "dunfell" ]
 fi
 
 # Display latest commit for meta-swupdate
-if [ ${BRANCH} != "kirkstone" ]
+if grep -q ${COMMIT_META_SWUPDATE} "${BASEDIR}/../default.xml"
     then
-        if grep -q ${COMMIT_META_SWUPDATE} "${BASEDIR}/../default.xml"
-            then
-                echo -e "meta-swupdate last commit:       ${COMMIT_META_SWUPDATE}"
-            else
-                echo -e "meta-swupdate last commit:       ${COLOR_INFO}${COMMIT_META_SWUPDATE}${COLOR_RESET} Check ${REPO_META_SW_UPDATE}/tree/${BRANCH}"
-        fi
+        echo -e "meta-swupdate last commit:       ${COMMIT_META_SWUPDATE}"
+    else
+        echo -e "meta-swupdate last commit:       ${COLOR_INFO}${COMMIT_META_SWUPDATE}${COLOR_RESET} Check ${REPO_META_SW_UPDATE}/tree/${BRANCH}"
 fi
 
 cd $BASEDIR
