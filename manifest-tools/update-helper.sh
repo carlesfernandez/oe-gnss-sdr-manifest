@@ -32,6 +32,8 @@ REPO_META_ADI="https://github.com/analogdevicesinc/meta-adi"
 REPO_HDL="https://github.com/analogdevicesinc/hdl"
 REPO_META_RASPBERRYPI="https://git.yoctoproject.org/meta-raspberrypi"
 REPO_META_INTEL="https://git.yoctoproject.org/meta-intel"
+REPO_META_TI="https://git.yoctoproject.org/meta-ti"
+REPO_META_ARM="https://git.yoctoproject.org/meta-arm"
 REPO_META_SW_UPDATE="https://github.com/sbabic/meta-swupdate"
 
 echo -e "Getting the latest commits in the ${BRANCH} branch..."
@@ -128,6 +130,10 @@ if [ ${BRANCH} == "gatesgarth" ]
     then
         SPECIAL_SDR_BRANCH="dunfell"
 fi
+if [ ${BRANCH} == "kirkstone" ]
+    then
+        SPECIAL_SDR_BRANCH="master"
+fi
 if [ -d "meta-sdr" ]
     then
         cd meta-sdr
@@ -155,7 +161,7 @@ fi
 cd ..
 
 # meta-virtualization
-if [ ${BRANCH} == "honister" ]
+if [ ${BRANCH} == "gatesgarth" ] || [ ${BRANCH} == "honister" ]
     then
         if [ -d "meta-virtualization" ]
             then
@@ -199,31 +205,38 @@ if [ ${BRANCH} == "gatesgarth" ]
     then
         SPECIAL_XILINX_BRANCH="rel-v2021.2"
 fi
-if [ -d "meta-xilinx" ]
+if [ ${BRANCH} == "honister" ]
     then
-        cd meta-xilinx
-        exists_in_remote=$(git ls-remote --heads origin ${SPECIAL_XILINX_BRANCH})
-        if [[ -z ${exists_in_remote} ]]
-           then
-               COMMIT_META_XILINX="Unknown"
-           else
-               git checkout ${SPECIAL_XILINX_BRANCH}
-               git pull origin ${SPECIAL_XILINX_BRANCH}
-               COMMIT_META_XILINX=$(git rev-parse HEAD)
-        fi
-    else
-        git clone ${REPO_META_XILINX}
-        cd meta-xilinx
-        exists_in_remote=$(git ls-remote --heads origin ${SPECIAL_XILINX_BRANCH})
-        if [[ -z ${exists_in_remote} ]]
-            then
-                COMMIT_META_XILINX="Unknown"
-            else
-                git checkout ${SPECIAL_XILINX_BRANCH}
-                COMMIT_META_XILINX=$(git rev-parse HEAD)
-        fi
+        SPECIAL_XILINX_BRANCH="rel-v2022.1"
 fi
-cd ..
+if [ ${BRANCH} != "kirkstone" ]
+    then
+        if [ -d "meta-xilinx" ]
+            then
+                cd meta-xilinx
+                exists_in_remote=$(git ls-remote --heads origin ${SPECIAL_XILINX_BRANCH})
+                if [[ -z ${exists_in_remote} ]]
+                   then
+                       COMMIT_META_XILINX="Unknown"
+                   else
+                       git checkout ${SPECIAL_XILINX_BRANCH}
+                       git pull origin ${SPECIAL_XILINX_BRANCH}
+                       COMMIT_META_XILINX=$(git rev-parse HEAD)
+                fi
+            else
+                git clone ${REPO_META_XILINX}
+                cd meta-xilinx
+                exists_in_remote=$(git ls-remote --heads origin ${SPECIAL_XILINX_BRANCH})
+                if [[ -z ${exists_in_remote} ]]
+                    then
+                        COMMIT_META_XILINX="Unknown"
+                    else
+                        git checkout ${SPECIAL_XILINX_BRANCH}
+                        COMMIT_META_XILINX=$(git rev-parse HEAD)
+                fi
+        fi
+        cd ..
+fi
 
 # meta-xilinx-tools
 SPECIAL_XILINX_TOOLS_BRANCH=${BRANCH}
@@ -235,8 +248,16 @@ if [ ${BRANCH} == "zeus" ]
    then
        SPECIAL_XILINX_TOOLS_BRANCH="rel-v2020.3"
 fi
+if [ ${BRANCH} == "gatesgarth" ]
+    then
+        SPECIAL_XILINX_TOOLS_BRANCH="rel-v2021.2"
+fi
+if [ ${BRANCH} == "honister" ]
+   then
+       SPECIAL_XILINX_TOOLS_BRANCH="rel-v2022.1"
+fi
 
-if [ ${BRANCH} == "thud" ] || [ ${BRANCH} == "zeus" ] || [ ${BRANCH} == "honister" ]
+if [ ${BRANCH} == "thud" ] || [ ${BRANCH} == "zeus" ] || [ ${BRANCH} == "gatesgarth" ] || [ ${BRANCH} == "honister" ]
    then
        if [ -d "meta-xilinx-tools" ]
            then
@@ -396,6 +417,66 @@ if [ -d "meta-intel" ]
 fi
 cd ..
 
+# meta-ti
+if [ ${BRANCH} == "dunfell" ]
+    then
+        if [ -d "meta-ti" ]
+            then
+                cd meta-ti
+                exists_in_remote=$(git ls-remote --heads origin ${BRANCH})
+                if [[ -z ${exists_in_remote} ]]
+                   then
+                       COMMIT_META_TI="Unknown"
+                   else
+                       git checkout ${BRANCH}
+                       git pull origin ${BRANCH}
+                       COMMIT_META_TI=$(git rev-parse HEAD)
+                fi
+        else
+            git clone ${REPO_META_TI}
+            cd meta-ti
+            exists_in_remote=$(git ls-remote --heads origin ${BRANCH})
+            if [[ -z ${exists_in_remote} ]]
+                then
+                    COMMIT_META_TI="Unknown"
+                else
+                    git checkout ${BRANCH}
+                    COMMIT_META_TI=$(git rev-parse HEAD)
+            fi
+        fi
+    cd ..
+fi
+
+# meta-arm
+if [ ${BRANCH} == "dunfell" ]
+    then
+        if [ -d "meta-ti" ]
+            then
+                cd meta-arm
+                exists_in_remote=$(git ls-remote --heads origin ${BRANCH})
+                if [[ -z ${exists_in_remote} ]]
+                   then
+                       COMMIT_META_ARM="Unknown"
+                   else
+                       git checkout ${BRANCH}
+                       git pull origin ${BRANCH}
+                       COMMIT_META_ARM=$(git rev-parse HEAD)
+                fi
+        else
+            git clone ${REPO_META_ARM}
+            cd meta-arm
+            exists_in_remote=$(git ls-remote --heads origin ${BRANCH})
+            if [[ -z ${exists_in_remote} ]]
+                then
+                    COMMIT_META_ARM="Unknown"
+                else
+                    git checkout ${BRANCH}
+                    COMMIT_META_ARM=$(git rev-parse HEAD)
+            fi
+        fi
+    cd ..
+fi
+
 # meta-swupdate
 if [ -d "meta-swupdate" ]
     then
@@ -497,7 +578,7 @@ if grep -q ${COMMIT_META_SDR} "${BASEDIR}/../default.xml"
 fi
 
 # Display latest commit for meta-virtualization
-if [ ${BRANCH} == "honister" ]
+if [ ${BRANCH} == "gatesgarth" ] || [ ${BRANCH} == "honister" ]
    then
        if grep -q ${COMMIT_META_VIRTUALIZATION} "${BASEDIR}/../default.xml"
            then
@@ -508,20 +589,23 @@ if [ ${BRANCH} == "honister" ]
 fi
 
 # Display latest commit for meta-xilinx
-if grep -q ${COMMIT_META_XILINX} "${BASEDIR}/../default.xml"
+if [ ${BRANCH} != "kirkstone" ]
     then
-        echo -e "meta-xilinx last commit:         ${COMMIT_META_XILINX}"
-    else
-        if [ ${COMMIT_META_XILINX} == "Unknown" ]
+        if grep -q ${COMMIT_META_XILINX} "${BASEDIR}/../default.xml"
             then
-                echo -e "meta-xilinx last commit:         ${COLOR_INFO}${COMMIT_META_XILINX}${COLOR_RESET}"
+                echo -e "meta-xilinx last commit:         ${COMMIT_META_XILINX}"
             else
-                echo -e "meta-xilinx last commit:         ${COLOR_WARNING}${COMMIT_META_XILINX}${COLOR_RESET} Check ${REPO_META_XILINX}/tree/${SPECIAL_XILINX_BRANCH}"
+                if [ ${COMMIT_META_XILINX} == "Unknown" ]
+                    then
+                        echo -e "meta-xilinx last commit:         ${COLOR_INFO}${COMMIT_META_XILINX}${COLOR_RESET}"
+                    else
+                        echo -e "meta-xilinx last commit:         ${COLOR_WARNING}${COMMIT_META_XILINX}${COLOR_RESET} Check ${REPO_META_XILINX}/tree/${SPECIAL_XILINX_BRANCH}"
+                fi
         fi
 fi
 
 # Display latest commit for meta-xilinx-tools
-if [ ${BRANCH} == "thud" ] || [ ${BRANCH} == "zeus" ] || [ ${BRANCH} == "honister" ]
+if [ ${BRANCH} == "thud" ] || [ ${BRANCH} == "zeus" ] || [ ${BRANCH} == "gatesgarth" ] || [ ${BRANCH} == "honister" ]
     then
         if grep -q ${COMMIT_META_XILINX_TOOLS} "${BASEDIR}/../default.xml"
             then
@@ -569,12 +653,37 @@ if grep -q ${COMMIT_META_INTEL} "${BASEDIR}/../default.xml"
         echo -e "meta-intel last commit:          ${COLOR_WARNING}${COMMIT_META_INTEL}${COLOR_RESET} Check ${REPO_META_INTEL}/log/?h=${BRANCH}"
 fi
 
-# Display latest commit for meta-swupdate
-if grep -q ${COMMIT_META_SWUPDATE} "${BASEDIR}/../default.xml"
+# Display latest commit for meta-ti
+if [ ${BRANCH} == "dunfell" ]
     then
-        echo -e "meta-swupdate last commit:       ${COMMIT_META_SWUPDATE}"
-    else
-        echo -e "meta-swupdate last commit:       ${COLOR_INFO}${COMMIT_META_SWUPDATE}${COLOR_RESET} Check ${REPO_META_SW_UPDATE}/tree/${BRANCH}"
+        if grep -q ${COMMIT_META_TI} "${BASEDIR}/../default.xml"
+            then
+                echo -e "meta-ti last commit:             ${COMMIT_META_TI}"
+            else
+                echo -e "meta-ti last commit:             ${COLOR_WARNING}${COMMIT_META_TI}${COLOR_RESET} Check ${REPO_META_TI}/log/?h=${BRANCH}"
+        fi
+fi
+
+# Display latest commit for meta-arm
+if [ ${BRANCH} == "dunfell" ]
+    then
+        if grep -q ${COMMIT_META_ARM} "${BASEDIR}/../default.xml"
+            then
+                echo -e "meta-arm last commit:            ${COMMIT_META_ARM}"
+            else
+                echo -e "meta-arm last commit:            ${COLOR_WARNING}${COMMIT_META_ARM}${COLOR_RESET} Check ${REPO_META_ARM}/log/?h=${BRANCH}"
+        fi
+fi
+
+# Display latest commit for meta-swupdate
+if [ ${BRANCH} != "kirkstone" ]
+    then
+        if grep -q ${COMMIT_META_SWUPDATE} "${BASEDIR}/../default.xml"
+            then
+                echo -e "meta-swupdate last commit:       ${COMMIT_META_SWUPDATE}"
+            else
+                echo -e "meta-swupdate last commit:       ${COLOR_INFO}${COMMIT_META_SWUPDATE}${COLOR_RESET} Check ${REPO_META_SW_UPDATE}/tree/${BRANCH}"
+        fi
 fi
 
 cd $BASEDIR
