@@ -4,25 +4,25 @@
 
 <manifest>
 	<remote name="openembedded"
-		fetch="git://github.com/openembedded" />
+		fetch="https://github.com/openembedded" />
 
 	<remote name="Xilinx"
-		fetch="git://github.com/Xilinx" />
+		fetch="https://github.com/Xilinx" />
 
 	<remote name="balister"
-		fetch="git://github.com/balister" />
+		fetch="https://github.com/balister" />
 
 	<remote name="sbabic"
-		fetch="git://github.com/sbabic" />
+		fetch="https://github.com/sbabic" />
 
 	<remote name="yocto"
-		fetch="git://git.yoctoproject.org/" />
+		fetch="https://git.yoctoproject.org/" />
 
 	<remote name="qt5"
-		fetch="git://github.com/meta-qt5" />
+		fetch="https://github.com/meta-qt5" />
 
 	<remote name="gnss-sdr"
-		fetch="git://github.com/carlesfernandez" />
+		fetch="https://github.com/carlesfernandez" />
 
 	<default remote="openembedded" revision="master" />
 
@@ -31,7 +31,9 @@
 	<project name="meta-openembedded" path="meta-oe" revision="master" />
 	<project name="meta-qt5" remote="qt5" path="meta-qt5" revision="master" />
 	<project name="meta-sdr" remote="balister" path="meta-sdr" revision="master" />
+	<project name="meta-virtualization" remote="yocto" path="meta-virtualization" revision="master" />
 	<project name="meta-xilinx" remote="Xilinx" path="meta-xilinx" revision="master" />
+	<project name="meta-xilinx-tools" remote="Xilinx" path="meta-xilinx-tools" revision="master" />
 	<project name="meta-raspberrypi" remote="yocto" path="meta-raspberrypi" revision="master" />
 	<project name="meta-intel" remote="yocto" path="meta-intel" revision="master" />
 	<project name="meta-swupdate" remote="sbabic" path="meta-swupdate" revision="master" />
