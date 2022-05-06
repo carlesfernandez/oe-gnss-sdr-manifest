@@ -450,7 +450,7 @@ fi
 # meta-arm
 if [ ${BRANCH} == "dunfell" ]
     then
-        if [ -d "meta-ti" ]
+        if [ -d "meta-arm" ]
             then
                 cd meta-arm
                 exists_in_remote=$(git ls-remote --heads origin ${BRANCH})
