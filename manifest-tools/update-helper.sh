@@ -354,6 +354,66 @@ if [ -d "meta-intel" ]
 fi
 cd ..
 
+# meta-ti
+if [ ${BRANCH} == "dunfell" ]
+    then
+        if [ -d "meta-ti" ]
+            then
+                cd meta-ti
+                exists_in_remote=$(git ls-remote --heads origin ${BRANCH})
+                if [[ -z ${exists_in_remote} ]]
+                   then
+                       COMMIT_META_TI="Unknown"
+                   else
+                       git checkout ${BRANCH}
+                       git pull origin ${BRANCH}
+                       COMMIT_META_TI=$(git rev-parse HEAD)
+                fi
+        else
+            git clone ${REPO_META_TI}
+            cd meta-ti
+            exists_in_remote=$(git ls-remote --heads origin ${BRANCH})
+            if [[ -z ${exists_in_remote} ]]
+                then
+                    COMMIT_META_TI="Unknown"
+                else
+                    git checkout ${BRANCH}
+                    COMMIT_META_TI=$(git rev-parse HEAD)
+            fi
+        fi
+    cd ..
+fi
+
+# meta-arm
+if [ ${BRANCH} == "dunfell" ]
+    then
+        if [ -d "meta-arm" ]
+            then
+                cd meta-arm
+                exists_in_remote=$(git ls-remote --heads origin ${BRANCH})
+                if [[ -z ${exists_in_remote} ]]
+                   then
+                       COMMIT_META_ARM="Unknown"
+                   else
+                       git checkout ${BRANCH}
+                       git pull origin ${BRANCH}
+                       COMMIT_META_ARM=$(git rev-parse HEAD)
+                fi
+        else
+            git clone ${REPO_META_ARM}
+            cd meta-arm
+            exists_in_remote=$(git ls-remote --heads origin ${BRANCH})
+            if [[ -z ${exists_in_remote} ]]
+                then
+                    COMMIT_META_ARM="Unknown"
+                else
+                    git checkout ${BRANCH}
+                    COMMIT_META_ARM=$(git rev-parse HEAD)
+            fi
+        fi
+    cd ..
+fi
+
 # meta-swupdate
 if [ -d "meta-swupdate" ]
     then
