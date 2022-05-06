@@ -450,7 +450,7 @@ fi
 # meta-arm
 if [ ${BRANCH} == "dunfell" ]
     then
-        if [ -d "meta-ti" ]
+        if [ -d "meta-arm" ]
             then
                 cd meta-arm
                 exists_in_remote=$(git ls-remote --heads origin ${BRANCH})
@@ -682,5 +682,6 @@ if grep -q ${COMMIT_META_SWUPDATE} "${BASEDIR}/../default.xml"
     else
         echo -e "meta-swupdate last commit:       ${COLOR_INFO}${COMMIT_META_SWUPDATE}${COLOR_RESET} Check ${REPO_META_SW_UPDATE}/tree/${BRANCH}"
 fi
+
 
 cd $BASEDIR
