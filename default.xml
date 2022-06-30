@@ -37,6 +37,6 @@
 	<project name="meta-ti" remote="yocto" path="meta-ti" revision="9193f1e4124f0596517286b628ac245197084b03" />
 	<project name="meta-arm" remote="yocto" path="meta-arm" revision="5c09684863be8e803e3e987a5ce4940721c3f39a" />
 	<project name="meta-swupdate" remote="sbabic" path="meta-swupdate" revision="649f9d9e0ae64a5bb1f74f6d6edf678327d1dbf6" />
-	<project name="meta-gnss-sdr" remote="gnss-sdr" path="meta-gnss-sdr" revision="337cd5388df935d9f1349a7a22b9e9b2ea655603" />
+	<project name="meta-gnss-sdr" remote="gnss-sdr" path="meta-gnss-sdr" revision="dunfell" />
 
 </manifest>
