@@ -16,8 +16,7 @@ authors:
     family-names: Flynn
     given-names: Toby
 cff-version: "1.2.0"
-date-released: "2022-02-19"
-doi: 10.5281/zenodo.6141758
+date-released: "2022-06-30"
 identifiers:
   - description: "The concept DOI of the work. This is a DOI always pointing to the latest stable release."
     type: doi
@@ -37,4 +36,4 @@ message: "If you use this software, please cite it using the metadata from this 
 repository-code: "https://github.com/carlesfernandez/oe-gnss-sdr-manifest"
 title: "oe-gnss-sdr-manifest"
 type: software
-version: "Zeus 22.02"
+version: "Zeus 22.06"
