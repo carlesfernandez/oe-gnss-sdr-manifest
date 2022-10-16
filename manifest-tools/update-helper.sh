@@ -130,7 +130,7 @@ if [ "${BRANCH}" == "gatesgarth" ]
     then
         SPECIAL_SDR_BRANCH="dunfell"
 fi
-if [ "${BRANCH}" == "kirkstone" ]
+if [ "${BRANCH}" == "langdale" ]
     then
         SPECIAL_SDR_BRANCH="master"
 fi
@@ -209,7 +209,7 @@ if [ "${BRANCH}" == "honister" ]
     then
         SPECIAL_XILINX_BRANCH="rel-v2022.1"
 fi
-if [ "${BRANCH}" != "kirkstone" ]
+if [ "${BRANCH}" != "kirkstone" ] && [ "${BRANCH}" != "langdale" ]
     then
         if [ -d "meta-xilinx" ]
             then
@@ -589,7 +589,7 @@ if [ "${BRANCH}" == "gatesgarth" ] || [ "${BRANCH}" == "honister" ]
 fi
 
 # Display latest commit for meta-xilinx
-if [ "${BRANCH}" != "kirkstone" ]
+if [ "${BRANCH}" != "kirkstone" ] && [ "${BRANCH}" != "langdale" ]
     then
         if grep -q "${COMMIT_META_XILINX}" "${BASEDIR}/../default.xml"
             then
