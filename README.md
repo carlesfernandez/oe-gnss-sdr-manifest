@@ -93,7 +93,7 @@ $ git config --global user.email your.name@example.com
 
     Tell Repo where to find the manifest
 
-        $ repo init -u https://github.com/carlesfernandez/oe-gnss-sdr-manifest.git -b kirkstone
+        $ repo init -u https://github.com/carlesfernandez/oe-gnss-sdr-manifest.git -b langdale
 
     A successful initialization will end with a message stating that Repo is
     initialized in your working directory. Your client directory should now
@@ -258,7 +258,7 @@ Sooner or later, you'll want to customize some aspect of the image either adding
 more packages, picking up some upstream patches, or tweaking your kernel. To
 this, you'll want to customize the Repo manifest to point at different
 repositories and branches or pull in additional meta-layers. Check out the
-[OpenEmbedded Layer Index](https://layers.openembedded.org/layerindex/branch/kirkstone/layers/).
+[OpenEmbedded Layer Index](https://layers.openembedded.org/layerindex/branch/langdale/layers/).
 
 Clone this repository (or fork it on github):
 

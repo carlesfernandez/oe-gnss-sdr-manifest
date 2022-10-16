@@ -36,4 +36,4 @@ message: "If you use this software, please cite it using the metadata from this 
 repository-code: "https://github.com/carlesfernandez/oe-gnss-sdr-manifest"
 title: "oe-gnss-sdr-manifest"
 type: software
-version: "Kirkstone 22.06"
+version: "langdale 22.06"
