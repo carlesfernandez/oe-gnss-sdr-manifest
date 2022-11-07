@@ -287,7 +287,7 @@ if [ "${BRANCH}" == "thud" ] || [ "${BRANCH}" == "zeus" ] || [ "${BRANCH}" == "g
 fi
 
 # meta-adi
-if [ "${BRANCH}" == "rocko" ] || [ "${BRANCH}" == "sumo" ] || [ "${BRANCH}" == "thud" ]
+if [ "${BRANCH}" == "rocko" ] || [ "${BRANCH}" == "sumo" ] || [ "${BRANCH}" == "thud" ] || [ "${BRANCH}" == "gatesgarth" ]
     then
         if [ "${BRANCH}" == "rocko" ] || [ "${BRANCH}" == "sumo" ]
             then
@@ -296,6 +296,10 @@ if [ "${BRANCH}" == "rocko" ] || [ "${BRANCH}" == "sumo" ] || [ "${BRANCH}" == "
         if [ "${BRANCH}" == "thud" ]
             then
                 SPECIAL_ADI_BRANCH="2019_R2"
+        fi
+        if [ "${BRANCH}" == "gatesgarth" ]
+            then
+                SPECIAL_ADI_BRANCH="master"
         fi
         if [ -d "meta-adi" ]
             then
@@ -334,7 +338,11 @@ if [ "${BRANCH}" == "thud" ]
     then
         SPECIAL_HDL_BRANCH="hdl_2019_r2"
 fi
-if [ "${BRANCH}" == "rocko" ] || [ "${BRANCH}" == "thud" ]
+if [ "${BRANCH}" == "gatesgarth" ]
+    then
+        SPECIAL_HDL_BRANCH="hdl_2021_r2"
+fi
+if [ "${BRANCH}" == "rocko" ] || [ "${BRANCH}" == "thud" ] || [ "${BRANCH}" == "gatesgarth" ]
     then
         if [ -d "hdl" ]
             then
@@ -616,7 +624,7 @@ if [ "${BRANCH}" == "thud" ] || [ "${BRANCH}" == "zeus" ] || [ "${BRANCH}" == "g
 fi
 
 # Display latest commit for meta-adi
-if [ "${BRANCH}" == "rocko" ] || [ "${BRANCH}" == "sumo" ] || [ "${BRANCH}" == "thud" ]
+if [ "${BRANCH}" == "rocko" ] || [ "${BRANCH}" == "sumo" ] || [ "${BRANCH}" == "thud" ]  || [ "${BRANCH}" == "gatesgarth" ]
     then
         if grep -q "${COMMIT_META_ADI}" "${BASEDIR}/../default.xml"
             then
@@ -627,7 +635,7 @@ if [ "${BRANCH}" == "rocko" ] || [ "${BRANCH}" == "sumo" ] || [ "${BRANCH}" == "
 fi
 
 # Display latest commit for hdl
-if [ "${BRANCH}" == "rocko" ] || [ "${BRANCH}" == "thud" ]
+if [ "${BRANCH}" == "rocko" ]  || [ "${BRANCH}" == "thud" ] || [ "${BRANCH}" == "gatesgarth" ]
     then
         if grep -q "${COMMIT_HDL}" "${BASEDIR}/../default.xml"
             then
