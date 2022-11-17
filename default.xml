@@ -12,8 +12,8 @@
 	<remote name="balister"
 		fetch="https://github.com/balister" />
 
-   <remote name="adi"
-        fetch="https://github.com/analogdevicesinc" />		
+	<remote name="adi"
+		fetch="https://github.com/analogdevicesinc" />
 
 	<remote name="sbabic"
 		fetch="https://github.com/sbabic" />
