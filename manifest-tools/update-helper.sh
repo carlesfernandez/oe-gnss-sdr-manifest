@@ -209,7 +209,11 @@ if [ "${BRANCH}" == "honister" ]
     then
         SPECIAL_XILINX_BRANCH="rel-v2022.1"
 fi
-if [ "${BRANCH}" != "kirkstone" ] && [ "${BRANCH}" != "langdale" ]
+if [ "${BRANCH}" == "langdale" ]
+    then
+        SPECIAL_XILINX_BRANCH="master"
+fi
+if [ "${BRANCH}" != "kirkstone" ]
     then
         if [ -d "meta-xilinx" ]
             then
@@ -256,8 +260,12 @@ if [ "${BRANCH}" == "honister" ]
    then
        SPECIAL_XILINX_TOOLS_BRANCH="rel-v2022.1"
 fi
+if [ "${BRANCH}" == "langdale" ]
+   then
+       SPECIAL_XILINX_TOOLS_BRANCH="master"
+fi
 
-if [ "${BRANCH}" == "thud" ] || [ "${BRANCH}" == "zeus" ] || [ "${BRANCH}" == "gatesgarth" ] || [ "${BRANCH}" == "honister" ]
+if [ "${BRANCH}" == "thud" ] || [ "${BRANCH}" == "zeus" ] || [ "${BRANCH}" == "gatesgarth" ] || [ "${BRANCH}" == "honister" ] || [ "${BRANCH}" == "langdale" ]
    then
        if [ -d "meta-xilinx-tools" ]
            then
@@ -597,7 +605,7 @@ if [ "${BRANCH}" == "gatesgarth" ] || [ "${BRANCH}" == "honister" ]
 fi
 
 # Display latest commit for meta-xilinx
-if [ "${BRANCH}" != "kirkstone" ] && [ "${BRANCH}" != "langdale" ]
+if [ "${BRANCH}" != "kirkstone" ]
     then
         if grep -q "${COMMIT_META_XILINX}" "${BASEDIR}/../default.xml"
             then
@@ -613,7 +621,7 @@ if [ "${BRANCH}" != "kirkstone" ] && [ "${BRANCH}" != "langdale" ]
 fi
 
 # Display latest commit for meta-xilinx-tools
-if [ "${BRANCH}" == "thud" ] || [ "${BRANCH}" == "zeus" ] || [ "${BRANCH}" == "gatesgarth" ] || [ "${BRANCH}" == "honister" ]
+if [ "${BRANCH}" == "thud" ] || [ "${BRANCH}" == "zeus" ] || [ "${BRANCH}" == "gatesgarth" ] || [ "${BRANCH}" == "honister" ] || [ "${BRANCH}" == "langdale" ]
     then
         if grep -q "${COMMIT_META_XILINX_TOOLS}" "${BASEDIR}/../default.xml"
             then
