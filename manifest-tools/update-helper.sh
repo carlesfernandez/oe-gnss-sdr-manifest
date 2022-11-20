@@ -207,12 +207,9 @@ if [ "${BRANCH}" == "gatesgarth" ]
 fi
 if [ "${BRANCH}" == "honister" ]
     then
-        SPECIAL_XILINX_BRANCH="rel-v2022.1"
+        SPECIAL_XILINX_BRANCH="rel-v2022.2"
 fi
-if [ "${BRANCH}" == "langdale" ]
-    then
-        SPECIAL_XILINX_BRANCH="master"
-fi
+
 if [ "${BRANCH}" != "kirkstone" ]
     then
         if [ -d "meta-xilinx" ]
@@ -258,11 +255,7 @@ if [ "${BRANCH}" == "gatesgarth" ]
 fi
 if [ "${BRANCH}" == "honister" ]
    then
-       SPECIAL_XILINX_TOOLS_BRANCH="rel-v2022.1"
-fi
-if [ "${BRANCH}" == "langdale" ]
-   then
-       SPECIAL_XILINX_TOOLS_BRANCH="master"
+       SPECIAL_XILINX_TOOLS_BRANCH="rel-v2022.2"
 fi
 
 if [ "${BRANCH}" == "thud" ] || [ "${BRANCH}" == "zeus" ] || [ "${BRANCH}" == "gatesgarth" ] || [ "${BRANCH}" == "honister" ] || [ "${BRANCH}" == "langdale" ]
