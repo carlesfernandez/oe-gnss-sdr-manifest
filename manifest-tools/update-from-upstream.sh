@@ -27,7 +27,7 @@ if [ "$1" = "--help" ] || [ "$1" = "-h" ]; then
 fi
 
 if [ "$1" = "--version" ] || [ "$1" = "-v" ]; then
-    echo "push-to-repo.sh v$version"
+    echo "update-from-upstream.sh v$version"
     exit 0
 fi
 
@@ -39,11 +39,14 @@ if [ -z "$currentbranch" ]; then
     exit 1
 fi
 
+echo "Running update-from-upstream.sh v$version ..."
+
 git fetch $upstream
 
 for branch in $branches; do
     git checkout "$branch" || echo "Something happened when checking out the $branch branch. Aborting." && exit 1
-    git pull $upstream "$branch" || echo "Something happened when pulling from the $branch branch. Aborting." && exit 1
+    git pull $upstream "$branch"
 done
 
 git checkout "$currentbranch"
+echo "update-from-upstream.sh v$version executed successfully."

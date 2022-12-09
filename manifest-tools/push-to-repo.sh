@@ -42,11 +42,14 @@ if [ -z "$currentbranch" ]; then
     exit 1
 fi
 
+echo "Running push-to-repo.sh v$version ..."
+
 git fetch "$remote"
 
 for branch in $branches; do
     git checkout "$branch" || echo "Something happened when checking out the $branch branch. Aborting." && exit 1
-    git push "$remote" "$branch" || echo "Something happened when pushing to $remote/$branch. Aborting." && exit 1
+    git push "$remote" "$branch"
 done
 
 git checkout "$currentbranch"
+echo "push-to-repo.sh v$version executed successfully."
