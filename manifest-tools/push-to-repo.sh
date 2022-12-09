@@ -47,7 +47,7 @@ echo "Running push-to-repo.sh v$version ..."
 git fetch "$remote"
 
 for branch in $branches; do
-    git checkout "$branch" || echo "Something happened when checking out the $branch branch. Aborting." && exit 1
+    git checkout "$branch"
     git push "$remote" "$branch"
 done
 

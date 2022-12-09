@@ -44,7 +44,7 @@ echo "Running update-from-upstream.sh v$version ..."
 git fetch $upstream
 
 for branch in $branches; do
-    git checkout "$branch" || echo "Something happened when checking out the $branch branch. Aborting." && exit 1
+    git checkout "$branch"
     git pull $upstream "$branch"
 done
 
