@@ -42,10 +42,10 @@ if [ -z "$currentbranch" ]; then
     exit 1
 fi
 
-git fetch "$remote" 2> /dev/null || echo "Remote $remote does not appear to be a git repository. Exiting." && exit 1
+git fetch "$remote"
 
 for branch in $branches; do
-    git checkout "$branch" || echo "Branch $branch is not known to git. Exiting." && exit 1
+    git checkout "$branch" || echo "Something happened when checking out the $branch branch. Aborting." && exit 1
     git push "$remote" "$branch" || echo "Something happened when pushing to $remote/$branch. Aborting." && exit 1
 done
 
