@@ -1,7 +1,7 @@
 #!/bin/sh
-# Update all branches from the upstream repository
+# Push all branches to a repo
 #
-# Usage: ./update-from-upstream.sh
+# Usage: ./push-to-repo.sh [remote]
 #
 # SPDX-FileCopyrightText: 2022 Carles Fernandez-Prades <cfernandez(at)cttc.es>
 # SPDX-License-Identifier: MIT
@@ -15,10 +15,13 @@ if ! [ -x "$(command -v git)" ]; then
 fi
 
 display_usage() {
-    echo "update-from-upstream.sh v$version - This script pulls all branches from the upstream repo."
-    echo " Supported branches: $branches"   
+    echo "push-to-repo.sh v$version - This script pushes all branches to a git repo."
+    echo " Supported branches: $branches"
     echo " Usage:"
-    echo "  ./update-from-upstream.sh"
+    echo "  ./push-to-repo.sh [remote]"
+    echo "  where:"
+    echo "   remote   Remote name (or full URL)"
+
 }
 
 if [ "$1" = "--help" ] || [ "$1" = "-h" ]; then
@@ -27,11 +30,11 @@ if [ "$1" = "--help" ] || [ "$1" = "-h" ]; then
 fi
 
 if [ "$1" = "--version" ] || [ "$1" = "-v" ]; then
-    echo "update-from-upstream.sh v$version"
+    echo "push-to-repo.sh v$version"
     exit 0
 fi
 
-upstream="https://github.com/carlesfernandez/oe-gnss-sdr-manifest"
+remote=${1:-"https://github.com/carlesfernandez/oe-gnss-sdr-manifest"}
 currentbranch=$(git rev-parse --abbrev-ref HEAD 2> /dev/null)
 
 if [ -z "$currentbranch" ]; then
@@ -39,14 +42,14 @@ if [ -z "$currentbranch" ]; then
     exit 1
 fi
 
-echo "Running update-from-upstream.sh v$version ..."
+echo "Running push-to-repo.sh v$version ..."
 
-git fetch $upstream
+git fetch "$remote"
 
 for branch in $branches; do
     git checkout "$branch"
-    git pull $upstream "$branch"
+    git push "$remote" "$branch"
 done
 
 git checkout "$currentbranch"
-echo "update-from-upstream.sh v$version executed successfully."
+echo "push-to-repo.sh v$version executed successfully."
