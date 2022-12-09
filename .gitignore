@@ -2,3 +2,4 @@
 *.save
 .DS_Store
 manifest-tools/sources/*
+sources/*
