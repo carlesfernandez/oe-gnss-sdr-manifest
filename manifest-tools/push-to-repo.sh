@@ -21,7 +21,6 @@ display_usage() {
     echo "  ./push-to-repo.sh [remote]"
     echo "  where:"
     echo "   remote   Remote name (or full URL)"
-
 }
 
 if [ "$1" = "--help" ] || [ "$1" = "-h" ]; then
