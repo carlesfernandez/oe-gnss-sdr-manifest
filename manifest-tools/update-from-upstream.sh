@@ -16,7 +16,7 @@ fi
 
 display_usage() {
     echo "update-from-upstream.sh v$version - This script pulls all branches from the upstream repo."
-    echo " Supported branches: $branches"   
+    echo " Supported branches: $branches"
     echo " Usage:"
     echo "  ./update-from-upstream.sh remote"
     echo "  where:"
