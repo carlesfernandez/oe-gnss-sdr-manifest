@@ -34,8 +34,8 @@
 	<project name="meta-xilinx" remote="Xilinx" path="meta-xilinx" revision="280065cf68f148a32a8299a5b04946c944568bee" />
 	<project name="meta-raspberrypi" remote="yocto" path="meta-raspberrypi" revision="2081e1bb9a44025db7297bfd5d024977d42191ed" />
 	<project name="meta-intel" remote="yocto" path="meta-intel" revision="6c202291925bb179d2d08b5bde80192f9b032b88" />
-	<project name="meta-ti" remote="yocto" path="meta-ti" revision="00f616fad364ba3ceffc35097ecd0c8d247ad52e" />
-	<project name="meta-arm" remote="yocto" path="meta-arm" revision="08c44df351ae1913f41de8388981b03e21235f09" />
+	<project name="meta-ti" remote="yocto" path="meta-ti" revision="17963778642f9d8620bbbe68b7672ac1c195d448" />
+	<project name="meta-arm" remote="yocto" path="meta-arm" revision="58dbad789d5fa0dc0283e16f1f6944210820d40b" />
 	<project name="meta-swupdate" remote="sbabic" path="meta-swupdate" revision="c08ae4b515538baf7d07aa0c152ad78e482ecc3c" />
 	<project name="meta-gnss-sdr" remote="gnss-sdr" path="meta-gnss-sdr" revision="dunfell" />
 
