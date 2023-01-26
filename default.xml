@@ -27,10 +27,10 @@
 	<default remote="openembedded" revision="master" />
 
 	<project name="bitbake" path="bitbake" revision="2.0" />
-	<project name="openembedded-core" path="oe-core" revision="45a8b4101b14453aa3020d3f2b8a76b4dc0ae3f2" />
-	<project name="meta-openembedded" path="meta-oe" revision="50d4a8d2a983a68383ef1ffec2c8e21adf0c1a79" />
+	<project name="openembedded-core" path="oe-core" revision="4760fac939a6204e3cb7dcd3699cd9a2508f9dee" />
+	<project name="meta-openembedded" path="meta-oe" revision="1f31570d0795da90083d1dbf28127c90908e30ee" />
 	<project name="meta-qt5" remote="qt5" path="meta-qt5" revision="44d44933200287f7d17cf6981af4b4a0961c308d" />
-	<project name="meta-sdr" remote="balister" path="meta-sdr" revision="cc6528f1c922be25b5e99b68fd43888e6f7b2ef9" />
+	<project name="meta-sdr" remote="balister" path="meta-sdr" revision="7765d1c09f6f1a97e03696120eabd7cbbfb6158f" />
 	<project name="meta-raspberrypi" remote="yocto" path="meta-raspberrypi" revision="dacad9302a92b0b7edf8546cdcad1f8ef753e462" />
 	<project name="meta-intel" remote="yocto" path="meta-intel" revision="f529e0594a784546926e89ce8e78385e00d0b0a9" />
 	<project name="meta-swupdate" remote="sbabic" path="meta-swupdate" revision="f27a63f42d124676a07401462b1c4a64f38b768b" />
