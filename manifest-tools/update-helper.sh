@@ -300,7 +300,7 @@ if [ "${BRANCH}" == "rocko" ] || [ "${BRANCH}" == "sumo" ] || [ "${BRANCH}" == "
         fi
         if [ "${BRANCH}" == "gatesgarth" ]
             then
-                SPECIAL_ADI_BRANCH="master"
+                SPECIAL_ADI_BRANCH="2021_R1"
         fi
         if [ -d "meta-adi" ]
             then
