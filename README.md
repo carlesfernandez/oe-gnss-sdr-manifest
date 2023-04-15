@@ -8,6 +8,8 @@ SPDX-FileCopyrightText: 2016-2023 Carles Fernandez-Prades <carles.fernandez@cttc
 )
 <!-- prettier-ignore-end -->
 
+[![REUSE status](https://api.reuse.software/badge/github.com/carlesfernandez/oe-gnss-sdr-manifest)](https://api.reuse.software/info/github.com/carlesfernandez/oe-gnss-sdr-manifest)
+
 # Repo Manifests for building systems based on the meta-gnss-sdr layer
 
 This repository provides Repo manifests to setup the OpenEmbedded build system
