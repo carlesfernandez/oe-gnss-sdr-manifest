@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- SPDX-License-Identifier: MIT -->
-<!-- SPDX-FileCopyrightText: 2016-2021 Carles Fernandez-Prades <carles.fernandez@cttc.es> -->
+<!-- SPDX-FileCopyrightText: 2016-2023 Carles Fernandez-Prades <carles.fernandez@cttc.es> -->
 
 <manifest>
 	<remote name="openembedded"
