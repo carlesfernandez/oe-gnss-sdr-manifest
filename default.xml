@@ -42,6 +42,6 @@
 	<project name="meta-intel" remote="yocto" path="meta-intel" revision="adf3288b9890cbeb2519b57ca548a025ef7a82b0" />
 	<project name="meta-virtualization" remote="yocto" path="meta-virtualization" revision="2e5df1cd76265587e6db67f020a06566c4ed6dc4" />
 	<project name="meta-swupdate" remote="sbabic" path="meta-swupdate" revision="744d6b96fc0290a7df9045e60c734c4924abfd4a" />
-	<project name="meta-gnss-sdr" remote="gnss-sdr" path="meta-gnss-sdr" revision="gatesgarth" />
+	<project name="meta-gnss-sdr" remote="gnss-sdr" path="meta-gnss-sdr" revision="3b4f759af5bcfc47444c7450674c522f0bd47e20" />
 
 </manifest>
