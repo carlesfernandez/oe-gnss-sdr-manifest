@@ -52,7 +52,7 @@ file on that repo for more details on its usage and options.
 
 ### Tested Environment
 
-Ubuntu 16.08 64 bits in a Virtual Machine
+Ubuntu 18.04 64 bits in a Virtual Machine
 
 ```
 $ sudo apt-get install apt-transport-https bc build-essential ca-certificates \
