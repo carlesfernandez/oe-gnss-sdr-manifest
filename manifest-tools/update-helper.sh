@@ -32,6 +32,7 @@ REPO_META_ADI="https://github.com/analogdevicesinc/meta-adi"
 REPO_HDL="https://github.com/analogdevicesinc/hdl"
 REPO_META_RASPBERRYPI="https://git.yoctoproject.org/meta-raspberrypi"
 REPO_META_INTEL="https://git.yoctoproject.org/meta-intel"
+REPO_META_AVNET="https://github.com/Avnet/meta-avnet"
 REPO_META_TI="https://git.yoctoproject.org/meta-ti"
 REPO_META_ARM="https://git.yoctoproject.org/meta-arm"
 REPO_META_SW_UPDATE="https://github.com/sbabic/meta-swupdate"
@@ -372,6 +373,45 @@ if [ "${BRANCH}" == "rocko" ] || [ "${BRANCH}" == "thud" ] || [ "${BRANCH}" == "
         cd ..
 fi
 
+# meta-avnet
+SPECIAL_AVNET_BRANCH=${BRANCH}
+if [ "${BRANCH}" == "gatesgarth" ]
+    then
+        SPECIAL_AVNET_BRANCH="2021.2"
+fi
+if [ "${BRANCH}" == "honister" ]
+    then
+        SPECIAL_AVNET_BRANCH="2022.2"
+fi
+if [ "${BRANCH}" == "gatesgarth" ] || [ "${BRANCH}" == "honister" ]
+    then
+        if [ -d "meta-avnet" ]
+            then
+                cd meta-avnet || exit
+                exists_in_remote=$(git ls-remote --heads origin "${SPECIAL_AVNET_BRANCH}")
+                if [[ -z ${exists_in_remote} ]]
+                    then
+                        COMMIT_META_AVNET="Unknown"
+                    else
+                        git checkout "${SPECIAL_AVNET_BRANCH}"
+                        git pull origin "${SPECIAL_AVNET_BRANCH}"
+                        COMMIT_META_AVNET=$(git rev-parse HEAD)
+                fi
+            else
+                git clone ${REPO_META_AVNET}
+                cd meta-avnet || exit
+                exists_in_remote=$(git ls-remote --heads origin "${SPECIAL_AVNET_BRANCH}")
+                if [[ -z ${exists_in_remote} ]]
+                    then
+                        COMMIT_META_AVNET="Unknown"
+                    else
+                        git checkout "${SPECIAL_AVNET_BRANCH}"
+                        COMMIT_META_AVNET=$(git rev-parse HEAD)
+                fi
+        fi
+        cd ..
+fi
+
 # meta-raspberrypi
 if [ -d "meta-raspberrypi" ]
     then
@@ -643,6 +683,17 @@ if [ "${BRANCH}" == "rocko" ]  || [ "${BRANCH}" == "thud" ] || [ "${BRANCH}" == 
                 echo -e "hdl last commit:                 ${COMMIT_HDL}"
             else
                 echo -e "hdl last commit:                 ${COLOR_WARNING}${COMMIT_HDL}${COLOR_RESET} Check ${REPO_HDL}/tree/${SPECIAL_HDL_BRANCH}"
+        fi
+fi
+
+# Display latest commit for meta-avnet
+if [ "${BRANCH}" == "gatesgarth" ] || [ "${BRANCH}" == "honister" ]
+    then
+        if grep -q "${COMMIT_META_AVNET}" "${BASEDIR}/../default.xml"
+            then
+                echo -e "meta-avnet last commit:          ${COMMIT_META_AVNET}"
+            else
+                echo -e "meta-avnet last commit:          ${COLOR_WARNING}${COMMIT_META_AVNET}${COLOR_RESET} Check ${REPO_META_AVNET}/tree/${SPECIAL_AVNET_BRANCH}"
         fi
 fi
 
