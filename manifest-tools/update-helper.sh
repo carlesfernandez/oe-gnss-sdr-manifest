@@ -28,10 +28,12 @@ REPO_META_SDR="https://github.com/balister/meta-sdr"
 REPO_META_VIRTUALIZATION="https://git.yoctoproject.org/meta-virtualization"
 REPO_META_XILINX="https://github.com/Xilinx/meta-xilinx"
 REPO_META_XILINX_TOOLS="https://github.com/Xilinx/meta-xilinx-tools"
+REPO_META_PETALINUX="https://github.com/Xilinx/meta-petalinux"
 REPO_META_ADI="https://github.com/analogdevicesinc/meta-adi"
 REPO_HDL="https://github.com/analogdevicesinc/hdl"
 REPO_META_RASPBERRYPI="https://git.yoctoproject.org/meta-raspberrypi"
 REPO_META_INTEL="https://git.yoctoproject.org/meta-intel"
+REPO_META_AVNET="https://github.com/Avnet/meta-avnet"
 REPO_META_TI="https://git.yoctoproject.org/meta-ti"
 REPO_META_ARM="https://git.yoctoproject.org/meta-arm"
 REPO_META_SW_UPDATE="https://github.com/sbabic/meta-swupdate"
@@ -137,24 +139,24 @@ fi
 if [ -d "meta-sdr" ]
     then
         cd meta-sdr || exit
-        exists_in_remote=$(git ls-remote --heads origin ${SPECIAL_SDR_BRANCH})
+        exists_in_remote=$(git ls-remote --heads origin "${SPECIAL_SDR_BRANCH}")
         if [[ -z ${exists_in_remote} ]]
            then
                COMMIT_META_SDR="Unknown"
            else
-               git checkout ${SPECIAL_SDR_BRANCH}
-               git pull origin ${SPECIAL_SDR_BRANCH}
+               git checkout "${SPECIAL_SDR_BRANCH}"
+               git pull origin "${SPECIAL_SDR_BRANCH}"
                COMMIT_META_SDR=$(git rev-parse HEAD)
         fi
     else
         git clone ${REPO_META_SDR}
         cd meta-sdr || exit
-        exists_in_remote=$(git ls-remote --heads origin ${SPECIAL_SDR_BRANCH})
+        exists_in_remote=$(git ls-remote --heads origin "${SPECIAL_SDR_BRANCH}")
         if [[ -z ${exists_in_remote} ]]
            then
                COMMIT_META_SDR="Unknown"
            else
-               git checkout ${SPECIAL_SDR_BRANCH}
+               git checkout "${SPECIAL_SDR_BRANCH}"
                COMMIT_META_SDR=$(git rev-parse HEAD)
         fi
 fi
@@ -215,24 +217,24 @@ if [ "${BRANCH}" != "kirkstone" ]
         if [ -d "meta-xilinx" ]
             then
                 cd meta-xilinx || exit
-                exists_in_remote=$(git ls-remote --heads origin ${SPECIAL_XILINX_BRANCH})
+                exists_in_remote=$(git ls-remote --heads origin "${SPECIAL_XILINX_BRANCH}")
                 if [[ -z ${exists_in_remote} ]]
                    then
                        COMMIT_META_XILINX="Unknown"
                    else
-                       git checkout ${SPECIAL_XILINX_BRANCH}
-                       git pull origin ${SPECIAL_XILINX_BRANCH}
+                       git checkout "${SPECIAL_XILINX_BRANCH}"
+                       git pull origin "${SPECIAL_XILINX_BRANCH}"
                        COMMIT_META_XILINX=$(git rev-parse HEAD)
                 fi
             else
                 git clone ${REPO_META_XILINX}
                 cd meta-xilinx || exit
-                exists_in_remote=$(git ls-remote --heads origin ${SPECIAL_XILINX_BRANCH})
+                exists_in_remote=$(git ls-remote --heads origin "${SPECIAL_XILINX_BRANCH}")
                 if [[ -z ${exists_in_remote} ]]
                     then
                         COMMIT_META_XILINX="Unknown"
                     else
-                        git checkout ${SPECIAL_XILINX_BRANCH}
+                        git checkout "${SPECIAL_XILINX_BRANCH}"
                         COMMIT_META_XILINX=$(git rev-parse HEAD)
                 fi
         fi
@@ -263,28 +265,63 @@ if [ "${BRANCH}" == "thud" ] || [ "${BRANCH}" == "zeus" ] || [ "${BRANCH}" == "g
        if [ -d "meta-xilinx-tools" ]
            then
                cd meta-xilinx-tools || exit
-               exists_in_remote=$(git ls-remote --heads origin ${SPECIAL_XILINX_TOOLS_BRANCH})
+               exists_in_remote=$(git ls-remote --heads origin "${SPECIAL_XILINX_TOOLS_BRANCH}")
                if [[ -z ${exists_in_remote} ]]
                   then
                       COMMIT_META_XILINX_TOOLS="Unknown"
                   else
-                      git checkout ${SPECIAL_XILINX_TOOLS_BRANCH}
-                      git pull origin ${SPECIAL_XILINX_TOOLS_BRANCH}
+                      git checkout "${SPECIAL_XILINX_TOOLS_BRANCH}"
+                      git pull origin "${SPECIAL_XILINX_TOOLS_BRANCH}"
                       COMMIT_META_XILINX_TOOLS=$(git rev-parse HEAD)
                fi
            else
                git clone ${REPO_META_XILINX_TOOLS}
                cd meta-xilinx-tools || exit
-               exists_in_remote=$(git ls-remote --heads origin ${SPECIAL_XILINX_TOOLS_BRANCH})
+               exists_in_remote=$(git ls-remote --heads origin "${SPECIAL_XILINX_TOOLS_BRANCH}")
                if [[ -z ${exists_in_remote} ]]
                    then
                        COMMIT_META_XILINX_TOOLS="Unknown"
                    else
-                       git checkout ${SPECIAL_XILINX_TOOLS_BRANCH}
+                       git checkout "${SPECIAL_XILINX_TOOLS_BRANCH}"
                        COMMIT_META_XILINX_TOOLS=$(git rev-parse HEAD)
                fi
        fi
        cd ..
+fi
+
+# meta-petalinux
+SPECIAL_META_PETALINUX_BRANCH=${BRANCH}
+if [ "${BRANCH}" == "gatesgarth" ]
+    then
+        SPECIAL_META_PETALINUX_BRANCH="rel-v2021.2"
+fi
+if [ "${BRANCH}" == "gatesgarth" ]
+    then
+        if [ -d "meta-petalinux" ]
+            then
+                cd meta-petalinux || exit
+                exists_in_remote=$(git ls-remote --heads origin "${SPECIAL_META_PETALINUX_BRANCH}")
+                if [[ -z ${exists_in_remote} ]]
+                    then
+                        COMMIT_META_PETALINUX="Unknown"
+                    else
+                        git checkout "${SPECIAL_META_PETALINUX_BRANCH}"
+                        git pull origin "${SPECIAL_META_PETALINUX_BRANCH}"
+                        COMMIT_META_PETALINUX=$(git rev-parse HEAD)
+                fi
+            else
+                git clone ${REPO_META_PETALINUX}
+                cd meta-petalinux || exit
+                exists_in_remote=$(git ls-remote --heads origin "${SPECIAL_META_PETALINUX_BRANCH}")
+                if [[ -z ${exists_in_remote} ]]
+                    then
+                        COMMIT_META_PETALINUX="Unknown"
+                    else
+                        git checkout "${SPECIAL_META_PETALINUX_BRANCH}"
+                        COMMIT_META_PETALINUX=$(git rev-parse HEAD)
+                fi
+        fi
+        cd ..
 fi
 
 # meta-adi
@@ -305,24 +342,24 @@ if [ "${BRANCH}" == "rocko" ] || [ "${BRANCH}" == "sumo" ] || [ "${BRANCH}" == "
         if [ -d "meta-adi" ]
             then
                 cd meta-adi || exit
-                exists_in_remote=$(git ls-remote --heads origin ${SPECIAL_ADI_BRANCH})
+                exists_in_remote=$(git ls-remote --heads origin "${SPECIAL_ADI_BRANCH}")
                 if [[ -z ${exists_in_remote} ]]
                    then
                        COMMIT_META_ADI="Unknown"
                    else
-                       git checkout ${SPECIAL_ADI_BRANCH}
-                       git pull origin ${SPECIAL_ADI_BRANCH}
+                       git checkout "${SPECIAL_ADI_BRANCH}"
+                       git pull origin "${SPECIAL_ADI_BRANCH}"
                        COMMIT_META_ADI=$(git rev-parse HEAD)
                 fi
             else
                 git clone ${REPO_META_ADI}
                 cd meta-adi || exit
-                exists_in_remote=$(git ls-remote --heads origin ${SPECIAL_ADI_BRANCH})
+                exists_in_remote=$(git ls-remote --heads origin "${SPECIAL_ADI_BRANCH}")
                 if [[ -z ${exists_in_remote} ]]
                    then
                        COMMIT_META_ADI="Unknown"
                    else
-                       git checkout ${SPECIAL_ADI_BRANCH}
+                       git checkout "${SPECIAL_ADI_BRANCH}"
                        COMMIT_META_ADI=$(git rev-parse HEAD)
                 fi
         fi
@@ -348,25 +385,64 @@ if [ "${BRANCH}" == "rocko" ] || [ "${BRANCH}" == "thud" ] || [ "${BRANCH}" == "
         if [ -d "hdl" ]
             then
                 cd hdl || exit
-                exists_in_remote=$(git ls-remote --heads origin ${SPECIAL_HDL_BRANCH})
+                exists_in_remote=$(git ls-remote --heads origin "${SPECIAL_HDL_BRANCH}")
                 if [[ -z ${exists_in_remote} ]]
                    then
                        COMMIT_HDL="Unknown"
                    else
-                       git checkout remotes/origin/${SPECIAL_HDL_BRANCH}
-                       git pull origin ${SPECIAL_HDL_BRANCH}
+                       git checkout "remotes/origin/${SPECIAL_HDL_BRANCH}"
+                       git pull origin "${SPECIAL_HDL_BRANCH}"
                        COMMIT_HDL=$(git rev-parse HEAD)
                 fi
             else
                 git clone ${REPO_HDL}
                 cd hdl || exit
-                exists_in_remote=$(git ls-remote --heads origin ${SPECIAL_HDL_BRANCH})
+                exists_in_remote=$(git ls-remote --heads origin "${SPECIAL_HDL_BRANCH}")
                 if [[ -z ${exists_in_remote} ]]
                     then
                         COMMIT_HDL="Unknown"
                     else
-                        git checkout remotes/origin/${SPECIAL_HDL_BRANCH}
+                        git checkout "remotes/origin/${SPECIAL_HDL_BRANCH}"
                         COMMIT_HDL=$(git rev-parse HEAD)
+                fi
+        fi
+        cd ..
+fi
+
+# meta-avnet
+SPECIAL_AVNET_BRANCH=${BRANCH}
+if [ "${BRANCH}" == "gatesgarth" ]
+    then
+        SPECIAL_AVNET_BRANCH="2021.2"
+fi
+if [ "${BRANCH}" == "honister" ]
+    then
+        SPECIAL_AVNET_BRANCH="2022.2"
+fi
+if [ "${BRANCH}" == "gatesgarth" ] || [ "${BRANCH}" == "honister" ]
+    then
+        if [ -d "meta-avnet" ]
+            then
+                cd meta-avnet || exit
+                exists_in_remote=$(git ls-remote --heads origin "${SPECIAL_AVNET_BRANCH}")
+                if [[ -z ${exists_in_remote} ]]
+                    then
+                        COMMIT_META_AVNET="Unknown"
+                    else
+                        git checkout "${SPECIAL_AVNET_BRANCH}"
+                        git pull origin "${SPECIAL_AVNET_BRANCH}"
+                        COMMIT_META_AVNET=$(git rev-parse HEAD)
+                fi
+            else
+                git clone ${REPO_META_AVNET}
+                cd meta-avnet || exit
+                exists_in_remote=$(git ls-remote --heads origin "${SPECIAL_AVNET_BRANCH}")
+                if [[ -z ${exists_in_remote} ]]
+                    then
+                        COMMIT_META_AVNET="Unknown"
+                    else
+                        git checkout "${SPECIAL_AVNET_BRANCH}"
+                        COMMIT_META_AVNET=$(git rev-parse HEAD)
                 fi
         fi
         cd ..
@@ -624,6 +700,17 @@ if [ "${BRANCH}" == "thud" ] || [ "${BRANCH}" == "zeus" ] || [ "${BRANCH}" == "g
         fi
 fi
 
+# Display latest commit for meta-petalinux
+if [ "${BRANCH}" == "gatesgarth" ]
+    then
+        if grep -q "${COMMIT_META_PETALINUX}" "${BASEDIR}/../default.xml"
+            then
+                echo -e "meta-petalinux last commit:      ${COMMIT_META_PETALINUX}"
+            else
+                echo -e "meta-petalinux last commit:      ${COLOR_WARNING}${COMMIT_META_PETALINUX}${COLOR_RESET} Check ${REPO_META_PETALINUX}/tree/${SPECIAL_META_PETALINUX_BRANCH}"
+        fi
+fi
+
 # Display latest commit for meta-adi
 if [ "${BRANCH}" == "rocko" ] || [ "${BRANCH}" == "sumo" ] || [ "${BRANCH}" == "thud" ]  || [ "${BRANCH}" == "gatesgarth" ]
     then
@@ -643,6 +730,17 @@ if [ "${BRANCH}" == "rocko" ]  || [ "${BRANCH}" == "thud" ] || [ "${BRANCH}" == 
                 echo -e "hdl last commit:                 ${COMMIT_HDL}"
             else
                 echo -e "hdl last commit:                 ${COLOR_WARNING}${COMMIT_HDL}${COLOR_RESET} Check ${REPO_HDL}/tree/${SPECIAL_HDL_BRANCH}"
+        fi
+fi
+
+# Display latest commit for meta-avnet
+if [ "${BRANCH}" == "gatesgarth" ] || [ "${BRANCH}" == "honister" ]
+    then
+        if grep -q "${COMMIT_META_AVNET}" "${BASEDIR}/../default.xml"
+            then
+                echo -e "meta-avnet last commit:          ${COMMIT_META_AVNET}"
+            else
+                echo -e "meta-avnet last commit:          ${COLOR_WARNING}${COMMIT_META_AVNET}${COLOR_RESET} Check ${REPO_META_AVNET}/tree/${SPECIAL_AVNET_BRANCH}"
         fi
 fi
 
