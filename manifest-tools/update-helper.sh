@@ -211,6 +211,10 @@ if [ "${BRANCH}" == "honister" ]
     then
         SPECIAL_XILINX_BRANCH="rel-v2022.2"
 fi
+if [ "${BRANCH}" == "langdale" ]
+    then
+        SPECIAL_XILINX_BRANCH="rel-v2023.1"
+fi
 
 if [ "${BRANCH}" != "kirkstone" ]
     then
@@ -258,6 +262,10 @@ fi
 if [ "${BRANCH}" == "honister" ]
    then
        SPECIAL_XILINX_TOOLS_BRANCH="rel-v2022.2"
+fi
+if [ "${BRANCH}" == "langdale" ]
+   then
+       SPECIAL_XILINX_TOOLS_BRANCH="rel-v2023.1"
 fi
 
 if [ "${BRANCH}" == "thud" ] || [ "${BRANCH}" == "zeus" ] || [ "${BRANCH}" == "gatesgarth" ] || [ "${BRANCH}" == "honister" ] || [ "${BRANCH}" == "langdale" ]
