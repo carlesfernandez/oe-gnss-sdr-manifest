@@ -268,7 +268,7 @@ if [ "${BRANCH}" == "langdale" ]
        SPECIAL_XILINX_TOOLS_BRANCH="rel-v2023.1"
 fi
 
-if [ "${BRANCH}" == "thud" ] || [ "${BRANCH}" == "zeus" ] || [ "${BRANCH}" == "gatesgarth" ] || [ "${BRANCH}" == "honister" ] || [ "${BRANCH}" == "langdale" ]
+if [ "${BRANCH}" == "thud" ] || [ "${BRANCH}" == "zeus" ] || [ "${BRANCH}" == "gatesgarth" ] || [ "${BRANCH}" == "honister" ] || [ "${BRANCH}" == "langdale" ] || [ "${BRANCH}" == "mickledore" ]
    then
        if [ -d "meta-xilinx-tools" ]
            then
@@ -698,7 +698,7 @@ if [ "${BRANCH}" != "kirkstone" ]
 fi
 
 # Display latest commit for meta-xilinx-tools
-if [ "${BRANCH}" == "thud" ] || [ "${BRANCH}" == "zeus" ] || [ "${BRANCH}" == "gatesgarth" ] || [ "${BRANCH}" == "honister" ] || [ "${BRANCH}" == "langdale" ]
+if [ "${BRANCH}" == "thud" ] || [ "${BRANCH}" == "zeus" ] || [ "${BRANCH}" == "gatesgarth" ] || [ "${BRANCH}" == "honister" ] || [ "${BRANCH}" == "langdale" ] || [ "${BRANCH}" == "mickledore" ]
     then
         if grep -q "${COMMIT_META_XILINX_TOOLS}" "${BASEDIR}/../default.xml"
             then
