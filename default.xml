@@ -27,15 +27,15 @@
 	<default remote="openembedded" revision="master" />
 
 	<project name="bitbake" path="bitbake" revision="2.4" />
-	<project name="openembedded-core" path="oe-core" revision="ab232138f633b0521867216570ff81fcdceb3be1" />
-	<project name="meta-openembedded" path="meta-oe" revision="c032fd0b1a9d444711103c2703dfa8e2964a3865" />
-	<project name="meta-qt5" remote="qt5" path="meta-qt5" revision="cf6ffcbad5275a3428f6046468a0c9d572e813d1" />
+	<project name="openembedded-core" path="oe-core" revision="4df0b835fae3af1dbde4a06568a652ce46d7af7a" />
+	<project name="meta-openembedded" path="meta-oe" revision="d71a08b3d8fc69d3213c10885af9cc693056a8bd" />
+	<project name="meta-qt5" remote="qt5" path="meta-qt5" revision="d86e2e82c15d186141713515dfd1373013aaebd5" />
 	<project name="meta-sdr" remote="balister" path="meta-sdr" revision="f04c7eb9322f7c6f2e7caa0fcedd44760d7b1ca6" />
-	<project name="meta-xilinx" remote="Xilinx" path="meta-xilinx" revision="1dfd063eb7f1e98b55468b3de34171f1995bd3f7" />
-	<project name="meta-xilinx-tools" remote="Xilinx" path="meta-xilinx-tools" revision="c26f52fa8aa45ad6e04bd7afcd3c9e244932166e" />
-	<project name="meta-raspberrypi" remote="yocto" path="meta-raspberrypi" revision="928bb234bb788b2723658df57e06e663f6426538" />
-	<project name="meta-intel" remote="yocto" path="meta-intel" revision="a0ea4e5d395579e70f1057f1f1222c8a2b55bd96" />
-	<project name="meta-swupdate" remote="sbabic" path="meta-swupdate" revision="36a3cf00e0af35160e7d1ca7c2f0e1fc8c5c303e" />
+	<project name="meta-xilinx" remote="Xilinx" path="meta-xilinx" revision="155bedb17469d3f622f184e74b47e3d660223008" />
+	<project name="meta-xilinx-tools" remote="Xilinx" path="meta-xilinx-tools" revision="66adbc0216d33cd59efcd511c8f0e5626946a179" />
+	<project name="meta-raspberrypi" remote="yocto" path="meta-raspberrypi" revision="aa0aed9a08d6578a18c4eeb3b44ed8354a57ebee" />
+	<project name="meta-intel" remote="yocto" path="meta-intel" revision="e31edebd4166a7b58ec11c00f9364d9f5f50484f" />
+	<project name="meta-swupdate" remote="sbabic" path="meta-swupdate" revision="2edb82c43f4049f721cabb97c99d443906fe87e1" />
 	<project name="meta-gnss-sdr" remote="gnss-sdr" path="meta-gnss-sdr" revision="mickledore" />
 
 </manifest>
