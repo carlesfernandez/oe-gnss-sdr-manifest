@@ -39,7 +39,7 @@
 	<project name="meta-xilinx-tools" remote="Xilinx" path="meta-xilinx-tools" revision="909b70c3f2db8df5cd3c68f5e739833dc8885b0c" />
 	<project name="meta-raspberrypi" remote="yocto" path="meta-raspberrypi" revision="378d4b6e7ba64b6a9a701457cc3780fa896ba5dc" />
 	<project name="meta-intel" remote="yocto" path="meta-intel" revision="75db9e135d53b070366cd0beecefd72e4cf135fd" />
-	<project name="meta-avnet" remote="avnet" path="meta-avnet" revision="cfce114cad6c13c6817eef8019ecd84df0d509e6" />
+	<project name="meta-avnet" remote="avnet" path="meta-avnet" revision="aecf3bfa880a1bdbcd7bab4cddca90efb2a5d617" />
 	<project name="meta-swupdate" remote="sbabic" path="meta-swupdate" revision="539c58405f4d27389a27c98d7f2cc153b55aa4e6" />
 	<project name="meta-gnss-sdr" remote="gnss-sdr" path="meta-gnss-sdr" revision="honister" />
 
