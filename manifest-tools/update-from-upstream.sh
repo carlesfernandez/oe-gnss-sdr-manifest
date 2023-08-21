@@ -34,9 +34,9 @@ if [ "$1" = "--version" ] || [ "$1" = "-v" ]; then
 fi
 
 if [ "$#" -gt 1 ]; then
-   echo "Error: wrong number of parameters."
-   display_usage
-   exit 1
+    echo "Error: wrong number of parameters."
+    display_usage
+    exit 1
 fi
 
 upstream=${1:-"https://github.com/carlesfernandez/oe-gnss-sdr-manifest"}
