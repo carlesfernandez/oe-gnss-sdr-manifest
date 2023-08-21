@@ -136,6 +136,10 @@ if [ "${BRANCH}" == "langdale" ]
     then
         SPECIAL_SDR_BRANCH="master"
 fi
+if [ "${BRANCH}" == "mickledore" ]
+    then
+        SPECIAL_SDR_BRANCH="master"
+fi
 if [ -d "meta-sdr" ]
     then
         cd meta-sdr || exit
