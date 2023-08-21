@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # A script to make manifest manual updating easier
-# SPDX-FileCopyrightText: 2021, Carles Fernandez-Prades <carles.fernandez@cttc.es>
+# SPDX-FileCopyrightText: 2021-2023, Carles Fernandez-Prades <carles.fernandez@cttc.es>
 # SPDX-License-Identifier: MIT
 
 display_usage() {
@@ -72,19 +72,19 @@ cd ..
 
 # meta-qt4
 if [ "${BRANCH}" == "rocko" ] || [ "${BRANCH}" == "sumo" ] || [ "${BRANCH}" == "thud" ]
-   then
-       if [ -d "meta-qt4" ]
-           then
-               cd meta-qt4 || exit
-               git checkout "${BRANCH}"
-               git pull origin "${BRANCH}"
-           else
-               git clone ${REPO_META_QT4}
-               cd meta-qt4 || exit
-               git checkout "$BRANCH"
-       fi
-       COMMIT_META_QT4=$(git rev-parse HEAD)
-       cd ..
+    then
+        if [ -d "meta-qt4" ]
+            then
+                cd meta-qt4 || exit
+                git checkout "${BRANCH}"
+                git pull origin "${BRANCH}"
+            else
+                git clone ${REPO_META_QT4}
+                cd meta-qt4 || exit
+                git checkout "$BRANCH"
+        fi
+        COMMIT_META_QT4=$(git rev-parse HEAD)
+        cd ..
 fi
 
 # meta-qt5
@@ -141,23 +141,23 @@ if [ -d "meta-sdr" ]
         cd meta-sdr || exit
         exists_in_remote=$(git ls-remote --heads origin "${SPECIAL_SDR_BRANCH}")
         if [[ -z ${exists_in_remote} ]]
-           then
-               COMMIT_META_SDR="Unknown"
-           else
-               git checkout "${SPECIAL_SDR_BRANCH}"
-               git pull origin "${SPECIAL_SDR_BRANCH}"
-               COMMIT_META_SDR=$(git rev-parse HEAD)
+            then
+                COMMIT_META_SDR="Unknown"
+            else
+                git checkout "${SPECIAL_SDR_BRANCH}"
+                git pull origin "${SPECIAL_SDR_BRANCH}"
+                COMMIT_META_SDR=$(git rev-parse HEAD)
         fi
     else
         git clone ${REPO_META_SDR}
         cd meta-sdr || exit
         exists_in_remote=$(git ls-remote --heads origin "${SPECIAL_SDR_BRANCH}")
         if [[ -z ${exists_in_remote} ]]
-           then
-               COMMIT_META_SDR="Unknown"
-           else
-               git checkout "${SPECIAL_SDR_BRANCH}"
-               COMMIT_META_SDR=$(git rev-parse HEAD)
+            then
+                COMMIT_META_SDR="Unknown"
+            else
+                git checkout "${SPECIAL_SDR_BRANCH}"
+                COMMIT_META_SDR=$(git rev-parse HEAD)
         fi
 fi
 cd ..
@@ -170,14 +170,14 @@ if [ "${BRANCH}" == "gatesgarth" ] || [ "${BRANCH}" == "honister" ]
                 cd meta-virtualization || exit
                 exists_in_remote=$(git ls-remote --heads origin "${BRANCH}")
                 if [[ -z ${exists_in_remote} ]]
-                   then
-                       COMMIT_META_VIRTUALIZATION="Unknown"
-                   else
-                       git checkout "${BRANCH}"
-                       git pull origin "${BRANCH}"
-                       COMMIT_META_VIRTUALIZATION=$(git rev-parse HEAD)
+                    then
+                        COMMIT_META_VIRTUALIZATION="Unknown"
+                    else
+                        git checkout "${BRANCH}"
+                        git pull origin "${BRANCH}"
+                        COMMIT_META_VIRTUALIZATION=$(git rev-parse HEAD)
                 fi
-             else
+            else
                 git clone ${REPO_META_VIRTUALIZATION}
                 cd meta-virtualization || exit
                 exists_in_remote=$(git ls-remote --heads origin "${BRANCH}")
@@ -211,6 +211,10 @@ if [ "${BRANCH}" == "honister" ]
     then
         SPECIAL_XILINX_BRANCH="rel-v2022.2"
 fi
+if [ "${BRANCH}" == "langdale" ]
+    then
+        SPECIAL_XILINX_BRANCH="rel-v2023.1"
+fi
 
 if [ "${BRANCH}" != "kirkstone" ]
     then
@@ -219,12 +223,12 @@ if [ "${BRANCH}" != "kirkstone" ]
                 cd meta-xilinx || exit
                 exists_in_remote=$(git ls-remote --heads origin "${SPECIAL_XILINX_BRANCH}")
                 if [[ -z ${exists_in_remote} ]]
-                   then
-                       COMMIT_META_XILINX="Unknown"
-                   else
-                       git checkout "${SPECIAL_XILINX_BRANCH}"
-                       git pull origin "${SPECIAL_XILINX_BRANCH}"
-                       COMMIT_META_XILINX=$(git rev-parse HEAD)
+                    then
+                        COMMIT_META_XILINX="Unknown"
+                    else
+                        git checkout "${SPECIAL_XILINX_BRANCH}"
+                        git pull origin "${SPECIAL_XILINX_BRANCH}"
+                        COMMIT_META_XILINX=$(git rev-parse HEAD)
                 fi
             else
                 git clone ${REPO_META_XILINX}
@@ -244,49 +248,53 @@ fi
 # meta-xilinx-tools
 SPECIAL_XILINX_TOOLS_BRANCH=${BRANCH}
 if [ "${BRANCH}" == "thud" ]
-   then
-       SPECIAL_XILINX_TOOLS_BRANCH="rel-v2019.2"
+    then
+        SPECIAL_XILINX_TOOLS_BRANCH="rel-v2019.2"
 fi
 if [ "${BRANCH}" == "zeus" ]
-   then
-       SPECIAL_XILINX_TOOLS_BRANCH="rel-v2020.3"
+    then
+        SPECIAL_XILINX_TOOLS_BRANCH="rel-v2020.3"
 fi
 if [ "${BRANCH}" == "gatesgarth" ]
     then
         SPECIAL_XILINX_TOOLS_BRANCH="rel-v2021.2"
 fi
 if [ "${BRANCH}" == "honister" ]
-   then
-       SPECIAL_XILINX_TOOLS_BRANCH="rel-v2022.2"
+    then
+        SPECIAL_XILINX_TOOLS_BRANCH="rel-v2022.2"
+fi
+if [ "${BRANCH}" == "langdale" ]
+    then
+        SPECIAL_XILINX_TOOLS_BRANCH="rel-v2023.1"
 fi
 
 if [ "${BRANCH}" == "thud" ] || [ "${BRANCH}" == "zeus" ] || [ "${BRANCH}" == "gatesgarth" ] || [ "${BRANCH}" == "honister" ] || [ "${BRANCH}" == "langdale" ] || [ "${BRANCH}" == "mickledore" ]
-   then
-       if [ -d "meta-xilinx-tools" ]
-           then
-               cd meta-xilinx-tools || exit
-               exists_in_remote=$(git ls-remote --heads origin "${SPECIAL_XILINX_TOOLS_BRANCH}")
-               if [[ -z ${exists_in_remote} ]]
-                  then
-                      COMMIT_META_XILINX_TOOLS="Unknown"
-                  else
-                      git checkout "${SPECIAL_XILINX_TOOLS_BRANCH}"
-                      git pull origin "${SPECIAL_XILINX_TOOLS_BRANCH}"
-                      COMMIT_META_XILINX_TOOLS=$(git rev-parse HEAD)
-               fi
-           else
-               git clone ${REPO_META_XILINX_TOOLS}
-               cd meta-xilinx-tools || exit
-               exists_in_remote=$(git ls-remote --heads origin "${SPECIAL_XILINX_TOOLS_BRANCH}")
-               if [[ -z ${exists_in_remote} ]]
-                   then
-                       COMMIT_META_XILINX_TOOLS="Unknown"
-                   else
-                       git checkout "${SPECIAL_XILINX_TOOLS_BRANCH}"
-                       COMMIT_META_XILINX_TOOLS=$(git rev-parse HEAD)
-               fi
-       fi
-       cd ..
+    then
+        if [ -d "meta-xilinx-tools" ]
+            then
+                cd meta-xilinx-tools || exit
+                exists_in_remote=$(git ls-remote --heads origin "${SPECIAL_XILINX_TOOLS_BRANCH}")
+                if [[ -z ${exists_in_remote} ]]
+                    then
+                        COMMIT_META_XILINX_TOOLS="Unknown"
+                    else
+                        git checkout "${SPECIAL_XILINX_TOOLS_BRANCH}"
+                        git pull origin "${SPECIAL_XILINX_TOOLS_BRANCH}"
+                        COMMIT_META_XILINX_TOOLS=$(git rev-parse HEAD)
+                fi
+            else
+                git clone ${REPO_META_XILINX_TOOLS}
+                cd meta-xilinx-tools || exit
+                exists_in_remote=$(git ls-remote --heads origin "${SPECIAL_XILINX_TOOLS_BRANCH}")
+                if [[ -z ${exists_in_remote} ]]
+                    then
+                        COMMIT_META_XILINX_TOOLS="Unknown"
+                    else
+                        git checkout "${SPECIAL_XILINX_TOOLS_BRANCH}"
+                        COMMIT_META_XILINX_TOOLS=$(git rev-parse HEAD)
+                fi
+        fi
+        cd ..
 fi
 
 # meta-petalinux
@@ -344,23 +352,23 @@ if [ "${BRANCH}" == "rocko" ] || [ "${BRANCH}" == "sumo" ] || [ "${BRANCH}" == "
                 cd meta-adi || exit
                 exists_in_remote=$(git ls-remote --heads origin "${SPECIAL_ADI_BRANCH}")
                 if [[ -z ${exists_in_remote} ]]
-                   then
-                       COMMIT_META_ADI="Unknown"
-                   else
-                       git checkout "${SPECIAL_ADI_BRANCH}"
-                       git pull origin "${SPECIAL_ADI_BRANCH}"
-                       COMMIT_META_ADI=$(git rev-parse HEAD)
+                    then
+                        COMMIT_META_ADI="Unknown"
+                    else
+                        git checkout "${SPECIAL_ADI_BRANCH}"
+                        git pull origin "${SPECIAL_ADI_BRANCH}"
+                        COMMIT_META_ADI=$(git rev-parse HEAD)
                 fi
             else
                 git clone ${REPO_META_ADI}
                 cd meta-adi || exit
                 exists_in_remote=$(git ls-remote --heads origin "${SPECIAL_ADI_BRANCH}")
                 if [[ -z ${exists_in_remote} ]]
-                   then
-                       COMMIT_META_ADI="Unknown"
-                   else
-                       git checkout "${SPECIAL_ADI_BRANCH}"
-                       COMMIT_META_ADI=$(git rev-parse HEAD)
+                    then
+                        COMMIT_META_ADI="Unknown"
+                    else
+                        git checkout "${SPECIAL_ADI_BRANCH}"
+                        COMMIT_META_ADI=$(git rev-parse HEAD)
                 fi
         fi
         cd ..
@@ -387,12 +395,12 @@ if [ "${BRANCH}" == "rocko" ] || [ "${BRANCH}" == "thud" ] || [ "${BRANCH}" == "
                 cd hdl || exit
                 exists_in_remote=$(git ls-remote --heads origin "${SPECIAL_HDL_BRANCH}")
                 if [[ -z ${exists_in_remote} ]]
-                   then
-                       COMMIT_HDL="Unknown"
-                   else
-                       git checkout "remotes/origin/${SPECIAL_HDL_BRANCH}"
-                       git pull origin "${SPECIAL_HDL_BRANCH}"
-                       COMMIT_HDL=$(git rev-parse HEAD)
+                    then
+                        COMMIT_HDL="Unknown"
+                    else
+                        git checkout "remotes/origin/${SPECIAL_HDL_BRANCH}"
+                        git pull origin "${SPECIAL_HDL_BRANCH}"
+                        COMMIT_HDL=$(git rev-parse HEAD)
                 fi
             else
                 git clone ${REPO_HDL}
@@ -454,23 +462,23 @@ if [ -d "meta-raspberrypi" ]
         cd meta-raspberrypi || exit
         exists_in_remote=$(git ls-remote --heads origin "${BRANCH}")
         if [[ -z ${exists_in_remote} ]]
-           then
-               COMMIT_META_RASPI="Unknown"
-           else
-               git checkout "${BRANCH}"
-               git pull origin "${BRANCH}"
-               COMMIT_META_RASPI=$(git rev-parse HEAD)
+            then
+                COMMIT_META_RASPI="Unknown"
+            else
+                git checkout "${BRANCH}"
+                git pull origin "${BRANCH}"
+                COMMIT_META_RASPI=$(git rev-parse HEAD)
         fi
     else
         git clone ${REPO_META_RASPBERRYPI}
         cd meta-raspberrypi || exit
         exists_in_remote=$(git ls-remote --heads origin "${BRANCH}")
         if [[ -z ${exists_in_remote} ]]
-           then
-               COMMIT_META_RASPI="Unknown"
-           else
-               git checkout "${BRANCH}"
-               COMMIT_META_RASPI=$(git rev-parse HEAD)
+            then
+                COMMIT_META_RASPI="Unknown"
+            else
+                git checkout "${BRANCH}"
+                COMMIT_META_RASPI=$(git rev-parse HEAD)
         fi
 fi
 cd ..
@@ -481,23 +489,23 @@ if [ -d "meta-intel" ]
         cd meta-intel || exit
         exists_in_remote=$(git ls-remote --heads origin "${BRANCH}")
         if [[ -z ${exists_in_remote} ]]
-           then
-               COMMIT_META_INTEL="Unknown"
-           else
-               git checkout "${BRANCH}"
-               git pull origin "${BRANCH}"
-               COMMIT_META_INTEL=$(git rev-parse HEAD)
+            then
+                COMMIT_META_INTEL="Unknown"
+            else
+                git checkout "${BRANCH}"
+                git pull origin "${BRANCH}"
+                COMMIT_META_INTEL=$(git rev-parse HEAD)
         fi
     else
         git clone ${REPO_META_INTEL}
         cd meta-intel || exit
         exists_in_remote=$(git ls-remote --heads origin "${BRANCH}")
         if [[ -z ${exists_in_remote} ]]
-           then
-               COMMIT_META_INTEL="Unknown"
-           else
-               git checkout "${BRANCH}"
-               COMMIT_META_INTEL=$(git rev-parse HEAD)
+            then
+                COMMIT_META_INTEL="Unknown"
+            else
+                git checkout "${BRANCH}"
+                COMMIT_META_INTEL=$(git rev-parse HEAD)
         fi
 fi
 cd ..
@@ -510,12 +518,12 @@ if [ "${BRANCH}" == "dunfell" ]
                 cd meta-ti || exit
                 exists_in_remote=$(git ls-remote --heads origin "${BRANCH}")
                 if [[ -z ${exists_in_remote} ]]
-                   then
-                       COMMIT_META_TI="Unknown"
-                   else
-                       git checkout "${BRANCH}"
-                       git pull origin "${BRANCH}"
-                       COMMIT_META_TI=$(git rev-parse HEAD)
+                    then
+                        COMMIT_META_TI="Unknown"
+                    else
+                        git checkout "${BRANCH}"
+                        git pull origin "${BRANCH}"
+                        COMMIT_META_TI=$(git rev-parse HEAD)
                 fi
         else
             git clone ${REPO_META_TI}
@@ -540,12 +548,12 @@ if [ "${BRANCH}" == "dunfell" ]
                 cd meta-arm || exit
                 exists_in_remote=$(git ls-remote --heads origin "${BRANCH}")
                 if [[ -z ${exists_in_remote} ]]
-                   then
-                       COMMIT_META_ARM="Unknown"
-                   else
-                       git checkout "${BRANCH}"
-                       git pull origin "${BRANCH}"
-                       COMMIT_META_ARM=$(git rev-parse HEAD)
+                    then
+                        COMMIT_META_ARM="Unknown"
+                    else
+                        git checkout "${BRANCH}"
+                        git pull origin "${BRANCH}"
+                        COMMIT_META_ARM=$(git rev-parse HEAD)
                 fi
         else
             git clone ${REPO_META_ARM}
@@ -568,23 +576,23 @@ if [ -d "meta-swupdate" ]
         cd meta-swupdate || exit
         exists_in_remote=$(git ls-remote --heads origin "${BRANCH}")
         if [[ -z ${exists_in_remote} ]]
-           then
-               COMMIT_META_SWUPDATE="Unknown"
-           else
-               git checkout "${BRANCH}"
-               git pull origin "${BRANCH}"
-               COMMIT_META_SWUPDATE=$(git rev-parse HEAD)
+            then
+                COMMIT_META_SWUPDATE="Unknown"
+            else
+                git checkout "${BRANCH}"
+                git pull origin "${BRANCH}"
+                COMMIT_META_SWUPDATE=$(git rev-parse HEAD)
         fi
     else
         git clone ${REPO_META_SW_UPDATE}
         cd meta-swupdate || exit
         exists_in_remote=$(git ls-remote --heads origin "${BRANCH}")
         if [[ -z ${exists_in_remote} ]]
-           then
-               COMMIT_META_SWUPDATE="Unknown"
-           else
-               git checkout "${BRANCH}"
-               COMMIT_META_SWUPDATE=$(git rev-parse HEAD)
+            then
+                COMMIT_META_SWUPDATE="Unknown"
+            else
+                git checkout "${BRANCH}"
+                COMMIT_META_SWUPDATE=$(git rev-parse HEAD)
         fi
 fi
 cd ..
@@ -621,13 +629,13 @@ fi
 
 # Display latest commit for meta-qt4
 if [ "${BRANCH}" == "rocko" ] || [ "${BRANCH}" == "sumo" ] || [ "${BRANCH}" == "thud" ]
-   then
-       if grep -q "${COMMIT_META_QT4}" "${BASEDIR}/../default.xml"
-           then
-               echo -e "meta-qt4 last commit:            ${COMMIT_META_QT4}"
-           else
-               echo -e "meta-qt4 last commit:            ${COLOR_WARNING}${COMMIT_META_QT4}${COLOR_RESET} Check ${REPO_META_QT4}/log/?h=${BRANCH}"
-       fi
+    then
+        if grep -q "${COMMIT_META_QT4}" "${BASEDIR}/../default.xml"
+            then
+                echo -e "meta-qt4 last commit:            ${COMMIT_META_QT4}"
+            else
+                echo -e "meta-qt4 last commit:            ${COLOR_WARNING}${COMMIT_META_QT4}${COLOR_RESET} Check ${REPO_META_QT4}/log/?h=${BRANCH}"
+        fi
 fi
 
 # Display latest commit for meta-qt5
@@ -640,13 +648,13 @@ fi
 
 # Display latest commit for meta-qt5-extra
 if [ "${BRANCH}" == "sumo" ]
-   then
-       if grep -q "${COMMIT_META_QT5_EXTRA}" "${BASEDIR}/../default.xml"
-           then
-               echo -e "meta-qt5-extra last commit:      ${COMMIT_META_QT5_EXTRA}"
-           else
-               echo -e "meta-qt5-extra last commit:      ${COLOR_WARNING}${COMMIT_META_QT5_EXTRA}${COLOR_RESET} Check ${REPO_META_QT5_EXTRA}/tree/${BRANCH}"
-       fi
+    then
+        if grep -q "${COMMIT_META_QT5_EXTRA}" "${BASEDIR}/../default.xml"
+            then
+                echo -e "meta-qt5-extra last commit:      ${COMMIT_META_QT5_EXTRA}"
+            else
+                echo -e "meta-qt5-extra last commit:      ${COLOR_WARNING}${COMMIT_META_QT5_EXTRA}${COLOR_RESET} Check ${REPO_META_QT5_EXTRA}/tree/${BRANCH}"
+        fi
 fi
 
 # Display latest commit for meta-sdr
@@ -664,13 +672,13 @@ fi
 
 # Display latest commit for meta-virtualization
 if [ "${BRANCH}" == "gatesgarth" ] || [ "${BRANCH}" == "honister" ]
-   then
-       if grep -q "${COMMIT_META_VIRTUALIZATION}" "${BASEDIR}/../default.xml"
-           then
-               echo -e "meta-virtualization last commit: ${COMMIT_META_VIRTUALIZATION}"
-           else
-               echo -e "meta-virtualization last commit: ${COLOR_WARNING}${COMMIT_META_VIRTUALIZATION}${COLOR_RESET} Check ${REPO_META_VIRTUALIZATION}/log/?h=${BRANCH}"
-       fi
+    then
+        if grep -q "${COMMIT_META_VIRTUALIZATION}" "${BASEDIR}/../default.xml"
+            then
+                echo -e "meta-virtualization last commit: ${COMMIT_META_VIRTUALIZATION}"
+            else
+                echo -e "meta-virtualization last commit: ${COLOR_WARNING}${COMMIT_META_VIRTUALIZATION}${COLOR_RESET} Check ${REPO_META_VIRTUALIZATION}/log/?h=${BRANCH}"
+        fi
 fi
 
 # Display latest commit for meta-xilinx
