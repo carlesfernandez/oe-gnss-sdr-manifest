@@ -140,6 +140,10 @@ if [ "${BRANCH}" == "mickledore" ]
     then
         SPECIAL_SDR_BRANCH="master"
 fi
+if [ "${BRANCH}" == "nanbield" ]
+    then
+        SPECIAL_SDR_BRANCH="master"
+fi
 if [ -d "meta-sdr" ]
     then
         cd meta-sdr || exit
@@ -272,7 +276,7 @@ if [ "${BRANCH}" == "langdale" ]
         SPECIAL_XILINX_TOOLS_BRANCH="rel-v2023.2"
 fi
 
-if [ "${BRANCH}" == "thud" ] || [ "${BRANCH}" == "zeus" ] || [ "${BRANCH}" == "gatesgarth" ] || [ "${BRANCH}" == "honister" ] || [ "${BRANCH}" == "langdale" ] || [ "${BRANCH}" == "mickledore" ]
+if [ "${BRANCH}" == "thud" ] || [ "${BRANCH}" == "zeus" ] || [ "${BRANCH}" == "gatesgarth" ] || [ "${BRANCH}" == "honister" ] || [ "${BRANCH}" == "langdale" ] || [ "${BRANCH}" == "mickledore" ] || [ "${BRANCH}" == "nanbield" ]
     then
         if [ -d "meta-xilinx-tools" ]
             then
