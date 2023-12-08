@@ -706,7 +706,7 @@ if [ "${BRANCH}" != "kirkstone" ]
 fi
 
 # Display latest commit for meta-xilinx-tools
-if [ "${BRANCH}" == "thud" ] || [ "${BRANCH}" == "zeus" ] || [ "${BRANCH}" == "gatesgarth" ] || [ "${BRANCH}" == "honister" ] || [ "${BRANCH}" == "langdale" ] || [ "${BRANCH}" == "mickledore" ]
+if [ "${BRANCH}" == "thud" ] || [ "${BRANCH}" == "zeus" ] || [ "${BRANCH}" == "gatesgarth" ] || [ "${BRANCH}" == "honister" ] || [ "${BRANCH}" == "langdale" ] || [ "${BRANCH}" == "mickledore" ] || [ "${BRANCH}" == "nanbield" ]
     then
         if grep -q "${COMMIT_META_XILINX_TOOLS}" "${BASEDIR}/../default.xml"
             then
