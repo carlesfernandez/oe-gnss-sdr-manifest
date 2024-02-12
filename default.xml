@@ -47,6 +47,6 @@
 	<project name="meta-avnet" remote="avnet" path="meta-avnet" revision="dce93c658f2610c2892099104822e08272c8daad" />
 	<project name="meta-virtualization" remote="yocto" path="meta-virtualization" revision="2e5df1cd76265587e6db67f020a06566c4ed6dc4" />
 	<project name="meta-swupdate" remote="sbabic" path="meta-swupdate" revision="744d6b96fc0290a7df9045e60c734c4924abfd4a" />
-	<project name="meta-gnss-sdr" remote="gnss-sdr" path="meta-gnss-sdr" revision="71f89516fd90fbcb907a6f47977c963472daa883" />
+	<project name="meta-gnss-sdr" remote="gnss-sdr" path="meta-gnss-sdr" revision="gatesgarth" />
 
 </manifest>
