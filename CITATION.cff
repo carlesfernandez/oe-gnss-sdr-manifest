@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: MIT
-# SPDX-FileCopyrightText: 2023 C. Fernandez-Prades carles.fernandez(at)cttc.es
+# SPDX-FileCopyrightText: 2024 C. Fernandez-Prades carles.fernandez(at)cttc.es
 ---
 authors:
   - affiliation: "Centre Tecnològic de Telecomunicacions de Catalunya (CTTC)"
@@ -16,7 +16,7 @@ authors:
     family-names: Flynn
     given-names: Toby
 cff-version: "1.2.0"
-date-released: "2023-04-17"
+date-released: "2024-02-12"
 identifiers:
   - description: "The concept DOI of the work. This is a DOI always pointing to the latest stable release."
     type: doi
@@ -36,4 +36,4 @@ message: "If you use this software, please cite it using the metadata from this 
 repository-code: "https://github.com/carlesfernandez/oe-gnss-sdr-manifest"
 title: "oe-gnss-sdr-manifest"
 type: software
-version: "Zeus 23.04"
+version: "Zeus 24.02"
