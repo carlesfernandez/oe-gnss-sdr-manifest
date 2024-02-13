@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- SPDX-License-Identifier: MIT -->
-<!-- SPDX-FileCopyrightText: 2016-2023 Carles Fernandez-Prades <carles.fernandez@cttc.es> -->
+<!-- SPDX-FileCopyrightText: 2016-2024 Carles Fernandez-Prades <carles.fernandez@cttc.es> -->
 
 <manifest>
 	<remote name="openembedded"
@@ -36,6 +36,6 @@
 	<project name="meta-raspberrypi" remote="yocto" path="meta-raspberrypi" revision="9c81413d0b6f41f14f0f9c504d19e312c5b9958f" />
 	<project name="meta-intel" remote="yocto" path="meta-intel" revision="e63d672fedd1328ebd6d0a2632f8bef35598eb21" />
 	<project name="meta-swupdate" remote="sbabic" path="meta-swupdate" revision="ec42fbc54048060c500ca6fabe6616cb608b293a" />
-	<project name="meta-gnss-sdr" remote="gnss-sdr" path="meta-gnss-sdr" revision="mickledore" />
+	<project name="meta-gnss-sdr" remote="gnss-sdr" path="meta-gnss-sdr" revision="a8bafe4bb0b1e0daf22cd0b3083a1545be127f6d" />
 
 </manifest>
