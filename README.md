@@ -4,7 +4,7 @@ SPDX-License-Identifier: MIT
 )
 
 [comment]: # (
-SPDX-FileCopyrightText: 2016-2023 Carles Fernandez-Prades <carles.fernandez@cttc.es>
+SPDX-FileCopyrightText: 2016-2024 Carles Fernandez-Prades <carles.fernandez@cttc.es>
 )
 <!-- prettier-ignore-end -->
 
@@ -95,7 +95,7 @@ $ git config --global user.email your.name@example.com
 
     Tell Repo where to find the manifest
 
-        $ repo init -u https://github.com/carlesfernandez/oe-gnss-sdr-manifest.git -b mickledore
+        $ repo init -u https://github.com/carlesfernandez/oe-gnss-sdr-manifest.git -b nanbield
 
     A successful initialization will end with a message stating that Repo is
     initialized in your working directory. Your client directory should now
@@ -158,7 +158,7 @@ $ git config --global user.email your.name@example.com
 
 Install it by running:
 
-        $ sudo sh ./tmp-glibc/deploy/sdk/geniux-x86_64-gnss-sdr-dev-image-zedboard-zynq7-toolchain-mickledore-23.04.1.sh
+        $ sudo sh ./tmp-glibc/deploy/sdk/geniux-x86_64-gnss-sdr-dev-image-zedboard-zynq7-toolchain-nanbield-24.02.1.sh
 
 This will ask you what directory to install the SDK into. Which directory
 doesn't matter, just make sure wherever it goes that you have enough disk space.
@@ -194,7 +194,7 @@ This will create a root filesystem at
 `./tmp-glibc/deploy/images/zedboard-zynq7/gnss-sdr-demo-image-zedboard-zynq7-YYYYMMDDHHMMSS.rootfs.tar.gz`.
 
 As well, executing
-`./tmp-glibc/deploy/sdk/geniux-x86_64-gnss-sdr-demo-image-zedboard-zynq7-toolchain-mickledore-23.04.1.sh`
+`./tmp-glibc/deploy/sdk/geniux-x86_64-gnss-sdr-demo-image-zedboard-zynq7-toolchain-nanbield-24.02.1.sh`
 as sudo will install the SDK, providing the full root filesystem at
 `/usr/local/oecore-x86_64/sysroots/armv7ahf-neon-oe-linux-gnueabi/`.
 
@@ -273,7 +273,7 @@ and then re-initialize your repo client
 
 ## Copyright and License
 
-Copyright: &copy; 2016-2023 Carles Fern&aacute;ndez-Prades,
+Copyright: &copy; 2016-2024 Carles Fern&aacute;ndez-Prades,
 [CTTC](https://www.cttc.cat). All rights reserved.
 
 The content of this repository is released under the [MIT](./LICENSES/MIT.txt)
