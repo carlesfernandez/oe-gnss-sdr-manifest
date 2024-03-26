@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # A script to make manifest manual updating easier
-# SPDX-FileCopyrightText: 2021-2023, Carles Fernandez-Prades <carles.fernandez@cttc.es>
+# SPDX-FileCopyrightText: 2021-2024, Carles Fernandez-Prades <carles.fernandez@cttc.es>
 # SPDX-License-Identifier: MIT
 
 display_usage() {
@@ -88,15 +88,24 @@ if [ "${BRANCH}" == "rocko" ] || [ "${BRANCH}" == "sumo" ] || [ "${BRANCH}" == "
 fi
 
 # meta-qt5
+SPECIAL_METAQT5_BRANCH=${BRANCH}
+if [ "${BRANCH}" == "nanbield" ]
+    then
+        SPECIAL_METAQT5_BRANCH="master"
+fi
+if [ "${BRANCH}" == "scarthgap" ]
+    then
+        SPECIAL_METAQT5_BRANCH="master"
+fi
 if [ -d "meta-qt5" ]
     then
         cd meta-qt5 || exit
-        git checkout "${BRANCH}"
-        git pull origin "${BRANCH}"
+        git checkout "${SPECIAL_METAQT5_BRANCH}"
+        git pull origin "${SPECIAL_METAQT5_BRANCH}"
     else
         git clone ${REPO_META_QT5}
         cd meta-qt5 || exit
-        git checkout "$BRANCH"
+        git checkout "${SPECIAL_METAQT5_BRANCH}"
 fi
 COMMIT_META_QT5=$(git rev-parse HEAD)
 cd ..
@@ -141,6 +150,10 @@ if [ "${BRANCH}" == "mickledore" ]
         SPECIAL_SDR_BRANCH="master"
 fi
 if [ "${BRANCH}" == "nanbield" ]
+    then
+        SPECIAL_SDR_BRANCH="master"
+fi
+if [ "${BRANCH}" == "scarthgap" ]
     then
         SPECIAL_SDR_BRANCH="master"
 fi
@@ -224,7 +237,7 @@ if [ "${BRANCH}" == "langdale" ]
         SPECIAL_XILINX_BRANCH="rel-v2023.1"
 fi
 
-if [ "${BRANCH}" != "kirkstone" ]
+if [ "${BRANCH}" != "kirkstone" ] && [ "${BRANCH}" != "scarthgap" ]
     then
         if [ -d "meta-xilinx" ]
             then
@@ -465,27 +478,36 @@ if [ "${BRANCH}" == "gatesgarth" ] || [ "${BRANCH}" == "honister" ]
 fi
 
 # meta-raspberrypi
+SPECIAL_RASPBERRYPI_BRANCH=${BRANCH}
+if [ "${BRANCH}" == "nanbield" ]
+    then
+        SPECIAL_RASPBERRYPI_BRANCH="master"
+fi
+if [ "${BRANCH}" == "scarthgap" ]
+    then
+        SPECIAL_RASPBERRYPI_BRANCH="master"
+fi
 if [ -d "meta-raspberrypi" ]
     then
         cd meta-raspberrypi || exit
-        exists_in_remote=$(git ls-remote --heads origin "${BRANCH}")
+        exists_in_remote=$(git ls-remote --heads origin "${SPECIAL_RASPBERRYPI_BRANCH}")
         if [[ -z ${exists_in_remote} ]]
             then
                 COMMIT_META_RASPI="Unknown"
             else
-                git checkout "${BRANCH}"
-                git pull origin "${BRANCH}"
+                git checkout "${SPECIAL_RASPBERRYPI_BRANCH}"
+                git pull origin "${SPECIAL_RASPBERRYPI_BRANCH}"
                 COMMIT_META_RASPI=$(git rev-parse HEAD)
         fi
     else
         git clone ${REPO_META_RASPBERRYPI}
         cd meta-raspberrypi || exit
-        exists_in_remote=$(git ls-remote --heads origin "${BRANCH}")
+        exists_in_remote=$(git ls-remote --heads origin "${SPECIAL_RASPBERRYPI_BRANCH}")
         if [[ -z ${exists_in_remote} ]]
             then
                 COMMIT_META_RASPI="Unknown"
             else
-                git checkout "${BRANCH}"
+                git checkout "${SPECIAL_RASPBERRYPI_BRANCH}"
                 COMMIT_META_RASPI=$(git rev-parse HEAD)
         fi
 fi
@@ -651,7 +673,7 @@ if grep -q "${COMMIT_META_QT5}" "${BASEDIR}/../default.xml"
     then
         echo -e "meta-qt5 last commit:            ${COMMIT_META_QT5}"
     else
-        echo -e "meta-qt5 last commit:            ${COLOR_WARNING}${COMMIT_META_QT5}${COLOR_RESET} Check ${REPO_META_QT5}/tree/${BRANCH}"
+        echo -e "meta-qt5 last commit:            ${COLOR_WARNING}${COMMIT_META_QT5}${COLOR_RESET} Check ${REPO_META_QT5}/tree/${SPECIAL_QT5_BRANCH}"
 fi
 
 # Display latest commit for meta-qt5-extra
@@ -690,7 +712,7 @@ if [ "${BRANCH}" == "gatesgarth" ] || [ "${BRANCH}" == "honister" ]
 fi
 
 # Display latest commit for meta-xilinx
-if [ "${BRANCH}" != "kirkstone" ]
+if [ "${BRANCH}" != "kirkstone" ] && [ "${BRANCH}" != "scarthgap" ]
     then
         if grep -q "${COMMIT_META_XILINX}" "${BASEDIR}/../default.xml"
             then
@@ -765,7 +787,7 @@ if grep -q "${COMMIT_META_RASPI}" "${BASEDIR}/../default.xml"
     then
         echo -e "meta-raspberrypi last commit:    ${COMMIT_META_RASPI}"
     else
-        echo -e "meta-raspberrypi last commit:    ${COLOR_WARNING}${COMMIT_META_RASPI}${COLOR_RESET} Check ${REPO_META_RASPBERRYPI}/log/?h=${BRANCH}"
+        echo -e "meta-raspberrypi last commit:    ${COLOR_WARNING}${COMMIT_META_RASPI}${COLOR_RESET} Check ${REPO_META_RASPBERRYPI}/log/?h=${SPECIAL_RASPBERRYPI_BRANCH}"
 fi
 
 # Display latest commit for meta-intel
