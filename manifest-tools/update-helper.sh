@@ -236,8 +236,12 @@ if [ "${BRANCH}" == "langdale" ]
     then
         SPECIAL_XILINX_BRANCH="rel-v2023.1"
 fi
+if [ "${BRANCH}" == "scarthgap" ]
+    then
+        SPECIAL_XILINX_BRANCH="master"
+fi
 
-if [ "${BRANCH}" != "kirkstone" ] && [ "${BRANCH}" != "scarthgap" ]
+if [ "${BRANCH}" != "kirkstone" ]
     then
         if [ -d "meta-xilinx" ]
             then
@@ -288,8 +292,12 @@ if [ "${BRANCH}" == "langdale" ]
     then
         SPECIAL_XILINX_TOOLS_BRANCH="rel-v2023.1"
 fi
+if [ "${BRANCH}" == "scarthgap" ]
+    then
+        SPECIAL_XILINX_TOOLS_BRANCH="master"
+fi
 
-if [ "${BRANCH}" == "thud" ] || [ "${BRANCH}" == "zeus" ] || [ "${BRANCH}" == "gatesgarth" ] || [ "${BRANCH}" == "honister" ] || [ "${BRANCH}" == "langdale" ] || [ "${BRANCH}" == "mickledore" ] || [ "${BRANCH}" == "nanbield" ]
+if [ "${BRANCH}" == "thud" ] || [ "${BRANCH}" == "zeus" ] || [ "${BRANCH}" == "gatesgarth" ] || [ "${BRANCH}" == "honister" ] || [ "${BRANCH}" == "langdale" ] || [ "${BRANCH}" == "mickledore" ] || [ "${BRANCH}" == "nanbield" ] || [ "${BRANCH}" == "scarthgap" ]
     then
         if [ -d "meta-xilinx-tools" ]
             then
@@ -712,7 +720,7 @@ if [ "${BRANCH}" == "gatesgarth" ] || [ "${BRANCH}" == "honister" ]
 fi
 
 # Display latest commit for meta-xilinx
-if [ "${BRANCH}" != "kirkstone" ] && [ "${BRANCH}" != "scarthgap" ]
+if [ "${BRANCH}" != "kirkstone" ]
     then
         if grep -q "${COMMIT_META_XILINX}" "${BASEDIR}/../default.xml"
             then
@@ -728,7 +736,7 @@ if [ "${BRANCH}" != "kirkstone" ] && [ "${BRANCH}" != "scarthgap" ]
 fi
 
 # Display latest commit for meta-xilinx-tools
-if [ "${BRANCH}" == "thud" ] || [ "${BRANCH}" == "zeus" ] || [ "${BRANCH}" == "gatesgarth" ] || [ "${BRANCH}" == "honister" ] || [ "${BRANCH}" == "langdale" ] || [ "${BRANCH}" == "mickledore" ] || [ "${BRANCH}" == "nanbield" ]
+if [ "${BRANCH}" == "thud" ] || [ "${BRANCH}" == "zeus" ] || [ "${BRANCH}" == "gatesgarth" ] || [ "${BRANCH}" == "honister" ] || [ "${BRANCH}" == "langdale" ] || [ "${BRANCH}" == "mickledore" ] || [ "${BRANCH}" == "nanbield" ] || [ "${BRANCH}" == "scarthgap" ]
     then
         if grep -q "${COMMIT_META_XILINX_TOOLS}" "${BASEDIR}/../default.xml"
             then
