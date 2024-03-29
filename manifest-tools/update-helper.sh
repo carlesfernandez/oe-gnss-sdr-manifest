@@ -221,7 +221,7 @@ if [ "${BRANCH}" == "honister" ]
 fi
 if [ "${BRANCH}" == "langdale" ]
     then
-        SPECIAL_XILINX_BRANCH="rel-v2023.1"
+        SPECIAL_XILINX_BRANCH="rel-v2023.2"
 fi
 
 if [ "${BRANCH}" != "kirkstone" ]
@@ -273,7 +273,7 @@ if [ "${BRANCH}" == "honister" ]
 fi
 if [ "${BRANCH}" == "langdale" ]
     then
-        SPECIAL_XILINX_TOOLS_BRANCH="rel-v2023.1"
+        SPECIAL_XILINX_TOOLS_BRANCH="rel-v2023.2"
 fi
 
 if [ "${BRANCH}" == "thud" ] || [ "${BRANCH}" == "zeus" ] || [ "${BRANCH}" == "gatesgarth" ] || [ "${BRANCH}" == "honister" ] || [ "${BRANCH}" == "langdale" ] || [ "${BRANCH}" == "mickledore" ] || [ "${BRANCH}" == "nanbield" ]
