@@ -234,7 +234,7 @@ if [ "${BRANCH}" == "honister" ]
 fi
 if [ "${BRANCH}" == "langdale" ]
     then
-        SPECIAL_XILINX_BRANCH="rel-v2023.1"
+        SPECIAL_XILINX_BRANCH="rel-v2023.2"
 fi
 if [ "${BRANCH}" == "scarthgap" ]
     then
@@ -290,7 +290,7 @@ if [ "${BRANCH}" == "honister" ]
 fi
 if [ "${BRANCH}" == "langdale" ]
     then
-        SPECIAL_XILINX_TOOLS_BRANCH="rel-v2023.1"
+        SPECIAL_XILINX_TOOLS_BRANCH="rel-v2023.2"
 fi
 if [ "${BRANCH}" == "scarthgap" ]
     then
