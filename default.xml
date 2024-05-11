@@ -27,14 +27,14 @@
 	<default remote="openembedded" revision="master" />
 
 	<project name="bitbake" path="bitbake" revision="2.8" />
-	<project name="openembedded-core" path="oe-core" revision="b65b4e5a8e4473d8ca43835ba17bc8bd4bdca277" />
+	<project name="openembedded-core" path="oe-core" revision="294a7dbe44f6b7c8d3a1de8c2cc182af37c4f916" />
 	<project name="meta-openembedded" path="meta-oe" revision="a72010b414ee3d73888ac9cb4e310e8f05e13aea" />
-	<project name="meta-qt5" remote="qt5" path="meta-qt5" revision="fe008b6174862a05de14aa350efec271631697e7" />
+	<project name="meta-qt5" remote="qt5" path="meta-qt5" revision="d8eeef0bfd84672c7919cd346f25f7c9a98ddaea" />
 	<project name="meta-sdr" remote="balister" path="meta-sdr" revision="139b41c45a1145fdf7323e2aa1408c434fe058b6" />
 	<project name="meta-xilinx" remote="Xilinx" path="meta-xilinx" revision="7965de51f877c3dff9f9ca08a2f95cc80b0ed598" />
 	<project name="meta-xilinx-tools" remote="Xilinx" path="meta-xilinx-tools" revision="989ef0bc701665bd2d9f7a8b9e1c18d84aed2393" />
 	<project name="meta-raspberrypi" remote="yocto" path="meta-raspberrypi" revision="1879cb831f4ea3e532cb5ce9fa0f32be917e8fa3" />
-	<project name="meta-intel" remote="yocto" path="meta-intel" revision="7864daf8ecec559fe144ba3d767768ba7392ec86" />
+	<project name="meta-intel" remote="yocto" path="meta-intel" revision="11c41c9a46305e7b57832de92735e53558356a25" />
 	<project name="meta-swupdate" remote="sbabic" path="meta-swupdate" revision="ae2f52ce3c8ee742218715d1d542eaae3b4ca19c" />
 	<project name="meta-gnss-sdr" remote="gnss-sdr" path="meta-gnss-sdr" revision="scarthgap" />
 
