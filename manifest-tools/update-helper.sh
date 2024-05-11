@@ -89,14 +89,7 @@ fi
 
 # meta-qt5
 SPECIAL_METAQT5_BRANCH=${BRANCH}
-if [ "${BRANCH}" == "nanbield" ]
-    then
-        SPECIAL_METAQT5_BRANCH="master"
-fi
-if [ "${BRANCH}" == "scarthgap" ]
-    then
-        SPECIAL_METAQT5_BRANCH="master"
-fi
+
 if [ -d "meta-qt5" ]
     then
         cd meta-qt5 || exit
@@ -681,7 +674,7 @@ if grep -q "${COMMIT_META_QT5}" "${BASEDIR}/../default.xml"
     then
         echo -e "meta-qt5 last commit:            ${COMMIT_META_QT5}"
     else
-        echo -e "meta-qt5 last commit:            ${COLOR_WARNING}${COMMIT_META_QT5}${COLOR_RESET} Check ${REPO_META_QT5}/tree/${SPECIAL_QT5_BRANCH}"
+        echo -e "meta-qt5 last commit:            ${COLOR_WARNING}${COMMIT_META_QT5}${COLOR_RESET} Check ${REPO_META_QT5}/tree/${SPECIAL_METAQT5_BRANCH}"
 fi
 
 # Display latest commit for meta-qt5-extra
