@@ -229,10 +229,6 @@ if [ "${BRANCH}" == "langdale" ]
     then
         SPECIAL_XILINX_BRANCH="rel-v2023.2"
 fi
-if [ "${BRANCH}" == "scarthgap" ]
-    then
-        SPECIAL_XILINX_BRANCH="master"
-fi
 
 if [ "${BRANCH}" != "kirkstone" ]
     then
@@ -284,10 +280,6 @@ fi
 if [ "${BRANCH}" == "langdale" ]
     then
         SPECIAL_XILINX_TOOLS_BRANCH="rel-v2023.2"
-fi
-if [ "${BRANCH}" == "scarthgap" ]
-    then
-        SPECIAL_XILINX_TOOLS_BRANCH="master"
 fi
 
 if [ "${BRANCH}" == "thud" ] || [ "${BRANCH}" == "zeus" ] || [ "${BRANCH}" == "gatesgarth" ] || [ "${BRANCH}" == "honister" ] || [ "${BRANCH}" == "langdale" ] || [ "${BRANCH}" == "mickledore" ] || [ "${BRANCH}" == "nanbield" ] || [ "${BRANCH}" == "scarthgap" ]
