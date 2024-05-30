@@ -472,14 +472,6 @@ fi
 
 # meta-raspberrypi
 SPECIAL_RASPBERRYPI_BRANCH=${BRANCH}
-if [ "${BRANCH}" == "nanbield" ]
-    then
-        SPECIAL_RASPBERRYPI_BRANCH="master"
-fi
-if [ "${BRANCH}" == "scarthgap" ]
-    then
-        SPECIAL_RASPBERRYPI_BRANCH="master"
-fi
 if [ -d "meta-raspberrypi" ]
     then
         cd meta-raspberrypi || exit
