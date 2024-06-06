@@ -30,7 +30,7 @@
 	<project name="openembedded-core" path="oe-core" revision="78211cda40eb018a3aa535c75b61e87337236628" />
 	<project name="meta-openembedded" path="meta-oe" revision="cbbaa82238cd60f08c9b9cb58dde59d5f9318c7b" />
 	<project name="meta-qt5" remote="qt5" path="meta-qt5" revision="036b791361abbc6abe8d31e88f71792cc7ed5cfd" />
-	<project name="meta-sdr" remote="balister" path="meta-sdr" revision="9936433d1fcbc76c3004be72c6ab42c208d1c71c" />
+	<project name="meta-sdr" remote="balister" path="meta-sdr" revision="a303935edd9eb29036d06b961a58dec853b4af64" />
 	<project name="meta-xilinx" remote="Xilinx" path="meta-xilinx" revision="c6ae24ee38a69e4bcd463337aed43276d70845df" />
 	<project name="meta-xilinx-tools" remote="Xilinx" path="meta-xilinx-tools" revision="4fbf7b158b6f72250212d024840636e30a9e34b8" />
 	<project name="meta-raspberrypi" remote="yocto" path="meta-raspberrypi" revision="8e3cbfa598de106a78d9a9e27aa25ded51416896" />
