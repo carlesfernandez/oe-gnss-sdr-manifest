@@ -402,7 +402,11 @@ if [ "${BRANCH}" == "gatesgarth" ]
     then
         SPECIAL_HDL_BRANCH="hdl_2021_r2"
 fi
-if [ "${BRANCH}" == "rocko" ] || [ "${BRANCH}" == "thud" ] || [ "${BRANCH}" == "gatesgarth" ]
+if [ "${BRANCH}" == "honister" ]
+    then
+        SPECIAL_HDL_BRANCH="hdl_2022_r2"
+fi
+if [ "${BRANCH}" == "rocko" ] || [ "${BRANCH}" == "thud" ] || [ "${BRANCH}" == "gatesgarth" ] || [ "${BRANCH}" == "honister" ]
     then
         if [ -d "hdl" ]
             then
@@ -746,7 +750,7 @@ if [ "${BRANCH}" == "rocko" ] || [ "${BRANCH}" == "sumo" ] || [ "${BRANCH}" == "
 fi
 
 # Display latest commit for hdl
-if [ "${BRANCH}" == "rocko" ]  || [ "${BRANCH}" == "thud" ] || [ "${BRANCH}" == "gatesgarth" ]
+if [ "${BRANCH}" == "rocko" ]  || [ "${BRANCH}" == "thud" ] || [ "${BRANCH}" == "gatesgarth" ] || [ "${BRANCH}" == "honister" ]
     then
         if grep -q "${COMMIT_HDL}" "${BASEDIR}/../default.xml"
             then
