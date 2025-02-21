@@ -560,7 +560,7 @@ if [ "${BRANCH}" == "dunfell" ]
 fi
 
 # meta-arm
-if [ "${BRANCH}" == "dunfell" ]
+if [ "${BRANCH}" == "dunfell" ] || [ "${BRANCH}" == "scarthgap" ]
     then
         if [ -d "meta-arm" ]
             then
@@ -799,7 +799,7 @@ if [ "${BRANCH}" == "dunfell" ]
 fi
 
 # Display latest commit for meta-arm
-if [ "${BRANCH}" == "dunfell" ]
+if [ "${BRANCH}" == "dunfell" ] || [ "${BRANCH}" == "scarthgap" ]
     then
         if grep -q "${COMMIT_META_ARM}" "${BASEDIR}/../default.xml"
             then
