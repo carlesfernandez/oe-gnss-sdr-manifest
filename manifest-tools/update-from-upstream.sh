@@ -3,11 +3,11 @@
 #
 # Usage: ./update-from-upstream.sh [upstream]
 #
-# SPDX-FileCopyrightText: 2022-2024 Carles Fernandez-Prades <cfernandez(at)cttc.es>
+# SPDX-FileCopyrightText: 2022-2025 Carles Fernandez-Prades <cfernandez(at)cttc.es>
 # SPDX-License-Identifier: MIT
 
 version="1.0"
-branches="master scarthgap nanbield mickledore langdale kirkstone honister hardknott gatesgarth dunfell zeus warrior thud sumo rocko"
+branches="master styhead scarthgap nanbield mickledore langdale kirkstone honister hardknott gatesgarth dunfell zeus warrior thud sumo rocko"
 
 if ! [ -x "$(command -v git)" ]; then
     echo "Please install git before using this script."
