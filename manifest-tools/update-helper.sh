@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # A script to make manifest manual updating easier
-# SPDX-FileCopyrightText: 2021-2024, Carles Fernandez-Prades <carles.fernandez@cttc.es>
+# SPDX-FileCopyrightText: 2021-2025, Carles Fernandez-Prades <carles.fernandez@cttc.es>
 # SPDX-License-Identifier: MIT
 
 display_usage() {
@@ -89,6 +89,10 @@ fi
 
 # meta-qt5
 SPECIAL_METAQT5_BRANCH=${BRANCH}
+if [ "${BRANCH}" == "styhead" ]
+    then
+        SPECIAL_METAQT5_BRANCH="master"
+fi
 
 if [ -d "meta-qt5" ]
     then
@@ -147,6 +151,10 @@ if [ "${BRANCH}" == "nanbield" ]
         SPECIAL_SDR_BRANCH="master"
 fi
 if [ "${BRANCH}" == "scarthgap" ]
+    then
+        SPECIAL_SDR_BRANCH="master"
+fi
+if [ "${BRANCH}" == "styhead" ]
     then
         SPECIAL_SDR_BRANCH="master"
 fi
@@ -229,6 +237,10 @@ if [ "${BRANCH}" == "langdale" ]
     then
         SPECIAL_XILINX_BRANCH="rel-v2023.2"
 fi
+if [ "${BRANCH}" == "styhead" ]
+    then
+        SPECIAL_XILINX_BRANCH="master"
+fi
 
 if [ "${BRANCH}" != "kirkstone" ]
     then
@@ -280,6 +292,10 @@ fi
 if [ "${BRANCH}" == "langdale" ]
     then
         SPECIAL_XILINX_TOOLS_BRANCH="rel-v2023.2"
+fi
+if [ "${BRANCH}" == "styhead" ]
+    then
+        SPECIAL_XILINX_TOOLS_BRANCH="master"
 fi
 
 if [ "${BRANCH}" == "thud" ] || [ "${BRANCH}" == "zeus" ] || [ "${BRANCH}" == "gatesgarth" ] || [ "${BRANCH}" == "honister" ] || [ "${BRANCH}" == "langdale" ] || [ "${BRANCH}" == "mickledore" ] || [ "${BRANCH}" == "nanbield" ] || [ "${BRANCH}" == "scarthgap" ]
@@ -476,6 +492,10 @@ fi
 
 # meta-raspberrypi
 SPECIAL_RASPBERRYPI_BRANCH=${BRANCH}
+if [ "${BRANCH}" == "styhead" ]
+    then
+        SPECIAL_RASPBERRYPI_BRANCH="master"
+fi
 if [ -d "meta-raspberrypi" ]
     then
         cd meta-raspberrypi || exit
@@ -560,7 +580,7 @@ if [ "${BRANCH}" == "dunfell" ]
 fi
 
 # meta-arm
-if [ "${BRANCH}" == "dunfell" ] || [ "${BRANCH}" == "scarthgap" ]
+if [ "${BRANCH}" == "dunfell" ] || [ "${BRANCH}" == "scarthgap" ] || [ "${BRANCH}" == "styhead" ]
     then
         if [ -d "meta-arm" ]
             then
@@ -799,7 +819,7 @@ if [ "${BRANCH}" == "dunfell" ]
 fi
 
 # Display latest commit for meta-arm
-if [ "${BRANCH}" == "dunfell" ] || [ "${BRANCH}" == "scarthgap" ]
+if [ "${BRANCH}" == "dunfell" ] || [ "${BRANCH}" == "scarthgap" ] || [ "${BRANCH}" == "styhead" ]
     then
         if grep -q "${COMMIT_META_ARM}" "${BASEDIR}/../default.xml"
             then
