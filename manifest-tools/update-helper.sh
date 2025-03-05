@@ -363,7 +363,7 @@ if [ "${BRANCH}" == "gatesgarth" ]
 fi
 
 # meta-adi
-if [ "${BRANCH}" == "rocko" ] || [ "${BRANCH}" == "sumo" ] || [ "${BRANCH}" == "thud" ] || [ "${BRANCH}" == "gatesgarth" ]
+if [ "${BRANCH}" == "rocko" ] || [ "${BRANCH}" == "sumo" ] || [ "${BRANCH}" == "thud" ] || [ "${BRANCH}" == "gatesgarth" ] || [ "${BRANCH}" == "honister" ] || [ "${BRANCH}" == "langdale" ]
     then
         if [ "${BRANCH}" == "rocko" ] || [ "${BRANCH}" == "sumo" ]
             then
@@ -376,6 +376,14 @@ if [ "${BRANCH}" == "rocko" ] || [ "${BRANCH}" == "sumo" ] || [ "${BRANCH}" == "
         if [ "${BRANCH}" == "gatesgarth" ]
             then
                 SPECIAL_ADI_BRANCH="2021_R1"
+        fi
+        if [ "${BRANCH}" == "honister" ]
+            then
+                SPECIAL_ADI_BRANCH="2022_R2"
+        fi
+        if [ "${BRANCH}" == "langdale" ]
+            then
+                SPECIAL_ADI_BRANCH="2023_R2"
         fi
         if [ -d "meta-adi" ]
             then
@@ -422,7 +430,11 @@ if [ "${BRANCH}" == "honister" ]
     then
         SPECIAL_HDL_BRANCH="hdl_2022_r2"
 fi
-if [ "${BRANCH}" == "rocko" ] || [ "${BRANCH}" == "thud" ] || [ "${BRANCH}" == "gatesgarth" ] || [ "${BRANCH}" == "honister" ]
+if [ "${BRANCH}" == "langdale" ]
+    then
+        SPECIAL_HDL_BRANCH="hdl_2023_r2"
+fi
+if [ "${BRANCH}" == "rocko" ] || [ "${BRANCH}" == "thud" ] || [ "${BRANCH}" == "gatesgarth" ] || [ "${BRANCH}" == "honister" ] || [ "${BRANCH}" == "langdale" ]
     then
         if [ -d "hdl" ]
             then
@@ -759,7 +771,7 @@ if [ "${BRANCH}" == "gatesgarth" ]
 fi
 
 # Display latest commit for meta-adi
-if [ "${BRANCH}" == "rocko" ] || [ "${BRANCH}" == "sumo" ] || [ "${BRANCH}" == "thud" ]  || [ "${BRANCH}" == "gatesgarth" ]
+if [ "${BRANCH}" == "rocko" ] || [ "${BRANCH}" == "sumo" ] || [ "${BRANCH}" == "thud" ]  || [ "${BRANCH}" == "gatesgarth" ] || [ "${BRANCH}" == "honister" ] || [ "${BRANCH}" == "langdale" ]
     then
         if grep -q "${COMMIT_META_ADI}" "${BASEDIR}/../default.xml"
             then
@@ -770,7 +782,7 @@ if [ "${BRANCH}" == "rocko" ] || [ "${BRANCH}" == "sumo" ] || [ "${BRANCH}" == "
 fi
 
 # Display latest commit for hdl
-if [ "${BRANCH}" == "rocko" ]  || [ "${BRANCH}" == "thud" ] || [ "${BRANCH}" == "gatesgarth" ] || [ "${BRANCH}" == "honister" ]
+if [ "${BRANCH}" == "rocko" ]  || [ "${BRANCH}" == "thud" ] || [ "${BRANCH}" == "gatesgarth" ] || [ "${BRANCH}" == "honister" ] || [ "${BRANCH}" == "langdale" ]
     then
         if grep -q "${COMMIT_HDL}" "${BASEDIR}/../default.xml"
             then
