@@ -21,6 +21,9 @@
 	<remote name="qt5"
 		fetch="https://github.com/meta-qt5" />
 
+	<remote name="adi"
+		fetch="https://github.com/analogdevicesinc" />
+
 	<remote name="gnss-sdr"
 		fetch="https://github.com/carlesfernandez" />
 
@@ -34,6 +37,8 @@
 	<project name="meta-xilinx" remote="Xilinx" path="meta-xilinx" revision="d0672f5ee00c551d897b9c1f88be9d8093043269" />
 	<project name="meta-xilinx-tools" remote="Xilinx" path="meta-xilinx-tools" revision="67a09a08886a7c2e23bc1f78ba327a400c55ef20" />
 	<project name="meta-raspberrypi" remote="yocto" path="meta-raspberrypi" revision="8e3cbfa598de106a78d9a9e27aa25ded51416896" />
+	<project name="meta-adi" remote="adi" path="meta-adi" revision="dd884c9265966e970c6525d322f0986a96ecc203" />
+	<project name="hdl" remote="adi" path="hdl" revision="d146370c10fdd55156de2bafdd9b24292c01b6e1" />
 	<project name="meta-intel" remote="yocto" path="meta-intel" revision="3e37d6c4f1ed77ac34b9871814f03a64ac403293" />
 	<project name="meta-swupdate" remote="sbabic" path="meta-swupdate" revision="2073a7e398891f03c65c847ae08cdc97ab219ab7" />
 	<project name="meta-gnss-sdr" remote="gnss-sdr" path="meta-gnss-sdr" revision="langdale" />
