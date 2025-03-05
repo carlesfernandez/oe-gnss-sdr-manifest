@@ -40,6 +40,7 @@
 	<project name="meta-virtualization" remote="yocto" path="meta-virtualization" revision="e69e3df88aa56bd05a8c2d5df759fed24072c55a" />
 	<project name="meta-xilinx" remote="Xilinx" path="meta-xilinx" revision="2e60ee606a1a9a08db72b69e018b1ed1fd2d1047" />
 	<project name="meta-xilinx-tools" remote="Xilinx" path="meta-xilinx-tools" revision="909b70c3f2db8df5cd3c68f5e739833dc8885b0c" />
+	<project name="meta-adi" remote="adi" path="meta-adi" revision="3a5de5cf8f1cf4a0fe39a26cbcc6a292a0e5b654" />
 	<project name="hdl" remote="adi" path="hdl" revision="ae6e248f219a5bb2e63733c762e9561c072d037e" />
 	<project name="meta-raspberrypi" remote="yocto" path="meta-raspberrypi" revision="378d4b6e7ba64b6a9a701457cc3780fa896ba5dc" />
 	<project name="meta-intel" remote="yocto" path="meta-intel" revision="75db9e135d53b070366cd0beecefd72e4cf135fd" />
