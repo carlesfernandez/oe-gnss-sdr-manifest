@@ -26,17 +26,17 @@
 
 	<default remote="openembedded" revision="master" />
 
-	<project name="bitbake" path="bitbake" revision="2.10" />
-	<project name="openembedded-core" path="oe-core" revision="2d94f4b8a852dc761f89e5106347e239382df5fb" />
-	<project name="meta-openembedded" path="meta-oe" revision="c93994f1bb601c57548b588d4f77a044d90822cf" />
-	<project name="meta-qt5" remote="qt5" path="meta-qt5" revision="40b3a597d691b894a2c959801cfb50cccfd41dd9" />
-	<project name="meta-sdr" remote="balister" path="meta-sdr" revision="26aa9a96ccf1b6aeb240953899918017057b0098" />
+	<project name="bitbake" path="bitbake" revision="2.12" />
+	<project name="openembedded-core" path="oe-core" revision="131d983dd19ae12bf0746f772b7d7a058e549fb1" />
+	<project name="meta-openembedded" path="meta-oe" revision="2fb85f67dd724bdf806a0bda886ff7d6dfaeaab8" />
+	<project name="meta-qt5" remote="qt5" path="meta-qt5" revision="182b250bcece90f31c9ccec042f934d15088b2bd" />
+	<project name="meta-sdr" remote="balister" path="meta-sdr" revision="408e8d09340b6a0d7c47bd36aed17c5126a6eb77" />
 	<project name="meta-xilinx" remote="Xilinx" path="meta-xilinx" revision="1d98f8981e3157aa265ca141a0fc9e6e2640394f" />
 	<project name="meta-xilinx-tools" remote="Xilinx" path="meta-xilinx-tools" revision="172b7e6e3b1e0d68aa452ea220fae5426c04e6a0" />
-	<project name="meta-arm" remote="yocto" path="meta-arm" revision="5425d269c171fad50abbbb4e0c22e5e01536413d" />
+	<project name="meta-arm" remote="yocto" path="meta-arm" revision="1d119f24f9eb4c65d944fbdb0ab2d737f3eaa001" />
 	<project name="meta-raspberrypi" remote="yocto" path="meta-raspberrypi" revision="cd558f77b6b1a6d0fa15cd9558df0c0262d42c91" />
-	<project name="meta-intel" remote="yocto" path="meta-intel" revision="0ee9e8454cd41dcb0f49df7dcf2182b4d5e7cc96" />
+	<project name="meta-intel" remote="yocto" path="meta-intel" revision="2506b743abe4ed987b515bb2b70566efdb3d4206" />
 	<project name="meta-swupdate" remote="sbabic" path="meta-swupdate" revision="33374d1217ae347c59aa50a387fd50469a85d659" />
-	<project name="meta-gnss-sdr" remote="gnss-sdr" path="meta-gnss-sdr" revision="styhead" />
+	<project name="meta-gnss-sdr" remote="gnss-sdr" path="meta-gnss-sdr" revision="walnascar" />
 
 </manifest>
