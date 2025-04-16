@@ -614,10 +614,6 @@ fi
 
 # meta-arm
 SPECIAL_ARM_BRANCH=${BRANCH}
-if [ "${BRANCH}" == "walnascar" ]
-    then
-        SPECIAL_ARM_BRANCH="master"
-fi
 if [ "${BRANCH}" == "dunfell" ] || [ "${BRANCH}" == "scarthgap" ] || [ "${BRANCH}" == "styhead" ] || [ "${BRANCH}" == "walnascar" ]
     then
         if [ -d "meta-arm" ]
