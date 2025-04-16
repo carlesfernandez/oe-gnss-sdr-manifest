@@ -89,7 +89,7 @@ fi
 
 # meta-qt5
 SPECIAL_METAQT5_BRANCH=${BRANCH}
-if [ "${BRANCH}" == "styhead" ]
+if [ "${BRANCH}" == "styhead" ] || [ "${BRANCH}" == "walnascar" ]
     then
         SPECIAL_METAQT5_BRANCH="master"
 fi
@@ -155,6 +155,10 @@ if [ "${BRANCH}" == "scarthgap" ]
         SPECIAL_SDR_BRANCH="master"
 fi
 if [ "${BRANCH}" == "styhead" ]
+    then
+        SPECIAL_SDR_BRANCH="master"
+fi
+if [ "${BRANCH}" == "walnascar" ]
     then
         SPECIAL_SDR_BRANCH="master"
 fi
@@ -241,6 +245,10 @@ if [ "${BRANCH}" == "styhead" ]
     then
         SPECIAL_XILINX_BRANCH="master"
 fi
+if [ "${BRANCH}" == "walnascar" ]
+    then
+        SPECIAL_XILINX_BRANCH="master"
+fi
 
 if [ "${BRANCH}" != "kirkstone" ]
     then
@@ -294,6 +302,10 @@ if [ "${BRANCH}" == "langdale" ]
         SPECIAL_XILINX_TOOLS_BRANCH="rel-v2023.2"
 fi
 if [ "${BRANCH}" == "styhead" ]
+    then
+        SPECIAL_XILINX_TOOLS_BRANCH="master"
+fi
+if [ "${BRANCH}" == "walnascar" ]
     then
         SPECIAL_XILINX_TOOLS_BRANCH="master"
 fi
@@ -508,6 +520,10 @@ if [ "${BRANCH}" == "styhead" ]
     then
         SPECIAL_RASPBERRYPI_BRANCH="master"
 fi
+if [ "${BRANCH}" == "walnascar" ]
+    then
+        SPECIAL_RASPBERRYPI_BRANCH="master"
+fi
 if [ -d "meta-raspberrypi" ]
     then
         cd meta-raspberrypi || exit
@@ -535,27 +551,32 @@ fi
 cd ..
 
 # meta-intel
+SPECIAL_INTEL_BRANCH=${BRANCH}
+if [ "${BRANCH}" == "walnascar" ]
+    then
+        SPECIAL_INTEL_BRANCH="master"
+fi
 if [ -d "meta-intel" ]
     then
         cd meta-intel || exit
-        exists_in_remote=$(git ls-remote --heads origin "${BRANCH}")
+        exists_in_remote=$(git ls-remote --heads origin "${SPECIAL_INTEL_BRANCH}")
         if [[ -z ${exists_in_remote} ]]
             then
                 COMMIT_META_INTEL="Unknown"
             else
-                git checkout "${BRANCH}"
-                git pull origin "${BRANCH}"
+                git checkout "${SPECIAL_INTEL_BRANCH}"
+                git pull origin "${SPECIAL_INTEL_BRANCH}"
                 COMMIT_META_INTEL=$(git rev-parse HEAD)
         fi
     else
         git clone ${REPO_META_INTEL}
         cd meta-intel || exit
-        exists_in_remote=$(git ls-remote --heads origin "${BRANCH}")
+        exists_in_remote=$(git ls-remote --heads origin "${SPECIAL_INTEL_BRANCH}")
         if [[ -z ${exists_in_remote} ]]
             then
                 COMMIT_META_INTEL="Unknown"
             else
-                git checkout "${BRANCH}"
+                git checkout "${SPECIAL_INTEL_BRANCH}"
                 COMMIT_META_INTEL=$(git rev-parse HEAD)
         fi
 fi
@@ -592,29 +613,34 @@ if [ "${BRANCH}" == "dunfell" ]
 fi
 
 # meta-arm
-if [ "${BRANCH}" == "dunfell" ] || [ "${BRANCH}" == "scarthgap" ] || [ "${BRANCH}" == "styhead" ]
+SPECIAL_ARM_BRANCH=${BRANCH}
+if [ "${BRANCH}" == "walnascar" ]
+    then
+        SPECIAL_ARM_BRANCH="master"
+fi
+if [ "${BRANCH}" == "dunfell" ] || [ "${BRANCH}" == "scarthgap" ] || [ "${BRANCH}" == "styhead" ] || [ "${BRANCH}" == "walnascar" ]
     then
         if [ -d "meta-arm" ]
             then
                 cd meta-arm || exit
-                exists_in_remote=$(git ls-remote --heads origin "${BRANCH}")
+                exists_in_remote=$(git ls-remote --heads origin "${SPECIAL_ARM_BRANCH}")
                 if [[ -z ${exists_in_remote} ]]
                     then
                         COMMIT_META_ARM="Unknown"
                     else
-                        git checkout "${BRANCH}"
-                        git pull origin "${BRANCH}"
+                        git checkout "${SPECIAL_ARM_BRANCH}"
+                        git pull origin "${SPECIAL_ARM_BRANCH}"
                         COMMIT_META_ARM=$(git rev-parse HEAD)
                 fi
         else
             git clone ${REPO_META_ARM}
             cd meta-arm || exit
-            exists_in_remote=$(git ls-remote --heads origin "${BRANCH}")
+            exists_in_remote=$(git ls-remote --heads origin "${SPECIAL_ARM_BRANCH}")
             if [[ -z ${exists_in_remote} ]]
                 then
                     COMMIT_META_ARM="Unknown"
                 else
-                    git checkout "${BRANCH}"
+                    git checkout "${SPECIAL_ARM_BRANCH}"
                     COMMIT_META_ARM=$(git rev-parse HEAD)
             fi
         fi
@@ -622,27 +648,32 @@ if [ "${BRANCH}" == "dunfell" ] || [ "${BRANCH}" == "scarthgap" ] || [ "${BRANCH
 fi
 
 # meta-swupdate
+SPECIAL_SWUPDATE_BRANCH=${BRANCH}
+if [ "${BRANCH}" == "walnascar" ]
+    then
+        SPECIAL_SWUPDATE_BRANCH="styhead"
+fi
 if [ -d "meta-swupdate" ]
     then
         cd meta-swupdate || exit
-        exists_in_remote=$(git ls-remote --heads origin "${BRANCH}")
+        exists_in_remote=$(git ls-remote --heads origin "${SPECIAL_SWUPDATE_BRANCH}")
         if [[ -z ${exists_in_remote} ]]
             then
                 COMMIT_META_SWUPDATE="Unknown"
             else
-                git checkout "${BRANCH}"
-                git pull origin "${BRANCH}"
+                git checkout "${SPECIAL_SWUPDATE_BRANCH}"
+                git pull origin "${SPECIAL_SWUPDATE_BRANCH}"
                 COMMIT_META_SWUPDATE=$(git rev-parse HEAD)
         fi
     else
         git clone ${REPO_META_SW_UPDATE}
         cd meta-swupdate || exit
-        exists_in_remote=$(git ls-remote --heads origin "${BRANCH}")
+        exists_in_remote=$(git ls-remote --heads origin "${SPECIAL_SWUPDATE_BRANCH}")
         if [[ -z ${exists_in_remote} ]]
             then
                 COMMIT_META_SWUPDATE="Unknown"
             else
-                git checkout "${BRANCH}"
+                git checkout "${SPECIAL_SWUPDATE_BRANCH}"
                 COMMIT_META_SWUPDATE=$(git rev-parse HEAD)
         fi
 fi
@@ -816,7 +847,7 @@ if grep -q "${COMMIT_META_INTEL}" "${BASEDIR}/../default.xml"
     then
         echo -e "meta-intel last commit:          ${COMMIT_META_INTEL}"
     else
-        echo -e "meta-intel last commit:          ${COLOR_WARNING}${COMMIT_META_INTEL}${COLOR_RESET} Check ${REPO_META_INTEL}/log/?h=${BRANCH}"
+        echo -e "meta-intel last commit:          ${COLOR_WARNING}${COMMIT_META_INTEL}${COLOR_RESET} Check ${REPO_META_INTEL}/log/?h=${SPECIAL_INTEL_BRANCH}"
 fi
 
 # Display latest commit for meta-ti
@@ -831,13 +862,13 @@ if [ "${BRANCH}" == "dunfell" ]
 fi
 
 # Display latest commit for meta-arm
-if [ "${BRANCH}" == "dunfell" ] || [ "${BRANCH}" == "scarthgap" ] || [ "${BRANCH}" == "styhead" ]
+if [ "${BRANCH}" == "dunfell" ] || [ "${BRANCH}" == "scarthgap" ] || [ "${BRANCH}" == "styhead" ] || [ "${BRANCH}" == "walnascar" ]
     then
         if grep -q "${COMMIT_META_ARM}" "${BASEDIR}/../default.xml"
             then
                 echo -e "meta-arm last commit:            ${COMMIT_META_ARM}"
             else
-                echo -e "meta-arm last commit:            ${COLOR_WARNING}${COMMIT_META_ARM}${COLOR_RESET} Check ${REPO_META_ARM}/log/?h=${BRANCH}"
+                echo -e "meta-arm last commit:            ${COLOR_WARNING}${COMMIT_META_ARM}${COLOR_RESET} Check ${REPO_META_ARM}/log/?h=${SPECIAL_ARM_BRANCH}"
         fi
 fi
 
@@ -846,7 +877,7 @@ if grep -q "${COMMIT_META_SWUPDATE}" "${BASEDIR}/../default.xml"
     then
         echo -e "meta-swupdate last commit:       ${COMMIT_META_SWUPDATE}"
     else
-        echo -e "meta-swupdate last commit:       ${COLOR_INFO}${COMMIT_META_SWUPDATE}${COLOR_RESET} Check ${REPO_META_SW_UPDATE}/tree/${BRANCH}"
+        echo -e "meta-swupdate last commit:       ${COLOR_INFO}${COMMIT_META_SWUPDATE}${COLOR_RESET} Check ${REPO_META_SW_UPDATE}/tree/${SPECIAL_SWUPDATE_BRANCH}"
 fi
 
 cd "$BASEDIR" || exit
