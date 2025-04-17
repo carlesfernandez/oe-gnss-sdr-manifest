@@ -31,7 +31,7 @@
 	<project name="meta-openembedded" path="meta-oe" revision="0d2d2d193a1619b6dbebaf335f1ef785478049e3" />
 	<project name="meta-qt5" remote="qt5" path="meta-qt5" revision="182b250bcece90f31c9ccec042f934d15088b2bd" />
 	<project name="meta-virtualization" remote="yocto" path="meta-virtualization" revision="1289579dd0def36245ade02e4dd3d0bc3c3e3af8" />
-	<project name="meta-sdr" remote="balister" path="meta-sdr" revision="76a0019a75c69c7672c1fb18b68ae8f155b57b2f" />
+	<project name="meta-sdr" remote="balister" path="meta-sdr" revision="afda2b089e669f214b55f1b99485769e46154c5a" />
 	<project name="meta-xilinx" remote="Xilinx" path="meta-xilinx" revision="1d98f8981e3157aa265ca141a0fc9e6e2640394f" />
 	<project name="meta-xilinx-tools" remote="Xilinx" path="meta-xilinx-tools" revision="172b7e6e3b1e0d68aa452ea220fae5426c04e6a0" />
 	<project name="meta-arm" remote="yocto" path="meta-arm" revision="42928dcc171629b495bbfcd8eda17ef6b8bdbfa3" />
