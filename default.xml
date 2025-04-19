@@ -30,7 +30,7 @@
 	<project name="openembedded-core" path="oe-core" revision="131d983dd19ae12bf0746f772b7d7a058e549fb1" />
 	<project name="meta-openembedded" path="meta-oe" revision="0d2d2d193a1619b6dbebaf335f1ef785478049e3" />
 	<project name="meta-qt5" remote="qt5" path="meta-qt5" revision="182b250bcece90f31c9ccec042f934d15088b2bd" />
-	<project name="meta-virtualization" remote="yocto" path="meta-virtualization" revision="1289579dd0def36245ade02e4dd3d0bc3c3e3af8" />
+	<project name="meta-virtualization" remote="yocto" path="meta-virtualization" revision="d331d16c3781f78be37ab192cdb4ab3c7b4284fb" />
 	<project name="meta-sdr" remote="balister" path="meta-sdr" revision="329d5ba03820b724fb8d6434bac715a95231afbb" />
 	<project name="meta-xilinx" remote="Xilinx" path="meta-xilinx" revision="1d98f8981e3157aa265ca141a0fc9e6e2640394f" />
 	<project name="meta-xilinx-tools" remote="Xilinx" path="meta-xilinx-tools" revision="172b7e6e3b1e0d68aa452ea220fae5426c04e6a0" />
