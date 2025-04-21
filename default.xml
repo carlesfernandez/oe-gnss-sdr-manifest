@@ -34,6 +34,6 @@
 	<project name="meta-raspberrypi" remote="yocto" path="meta-raspberrypi" revision="9e12ad97b4c95772c6f403b9318f2bec2ab09e53" />
 	<project name="meta-intel" remote="yocto" path="meta-intel" revision="dc0948200594dacece4da91f4c501e9a9fb0394f" />
 	<project name="meta-swupdate" remote="sbabic" path="meta-swupdate" revision="b43bb01bbdfe8b7be3e9d4521e5871766db39ba3" />
-	<project name="meta-gnss-sdr" remote="gnss-sdr" path="meta-gnss-sdr" revision="e591ee3c54179caebebf0a326ecea568d9dda032" />
+	<project name="meta-gnss-sdr" remote="gnss-sdr" path="meta-gnss-sdr" revision="kirkstone" />
 
 </manifest>
