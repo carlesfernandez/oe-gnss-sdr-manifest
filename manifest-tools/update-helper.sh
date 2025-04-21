@@ -29,6 +29,7 @@ REPO_META_VIRTUALIZATION="https://git.yoctoproject.org/meta-virtualization"
 REPO_META_XILINX="https://github.com/Xilinx/meta-xilinx"
 REPO_META_XILINX_TOOLS="https://github.com/Xilinx/meta-xilinx-tools"
 REPO_META_PETALINUX="https://github.com/Xilinx/meta-petalinux"
+REPO_META_OPENAMP="https://github.com/Xilinx/meta-openamp"
 REPO_META_ADI="https://github.com/analogdevicesinc/meta-adi"
 REPO_HDL="https://github.com/analogdevicesinc/hdl"
 REPO_META_RASPBERRYPI="https://git.yoctoproject.org/meta-raspberrypi"
@@ -189,35 +190,35 @@ fi
 cd ..
 
 # meta-virtualization
-if [ "${BRANCH}" == "gatesgarth" ] || [ "${BRANCH}" == "honister" ]
+SPECIAL_VIRTUALIZATION_BRANCH=${BRANCH}
+if [ "${BRANCH}" == "gatesgarth" ] || [ "${BRANCH}" == "honister" ] || [ "${BRANCH}" == "scarthgap" ] || [ "${BRANCH}" == "styhead" ] || [ "${BRANCH}" == "walnascar" ]
     then
         if [ -d "meta-virtualization" ]
             then
                 cd meta-virtualization || exit
-                exists_in_remote=$(git ls-remote --heads origin "${BRANCH}")
+                exists_in_remote=$(git ls-remote --heads origin "${SPECIAL_VIRTUALIZATION_BRANCH}")
                 if [[ -z ${exists_in_remote} ]]
                     then
                         COMMIT_META_VIRTUALIZATION="Unknown"
                     else
-                        git checkout "${BRANCH}"
-                        git pull origin "${BRANCH}"
+                        git checkout "${SPECIAL_VIRTUALIZATION_BRANCH}"
+                        git pull origin "${SPECIAL_VIRTUALIZATION_BRANCH}"
                         COMMIT_META_VIRTUALIZATION=$(git rev-parse HEAD)
                 fi
             else
                 git clone ${REPO_META_VIRTUALIZATION}
                 cd meta-virtualization || exit
-                exists_in_remote=$(git ls-remote --heads origin "${BRANCH}")
+                exists_in_remote=$(git ls-remote --heads origin "${SPECIAL_VIRTUALIZATION_BRANCH}")
                 if [[ -z ${exists_in_remote} ]]
                     then
                         COMMIT_META_VIRTUALIZATION="Unknown"
                     else
-                        git checkout "${BRANCH}"
+                        git checkout "${SPECIAL_VIRTUALIZATION_BRANCH}"
                         COMMIT_META_VIRTUALIZATION=$(git rev-parse HEAD)
                 fi
         fi
         cd ..
 fi
-
 
 # meta-xilinx
 SPECIAL_XILINX_BRANCH=${BRANCH}
@@ -369,6 +370,41 @@ if [ "${BRANCH}" == "gatesgarth" ]
                     else
                         git checkout "${SPECIAL_META_PETALINUX_BRANCH}"
                         COMMIT_META_PETALINUX=$(git rev-parse HEAD)
+                fi
+        fi
+        cd ..
+fi
+
+# meta-openamp
+SPECIAL_OPENAMP_BRANCH=${BRANCH}
+if [ "${BRANCH}" == "scarthgap" ]
+    then
+        SPECIAL_OPENAMP_BRANCH="rel-v2024.2"
+fi
+if [ "${BRANCH}" == "scarthgap" ]
+    then
+        if [ -d "meta-openamp" ]
+            then
+                cd meta-openamp || exit
+                exists_in_remote=$(git ls-remote --heads origin "${SPECIAL_OPENAMP_BRANCH}")
+                if [[ -z ${exists_in_remote} ]]
+                    then
+                        COMMIT_META_VIRTUALIZATION="Unknown"
+                    else
+                        git checkout "${SPECIAL_OPENAMP_BRANCH}"
+                        git pull origin "${SPECIAL_OPENAMP_BRANCH}"
+                        COMMIT_META_OPENAMP=$(git rev-parse HEAD)
+                fi
+            else
+                git clone ${REPO_META_OPENAMP}
+                cd meta-openamp || exit
+                exists_in_remote=$(git ls-remote --heads origin "${SPECIAL_OPENAMP_BRANCH}")
+                if [[ -z ${exists_in_remote} ]]
+                    then
+                        COMMIT_META_OPENAMP="Unknown"
+                    else
+                        git checkout "${SPECIAL_OPENAMP_BRANCH}"
+                        COMMIT_META_OPENAMP=$(git rev-parse HEAD)
                 fi
         fi
         cd ..
@@ -749,13 +785,13 @@ if grep -q "${COMMIT_META_SDR}" "${BASEDIR}/../default.xml"
 fi
 
 # Display latest commit for meta-virtualization
-if [ "${BRANCH}" == "gatesgarth" ] || [ "${BRANCH}" == "honister" ]
+if [ "${BRANCH}" == "gatesgarth" ] || [ "${BRANCH}" == "honister" ] || [ "${BRANCH}" == "scarthgap" ] || [ "${BRANCH}" == "styhead" ] || [ "${BRANCH}" == "walnascar" ]
     then
         if grep -q "${COMMIT_META_VIRTUALIZATION}" "${BASEDIR}/../default.xml"
             then
                 echo -e "meta-virtualization last commit: ${COMMIT_META_VIRTUALIZATION}"
             else
-                echo -e "meta-virtualization last commit: ${COLOR_WARNING}${COMMIT_META_VIRTUALIZATION}${COLOR_RESET} Check ${REPO_META_VIRTUALIZATION}/log/?h=${BRANCH}"
+                echo -e "meta-virtualization last commit: ${COLOR_WARNING}${COMMIT_META_VIRTUALIZATION}${COLOR_RESET} Check ${REPO_META_VIRTUALIZATION}/log/?h=${SPECIAL_VIRTUALIZATION_BRANCH}"
         fi
 fi
 
@@ -794,6 +830,17 @@ if [ "${BRANCH}" == "gatesgarth" ]
                 echo -e "meta-petalinux last commit:      ${COMMIT_META_PETALINUX}"
             else
                 echo -e "meta-petalinux last commit:      ${COLOR_WARNING}${COMMIT_META_PETALINUX}${COLOR_RESET} Check ${REPO_META_PETALINUX}/tree/${SPECIAL_META_PETALINUX_BRANCH}"
+        fi
+fi
+
+# Display latest commit for meta-openamp
+if [ "${BRANCH}" == "scarthgap" ]
+    then
+        if grep -q "${COMMIT_META_OPENAMP}" "${BASEDIR}/../default.xml"
+            then
+                echo -e "meta-openamp last commit:        ${COMMIT_META_OPENAMP}"
+            else
+                echo -e "meta-openamp last commit:        ${COLOR_WARNING}${COMMIT_META_OPENAMP}${COLOR_RESET} Check ${REPO_META_OPENAMP}/tree/${SPECIAL_OPENAMP_BRANCH}"
         fi
 fi
 
