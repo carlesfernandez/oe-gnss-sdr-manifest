@@ -4,7 +4,7 @@ SPDX-License-Identifier: MIT
 )
 
 [comment]: # (
-SPDX-FileCopyrightText: 2016-2023 Carles Fernandez-Prades <carles.fernandez@cttc.es>
+SPDX-FileCopyrightText: 2016-2025 Carles Fernandez-Prades <carles.fernandez@cttc.es>
 )
 <!-- prettier-ignore-end -->
 
@@ -53,7 +53,7 @@ file on that repo for more details on its usage and options.
 
 ## Copyright and License
 
-Copyright: &copy; 2016-2023 Carles Fern&aacute;ndez-Prades,
+Copyright: &copy; 2016-2025 Carles Fern&aacute;ndez-Prades,
 [CTTC](https://www.cttc.cat). All rights reserved.
 
 The content of this repository is released under the [MIT](./LICENSES/MIT.txt)
@@ -61,5 +61,6 @@ license.
 
 ## Acknowledgements
 
-This work was partially supported by Grant PID2021-128373OB-I00 funded by
+This work was partially supported by CPP2021-008648/ AEI/10.13039/501100011033/
+European Union NextGenerationEU/PRTR and Grant PID2021-128373OB-I00 funded by
 MCIN/AEI/10.13039/501100011033.
