@@ -21,9 +21,7 @@ BASEDIR=$PWD
 
 REPO_OE_CORE="https://github.com/openembedded/openembedded-core"
 REPO_META_OE="https://github.com/openembedded/meta-openembedded"
-REPO_META_QT4="https://git.yoctoproject.org/meta-qt4"
 REPO_META_QT5="https://github.com/meta-qt5/meta-qt5"
-REPO_META_QT5_EXTRA="https://github.com/schnitzeltony/meta-qt5-extra"
 REPO_META_SDR="https://github.com/balister/meta-sdr"
 REPO_META_VIRTUALIZATION="https://git.yoctoproject.org/meta-virtualization"
 REPO_META_XILINX="https://github.com/Xilinx/meta-xilinx"
@@ -35,7 +33,6 @@ REPO_HDL="https://github.com/analogdevicesinc/hdl"
 REPO_META_RASPBERRYPI="https://git.yoctoproject.org/meta-raspberrypi"
 REPO_META_INTEL="https://git.yoctoproject.org/meta-intel"
 REPO_META_AVNET="https://github.com/Avnet/meta-avnet"
-REPO_META_TI="https://git.yoctoproject.org/meta-ti"
 REPO_META_ARM="https://git.yoctoproject.org/meta-arm"
 REPO_META_SW_UPDATE="https://github.com/sbabic/meta-swupdate"
 
@@ -71,23 +68,6 @@ fi
 COMMIT_META_OPENEMBEDDED=$(git rev-parse HEAD)
 cd ..
 
-# meta-qt4
-if [ "${BRANCH}" == "rocko" ] || [ "${BRANCH}" == "sumo" ] || [ "${BRANCH}" == "thud" ]
-    then
-        if [ -d "meta-qt4" ]
-            then
-                cd meta-qt4 || exit
-                git checkout "${BRANCH}"
-                git pull origin "${BRANCH}"
-            else
-                git clone ${REPO_META_QT4}
-                cd meta-qt4 || exit
-                git checkout "$BRANCH"
-        fi
-        COMMIT_META_QT4=$(git rev-parse HEAD)
-        cd ..
-fi
-
 # meta-qt5
 SPECIAL_METAQT5_BRANCH=${BRANCH}
 if [ "${BRANCH}" == "styhead" ]
@@ -108,33 +88,8 @@ fi
 COMMIT_META_QT5=$(git rev-parse HEAD)
 cd ..
 
-# meta-qt5-extra
-if [ "${BRANCH}" == "sumo" ]
-    then
-        if [ -d "meta-qt5-extra" ]
-            then
-                cd meta-qt5-extra || exit
-                git checkout "${BRANCH}"
-                git pull origin "${BRANCH}"
-            else
-                git clone ${REPO_META_QT5_EXTRA}
-                cd meta-qt5-extra || exit
-                git checkout "$BRANCH"
-        fi
-        COMMIT_META_QT5_EXTRA=$(git rev-parse HEAD)
-        cd ..
-fi
-
 # meta-sdr
 SPECIAL_SDR_BRANCH=${BRANCH}
-if [ "${BRANCH}" == "thud" ]
-    then
-        SPECIAL_SDR_BRANCH="sumo"
-fi
-if [ "${BRANCH}" == "warrior" ]
-    then
-        SPECIAL_SDR_BRANCH="zeus"
-fi
 if [ "${BRANCH}" == "gatesgarth" ]
     then
         SPECIAL_SDR_BRANCH="dunfell"
@@ -222,14 +177,6 @@ fi
 
 # meta-xilinx
 SPECIAL_XILINX_BRANCH=${BRANCH}
-if [ "${BRANCH}" == "thud" ]
-    then
-        SPECIAL_XILINX_BRANCH="rel-v2019.2"
-fi
-if [ "${BRANCH}" == "zeus" ]
-    then
-        SPECIAL_XILINX_BRANCH="rel-v2020.3"
-fi
 if [ "${BRANCH}" == "gatesgarth" ]
     then
         SPECIAL_XILINX_BRANCH="rel-v2021.2"
@@ -282,14 +229,6 @@ fi
 
 # meta-xilinx-tools
 SPECIAL_XILINX_TOOLS_BRANCH=${BRANCH}
-if [ "${BRANCH}" == "thud" ]
-    then
-        SPECIAL_XILINX_TOOLS_BRANCH="rel-v2019.2"
-fi
-if [ "${BRANCH}" == "zeus" ]
-    then
-        SPECIAL_XILINX_TOOLS_BRANCH="rel-v2020.3"
-fi
 if [ "${BRANCH}" == "gatesgarth" ]
     then
         SPECIAL_XILINX_TOOLS_BRANCH="rel-v2021.2"
@@ -311,7 +250,7 @@ if [ "${BRANCH}" == "walnascar" ]
         SPECIAL_XILINX_TOOLS_BRANCH="master"
 fi
 
-if [ "${BRANCH}" == "thud" ] || [ "${BRANCH}" == "zeus" ] || [ "${BRANCH}" == "gatesgarth" ] || [ "${BRANCH}" == "honister" ] || [ "${BRANCH}" == "langdale" ] || [ "${BRANCH}" == "mickledore" ] || [ "${BRANCH}" == "nanbield" ] || [ "${BRANCH}" == "scarthgap" ] || [ "${BRANCH}" == "styhead" ] || [ "${BRANCH}" == "walnascar" ]
+if [ "${BRANCH}" == "gatesgarth" ] || [ "${BRANCH}" == "honister" ] || [ "${BRANCH}" == "langdale" ] || [ "${BRANCH}" == "mickledore" ] || [ "${BRANCH}" == "nanbield" ] || [ "${BRANCH}" == "scarthgap" ] || [ "${BRANCH}" == "styhead" ] || [ "${BRANCH}" == "walnascar" ]
     then
         if [ -d "meta-xilinx-tools" ]
             then
@@ -411,16 +350,8 @@ if [ "${BRANCH}" == "scarthgap" ]
 fi
 
 # meta-adi
-if [ "${BRANCH}" == "rocko" ] || [ "${BRANCH}" == "sumo" ] || [ "${BRANCH}" == "thud" ] || [ "${BRANCH}" == "gatesgarth" ] || [ "${BRANCH}" == "honister" ] || [ "${BRANCH}" == "langdale" ]
+if [ "${BRANCH}" == "gatesgarth" ] || [ "${BRANCH}" == "honister" ] || [ "${BRANCH}" == "langdale" ]
     then
-        if [ "${BRANCH}" == "rocko" ] || [ "${BRANCH}" == "sumo" ]
-            then
-                SPECIAL_ADI_BRANCH="2019_R1"
-        fi
-        if [ "${BRANCH}" == "thud" ]
-            then
-                SPECIAL_ADI_BRANCH="2019_R2"
-        fi
         if [ "${BRANCH}" == "gatesgarth" ]
             then
                 SPECIAL_ADI_BRANCH="2021_R1"
@@ -462,14 +393,6 @@ fi
 
 # hdl
 SPECIAL_HDL_BRANCH=${BRANCH}
-if [ "${BRANCH}" == "rocko" ]
-    then
-        SPECIAL_HDL_BRANCH="hdl_2019_r1"
-fi
-if [ "${BRANCH}" == "thud" ]
-    then
-        SPECIAL_HDL_BRANCH="hdl_2019_r2"
-fi
 if [ "${BRANCH}" == "gatesgarth" ]
     then
         SPECIAL_HDL_BRANCH="hdl_2021_r2"
@@ -618,39 +541,9 @@ if [ -d "meta-intel" ]
 fi
 cd ..
 
-# meta-ti
-if [ "${BRANCH}" == "dunfell" ]
-    then
-        if [ -d "meta-ti" ]
-            then
-                cd meta-ti || exit
-                exists_in_remote=$(git ls-remote --heads origin "${BRANCH}")
-                if [[ -z ${exists_in_remote} ]]
-                    then
-                        COMMIT_META_TI="Unknown"
-                    else
-                        git checkout "${BRANCH}"
-                        git pull origin "${BRANCH}"
-                        COMMIT_META_TI=$(git rev-parse HEAD)
-                fi
-        else
-            git clone ${REPO_META_TI}
-            cd meta-ti || exit
-            exists_in_remote=$(git ls-remote --heads origin "${BRANCH}")
-            if [[ -z ${exists_in_remote} ]]
-                then
-                    COMMIT_META_TI="Unknown"
-                else
-                    git checkout "${BRANCH}"
-                    COMMIT_META_TI=$(git rev-parse HEAD)
-            fi
-        fi
-    cd ..
-fi
-
 # meta-arm
 SPECIAL_ARM_BRANCH=${BRANCH}
-if [ "${BRANCH}" == "dunfell" ] || [ "${BRANCH}" == "scarthgap" ] || [ "${BRANCH}" == "styhead" ] || [ "${BRANCH}" == "walnascar" ]
+if [ "${BRANCH}" == "scarthgap" ] || [ "${BRANCH}" == "styhead" ] || [ "${BRANCH}" == "walnascar" ]
     then
         if [ -d "meta-arm" ]
             then
@@ -741,34 +634,12 @@ if grep -q "${COMMIT_META_OPENEMBEDDED}" "${BASEDIR}/../default.xml"
         echo -e "meta-openembedded last commit:   ${COLOR_WARNING}${COMMIT_META_OPENEMBEDDED}${COLOR_RESET} Check ${REPO_META_OE}/tree/${BRANCH}"
 fi
 
-# Display latest commit for meta-qt4
-if [ "${BRANCH}" == "rocko" ] || [ "${BRANCH}" == "sumo" ] || [ "${BRANCH}" == "thud" ]
-    then
-        if grep -q "${COMMIT_META_QT4}" "${BASEDIR}/../default.xml"
-            then
-                echo -e "meta-qt4 last commit:            ${COMMIT_META_QT4}"
-            else
-                echo -e "meta-qt4 last commit:            ${COLOR_WARNING}${COMMIT_META_QT4}${COLOR_RESET} Check ${REPO_META_QT4}/log/?h=${BRANCH}"
-        fi
-fi
-
 # Display latest commit for meta-qt5
 if grep -q "${COMMIT_META_QT5}" "${BASEDIR}/../default.xml"
     then
         echo -e "meta-qt5 last commit:            ${COMMIT_META_QT5}"
     else
         echo -e "meta-qt5 last commit:            ${COLOR_WARNING}${COMMIT_META_QT5}${COLOR_RESET} Check ${REPO_META_QT5}/tree/${SPECIAL_METAQT5_BRANCH}"
-fi
-
-# Display latest commit for meta-qt5-extra
-if [ "${BRANCH}" == "sumo" ]
-    then
-        if grep -q "${COMMIT_META_QT5_EXTRA}" "${BASEDIR}/../default.xml"
-            then
-                echo -e "meta-qt5-extra last commit:      ${COMMIT_META_QT5_EXTRA}"
-            else
-                echo -e "meta-qt5-extra last commit:      ${COLOR_WARNING}${COMMIT_META_QT5_EXTRA}${COLOR_RESET} Check ${REPO_META_QT5_EXTRA}/tree/${BRANCH}"
-        fi
 fi
 
 # Display latest commit for meta-sdr
@@ -812,7 +683,7 @@ if [ "${BRANCH}" != "kirkstone" ]
 fi
 
 # Display latest commit for meta-xilinx-tools
-if [ "${BRANCH}" == "thud" ] || [ "${BRANCH}" == "zeus" ] || [ "${BRANCH}" == "gatesgarth" ] || [ "${BRANCH}" == "honister" ] || [ "${BRANCH}" == "langdale" ] || [ "${BRANCH}" == "mickledore" ] || [ "${BRANCH}" == "nanbield" ] || [ "${BRANCH}" == "scarthgap" ] || [ "${BRANCH}" == "styhead" ] || [ "${BRANCH}" == "walnascar" ]
+if [ "${BRANCH}" == "gatesgarth" ] || [ "${BRANCH}" == "honister" ] || [ "${BRANCH}" == "langdale" ] || [ "${BRANCH}" == "mickledore" ] || [ "${BRANCH}" == "nanbield" ] || [ "${BRANCH}" == "scarthgap" ] || [ "${BRANCH}" == "styhead" ] || [ "${BRANCH}" == "walnascar" ]
     then
         if grep -q "${COMMIT_META_XILINX_TOOLS}" "${BASEDIR}/../default.xml"
             then
@@ -845,7 +716,7 @@ if [ "${BRANCH}" == "scarthgap" ]
 fi
 
 # Display latest commit for meta-adi
-if [ "${BRANCH}" == "rocko" ] || [ "${BRANCH}" == "sumo" ] || [ "${BRANCH}" == "thud" ]  || [ "${BRANCH}" == "gatesgarth" ] || [ "${BRANCH}" == "honister" ] || [ "${BRANCH}" == "langdale" ]
+if [ "${BRANCH}" == "gatesgarth" ] || [ "${BRANCH}" == "honister" ] || [ "${BRANCH}" == "langdale" ]
     then
         if grep -q "${COMMIT_META_ADI}" "${BASEDIR}/../default.xml"
             then
@@ -856,7 +727,7 @@ if [ "${BRANCH}" == "rocko" ] || [ "${BRANCH}" == "sumo" ] || [ "${BRANCH}" == "
 fi
 
 # Display latest commit for hdl
-if [ "${BRANCH}" == "rocko" ]  || [ "${BRANCH}" == "thud" ] || [ "${BRANCH}" == "gatesgarth" ] || [ "${BRANCH}" == "honister" ] || [ "${BRANCH}" == "langdale" ]
+if [ "${BRANCH}" == "gatesgarth" ] || [ "${BRANCH}" == "honister" ] || [ "${BRANCH}" == "langdale" ]
     then
         if grep -q "${COMMIT_HDL}" "${BASEDIR}/../default.xml"
             then
@@ -893,19 +764,8 @@ if grep -q "${COMMIT_META_INTEL}" "${BASEDIR}/../default.xml"
         echo -e "meta-intel last commit:          ${COLOR_WARNING}${COMMIT_META_INTEL}${COLOR_RESET} Check ${REPO_META_INTEL}/log/?h=${SPECIAL_INTEL_BRANCH}"
 fi
 
-# Display latest commit for meta-ti
-if [ "${BRANCH}" == "dunfell" ]
-    then
-        if grep -q "${COMMIT_META_TI}" "${BASEDIR}/../default.xml"
-            then
-                echo -e "meta-ti last commit:             ${COMMIT_META_TI}"
-            else
-                echo -e "meta-ti last commit:             ${COLOR_WARNING}${COMMIT_META_TI}${COLOR_RESET} Check ${REPO_META_TI}/log/?h=${BRANCH}"
-        fi
-fi
-
 # Display latest commit for meta-arm
-if [ "${BRANCH}" == "dunfell" ] || [ "${BRANCH}" == "scarthgap" ] || [ "${BRANCH}" == "styhead" ] || [ "${BRANCH}" == "walnascar" ]
+if [ "${BRANCH}" == "scarthgap" ] || [ "${BRANCH}" == "styhead" ] || [ "${BRANCH}" == "walnascar" ]
     then
         if grep -q "${COMMIT_META_ARM}" "${BASEDIR}/../default.xml"
             then
