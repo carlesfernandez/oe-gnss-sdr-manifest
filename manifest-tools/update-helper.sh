@@ -250,11 +250,7 @@ if [ "${BRANCH}" == "walnascar" ]
         SPECIAL_XILINX_TOOLS_BRANCH="master"
 fi
 
-<<<<<<< HEAD
-if [ "${BRANCH}" == "thud" ] || [ "${BRANCH}" == "zeus" ] || [ "${BRANCH}" == "gatesgarth" ] || [ "${BRANCH}" == "honister" ] || [ "${BRANCH}" == "langdale" ] || [ "${BRANCH}" == "mickledore" ] || [ "${BRANCH}" == "nanbield" ] || [ "${BRANCH}" == "scarthgap" ]
-=======
 if [ "${BRANCH}" == "gatesgarth" ] || [ "${BRANCH}" == "honister" ] || [ "${BRANCH}" == "langdale" ] || [ "${BRANCH}" == "mickledore" ] || [ "${BRANCH}" == "nanbield" ] || [ "${BRANCH}" == "scarthgap" ] || [ "${BRANCH}" == "styhead" ] || [ "${BRANCH}" == "walnascar" ]
->>>>>>> 779a181 (Scripts: remove Rocko, Sumo, Thud, Warrior, Zeus, and Dunfell versions since they have reached End-of-Life)
     then
         if [ -d "meta-xilinx-tools" ]
             then
