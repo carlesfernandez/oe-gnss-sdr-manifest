@@ -12,6 +12,11 @@ SPDX-FileCopyrightText: 2016-2025 Carles Fernandez-Prades <carles.fernandez@cttc
 
 # Repo Manifests for building systems based on the meta-gnss-sdr layer
 
+> ⚠️ **END-OF-LIFE (EOL) NOTICE:** 
+> The Geniux Zeus manifest reached its End-of-Life in April 2025.
+> Version `zeus-25.04` is the final release, and no further maintenance is
+> expected on this branch.
+
 This repository provides Repo manifests to setup the OpenEmbedded build system
 with the meta-gnss-sdr layer.
 
