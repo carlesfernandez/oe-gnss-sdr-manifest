@@ -90,7 +90,7 @@ fi
 
 # meta-qt5
 SPECIAL_METAQT5_BRANCH=${BRANCH}
-if [ "${BRANCH}" == "styhead" ] || [ "${BRANCH}" == "walnascar" ]
+if [ "${BRANCH}" == "styhead" ]
     then
         SPECIAL_METAQT5_BRANCH="master"
 fi
