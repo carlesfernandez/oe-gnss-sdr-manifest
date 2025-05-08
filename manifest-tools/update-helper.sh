@@ -511,10 +511,6 @@ cd ..
 
 # meta-intel
 SPECIAL_INTEL_BRANCH=${BRANCH}
-if [ "${BRANCH}" == "walnascar" ]
-    then
-        SPECIAL_INTEL_BRANCH="master"
-fi
 if [ -d "meta-intel" ]
     then
         cd meta-intel || exit
