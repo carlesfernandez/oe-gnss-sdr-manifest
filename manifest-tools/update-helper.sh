@@ -477,11 +477,7 @@ fi
 SPECIAL_RASPBERRYPI_BRANCH=${BRANCH}
 if [ "${BRANCH}" == "styhead" ]
     then
-        SPECIAL_RASPBERRYPI_BRANCH="master"
-fi
-if [ "${BRANCH}" == "walnascar" ]
-    then
-        SPECIAL_RASPBERRYPI_BRANCH="master"
+        SPECIAL_RASPBERRYPI_BRANCH="walnascar"
 fi
 if [ -d "meta-raspberrypi" ]
     then
