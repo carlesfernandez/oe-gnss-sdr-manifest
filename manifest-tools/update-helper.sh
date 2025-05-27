@@ -72,7 +72,7 @@ cd ..
 SPECIAL_METAQT5_BRANCH=${BRANCH}
 if [ "${BRANCH}" == "styhead" ]
     then
-        SPECIAL_METAQT5_BRANCH="master"
+        SPECIAL_METAQT5_BRANCH="walnascar"
 fi
 
 if [ -d "meta-qt5" ]
