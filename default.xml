@@ -27,16 +27,16 @@
 	<default remote="openembedded" revision="master" />
 
 	<project name="bitbake" path="bitbake" revision="2.8" />
-	<project name="openembedded-core" path="oe-core" revision="d1b64f190c1686f081f5ba2c4f2b320048f6a514" />
-	<project name="meta-openembedded" path="meta-oe" revision="491671faee11ea131feab5a3a451d1a01deb2ab1" />
+	<project name="openembedded-core" path="oe-core" revision="cfa97a50e06fb0fcc7cbc0ada54ce7ad5ba29ebe" />
+	<project name="meta-openembedded" path="meta-oe" revision="727811eaf256b88fd135be99559f2cbf14c82fce" />
 	<project name="meta-qt5" remote="qt5" path="meta-qt5" revision="eb828418264a49b8d00035cb3d7b12fcea3be801" />
 	<project name="meta-sdr" remote="balister" path="meta-sdr" revision="329d5ba03820b724fb8d6434bac715a95231afbb" />
 	<project name="meta-virtualization" remote="yocto" path="meta-virtualization" revision="9e040ee8dd6025558ea60ac9db60c41bfeddf221" />
-	<project name="meta-xilinx" remote="Xilinx" path="meta-xilinx" revision="cd70c8d08de48963fe1a5d61d532a12b1d0730fc" />
+	<project name="meta-xilinx" remote="Xilinx" path="meta-xilinx" revision="936845b97ab1ff035108f219f4e7cfef5401eb02" />
 	<project name="meta-xilinx-tools" remote="Xilinx" path="meta-xilinx-tools" revision="fb6908f6a63c5c79cb1c096f54d8ef5605eb7b74" />
 	<project name="meta-openamp" remote="Xilinx" path="meta-openamp" revision="68049285b561f071bd7cc093f9ecbe4f5518ddf9" />
 	<project name="meta-arm" remote="yocto" path="meta-arm" revision="8e0f8af90fefb03f08cd2228cde7a89902a6b37c" />
-	<project name="meta-raspberrypi" remote="yocto" path="meta-raspberrypi" revision="bce7b3acd2e0d9d127fcb57eae4a512bd7e7924a" />
+	<project name="meta-raspberrypi" remote="yocto" path="meta-raspberrypi" revision="1091bde25e9ebaea33114edb85e4aee931d105f3" />
 	<project name="meta-intel" remote="yocto" path="meta-intel" revision="38e75c8c1059e5f37659c140c010eaa203238fd2" />
 	<project name="meta-swupdate" remote="sbabic" path="meta-swupdate" revision="43ef322cbf5b91d84b007c343cf73e9b01699594" />
 	<project name="meta-gnss-sdr" remote="gnss-sdr" path="meta-gnss-sdr" revision="scarthgap" />
