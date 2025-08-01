@@ -96,27 +96,27 @@ if [ "${BRANCH}" == "gatesgarth" ]
 fi
 if [ "${BRANCH}" == "langdale" ]
     then
-        SPECIAL_SDR_BRANCH="master"
+        SPECIAL_SDR_BRANCH="walnascar"
 fi
 if [ "${BRANCH}" == "mickledore" ]
     then
-        SPECIAL_SDR_BRANCH="master"
+        SPECIAL_SDR_BRANCH="walnascar"
 fi
 if [ "${BRANCH}" == "nanbield" ]
     then
-        SPECIAL_SDR_BRANCH="master"
+        SPECIAL_SDR_BRANCH="walnascar"
 fi
 if [ "${BRANCH}" == "scarthgap" ]
     then
-        SPECIAL_SDR_BRANCH="master"
+        SPECIAL_SDR_BRANCH="walnascar"
 fi
 if [ "${BRANCH}" == "styhead" ]
     then
-        SPECIAL_SDR_BRANCH="master"
+        SPECIAL_SDR_BRANCH="walnascar"
 fi
 if [ "${BRANCH}" == "walnascar" ]
     then
-        SPECIAL_SDR_BRANCH="master"
+        SPECIAL_SDR_BRANCH="walnascar"
 fi
 if [ -d "meta-sdr" ]
     then
