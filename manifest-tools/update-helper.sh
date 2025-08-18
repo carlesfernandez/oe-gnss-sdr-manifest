@@ -114,10 +114,6 @@ if [ "${BRANCH}" == "styhead" ]
     then
         SPECIAL_SDR_BRANCH="walnascar"
 fi
-if [ "${BRANCH}" == "walnascar" ]
-    then
-        SPECIAL_SDR_BRANCH="walnascar"
-fi
 if [ -d "meta-sdr" ]
     then
         cd meta-sdr || exit
@@ -475,10 +471,6 @@ fi
 
 # meta-raspberrypi
 SPECIAL_RASPBERRYPI_BRANCH=${BRANCH}
-if [ "${BRANCH}" == "styhead" ]
-    then
-        SPECIAL_RASPBERRYPI_BRANCH="walnascar"
-fi
 if [ -d "meta-raspberrypi" ]
     then
         cd meta-raspberrypi || exit
