@@ -34,7 +34,7 @@
 	<project name="meta-openembedded" path="meta-oe" revision="09c7f76c196876a4366f220b360f4bdb93ab95c0" />
 	<project name="meta-qt5" remote="qt5" path="meta-qt5" revision="9d9966d81d6a98876f3919127ece3a6829edf609" />
 	<project name="meta-sdr" remote="balister" path="meta-sdr" revision="a36d5c07a6b93109572b4447447101ed5301c776" />
-	<project name="meta-arm" remote="yocto" path="meta-arm" revision="0d4c09cf00b0eb3a0bcafb4087e9ef1cec7b7490" />
+	<project name="meta-arm" remote="yocto" path="meta-arm" revision="aff67cb5d748aafcba1ee589a758d51191f061c2" />
 	<project name="meta-raspberrypi" remote="yocto" path="meta-raspberrypi" revision="b667e177b1e6642cb11301801db44d4515c1652d" />
 	<project name="meta-intel" remote="yocto" path="meta-intel" revision="af904290f574ee9b1f62aade9f55dacdd9fb6cdb" />
 	<project name="meta-riscv" remote="riscv" path="meta-riscv" revision="3c81a585a6ecc6c895127763250bf76bde22f204" />
