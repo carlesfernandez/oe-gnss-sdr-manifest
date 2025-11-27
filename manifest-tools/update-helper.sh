@@ -35,6 +35,7 @@ REPO_META_INTEL="https://git.yoctoproject.org/meta-intel"
 REPO_META_AVNET="https://github.com/Avnet/meta-avnet"
 REPO_META_ARM="https://git.yoctoproject.org/meta-arm"
 REPO_META_SW_UPDATE="https://github.com/sbabic/meta-swupdate"
+REPO_META_RISCV="https://github.com/riscv/meta-riscv"
 
 echo -e "Getting the latest commits in the ${BRANCH} branch..."
 mkdir -p sources
@@ -73,6 +74,10 @@ SPECIAL_METAQT5_BRANCH=${BRANCH}
 if [ "${BRANCH}" == "styhead" ]
     then
         SPECIAL_METAQT5_BRANCH="walnascar"
+fi
+if [ "${BRANCH}" == "whinlatter" ]
+    then
+        SPECIAL_METAQT5_BRANCH="master"
 fi
 
 if [ -d "meta-qt5" ]
@@ -113,6 +118,10 @@ fi
 if [ "${BRANCH}" == "styhead" ]
     then
         SPECIAL_SDR_BRANCH="walnascar"
+fi
+if [ "${BRANCH}" == "whinlatter" ]
+    then
+        SPECIAL_SDR_BRANCH="master"
 fi
 if [ -d "meta-sdr" ]
     then
@@ -194,7 +203,7 @@ if [ "${BRANCH}" == "walnascar" ]
         SPECIAL_XILINX_BRANCH="master"
 fi
 
-if [ "${BRANCH}" != "kirkstone" ]
+if [ "${BRANCH}" != "kirkstone" ] || ["${BRANCH}" != "whinlatter" ]
     then
         if [ -d "meta-xilinx" ]
             then
@@ -471,6 +480,10 @@ fi
 
 # meta-raspberrypi
 SPECIAL_RASPBERRYPI_BRANCH=${BRANCH}
+if [ "${BRANCH}" == "whinlatter" ]
+    then
+        SPECIAL_RASPBERRYPI_BRANCH="master"
+fi
 if [ -d "meta-raspberrypi" ]
     then
         cd meta-raspberrypi || exit
@@ -499,6 +512,10 @@ cd ..
 
 # meta-intel
 SPECIAL_INTEL_BRANCH=${BRANCH}
+if [ "${BRANCH}" == "whinlatter" ]
+    then
+        SPECIAL_INTEL_BRANCH="master"
+fi
 if [ -d "meta-intel" ]
     then
         cd meta-intel || exit
@@ -527,7 +544,11 @@ cd ..
 
 # meta-arm
 SPECIAL_ARM_BRANCH=${BRANCH}
-if [ "${BRANCH}" == "scarthgap" ] || [ "${BRANCH}" == "styhead" ] || [ "${BRANCH}" == "walnascar" ]
+if [ "${BRANCH}" == "whinlatter" ]
+    then
+        SPECIAL_ARM_BRANCH="master"
+fi
+if [ "${BRANCH}" == "scarthgap" ] || [ "${BRANCH}" == "styhead" ] || [ "${BRANCH}" == "walnascar" ] || [ "${BRANCH}" == "whinlatter" ]
     then
         if [ -d "meta-arm" ]
             then
@@ -556,11 +577,50 @@ if [ "${BRANCH}" == "scarthgap" ] || [ "${BRANCH}" == "styhead" ] || [ "${BRANCH
     cd ..
 fi
 
+# meta-riscv
+SPECIAL_RISCV_BRANCH==${BRANCH}
+if [ "${BRANCH}" == "whinlatter" ]
+    then
+        SPECIAL_RISCV_BRANCH="master"
+fi
+if [ "${BRANCH}" == "styhead" ] || [ "${BRANCH}" == "whinlatter" ]
+    then
+        if [ -d "meta-riscv" ]
+            then
+                cd meta-riscv || exit
+                exists_in_remote=$(git ls-remote --heads origin "${SPECIAL_RISCV_BRANCH}")
+                if [[ -z ${exists_in_remote} ]]
+                    then
+                        COMMIT_META_RISCV="Unknown"
+                    else
+                        git checkout "${SPECIAL_RISCV_BRANCH}"
+                        git pull origin "${SPECIAL_RISCV_BRANCH}"
+                        COMMIT_META_RISCV=$(git rev-parse HEAD)
+                fi
+            else
+                git clone ${REPO_META_RISCV}
+                cd meta-riscv || exit
+                exists_in_remote=$(git ls-remote --heads origin "${SPECIAL_RISCV_BRANCH}")
+                if [[ -z ${exists_in_remote} ]]
+                    then
+                        COMMIT_META_RISCV="Unknown"
+                    else
+                        git checkout "${SPECIAL_RISCV_BRANCH}"
+                        COMMIT_META_RISCV=$(git rev-parse HEAD)
+                fi
+        fi
+    cd ..
+fi
+
 # meta-swupdate
 SPECIAL_SWUPDATE_BRANCH=${BRANCH}
 if [ "${BRANCH}" == "walnascar" ]
     then
         SPECIAL_SWUPDATE_BRANCH="styhead"
+fi
+if [ "${BRANCH}" == "whinlatter" ]
+    then
+        SPECIAL_SWUPDATE_BRANCH="master"
 fi
 if [ -d "meta-swupdate" ]
     then
@@ -651,7 +711,7 @@ if [ "${BRANCH}" == "gatesgarth" ] || [ "${BRANCH}" == "honister" ] || [ "${BRAN
 fi
 
 # Display latest commit for meta-xilinx
-if [ "${BRANCH}" != "kirkstone" ]
+if [ "${BRANCH}" != "kirkstone" ] && [ "${BRANCH}" != "whinlatter" ]
     then
         if grep -q "${COMMIT_META_XILINX}" "${BASEDIR}/../default.xml"
             then
@@ -749,13 +809,24 @@ if grep -q "${COMMIT_META_INTEL}" "${BASEDIR}/../default.xml"
 fi
 
 # Display latest commit for meta-arm
-if [ "${BRANCH}" == "scarthgap" ] || [ "${BRANCH}" == "styhead" ] || [ "${BRANCH}" == "walnascar" ]
+if [ "${BRANCH}" == "scarthgap" ] || [ "${BRANCH}" == "styhead" ] || [ "${BRANCH}" == "walnascar" ] || [ "${BRANCH}" == "whinlatter" ]
     then
         if grep -q "${COMMIT_META_ARM}" "${BASEDIR}/../default.xml"
             then
                 echo -e "meta-arm last commit:            ${COMMIT_META_ARM}"
             else
                 echo -e "meta-arm last commit:            ${COLOR_WARNING}${COMMIT_META_ARM}${COLOR_RESET} Check ${REPO_META_ARM}/log/?h=${SPECIAL_ARM_BRANCH}"
+        fi
+fi
+
+# Display latest commit for meta-riscv
+if [ "${BRANCH}" == "styhead" ] || [ "${BRANCH}" == "whinlatter" ]
+    then
+        if grep -q "${COMMIT_META_RISCV}" "${BASEDIR}/../default.xml"
+            then
+                echo -e "meta-riscv last commit:          ${COMMIT_META_RISCV}"
+            else
+                echo -e "meta-riscv last commit:          ${COLOR_WARNING}${COMMIT_META_RISCV}${COLOR_RESET} Check ${REPO_META_RISCV}/log/?h=${SPECIAL_RISCV_BRANCH}"
         fi
 fi
 
