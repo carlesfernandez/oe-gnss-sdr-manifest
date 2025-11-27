@@ -27,17 +27,17 @@
 	<default remote="openembedded" revision="master" />
 
 	<project name="bitbake" path="bitbake" revision="2.8" />
-	<project name="openembedded-core" path="oe-core" revision="baa5e7ea5f37f54c2a00080798ad7fb4c0664f69" />
-	<project name="meta-openembedded" path="meta-oe" revision="c29a18fa39ede952f3f6108ec007c1906e2d9a0d" />
-	<project name="meta-qt5" remote="qt5" path="meta-qt5" revision="e197839013fa2cfd59339508303bce91fef48928" />
+	<project name="openembedded-core" path="oe-core" revision="7cfacaee1b3319e561036512a849e762d0f68a5e" />
+	<project name="meta-openembedded" path="meta-oe" revision="b79cf94b4d53d75ddc4b4f468c1b1ad42a3fffe2" />
+	<project name="meta-qt5" remote="qt5" path="meta-qt5" revision="9ae2fe2696b10f5dc4253c4f467dc388139860bd" />
 	<project name="meta-sdr" remote="balister" path="meta-sdr" revision="835e65adb22c9058ab84c70832c91114166f4934" />
-	<project name="meta-virtualization" remote="yocto" path="meta-virtualization" revision="af1db2042caf8021d767dce1b26c08b59b96f3d1" />
+	<project name="meta-virtualization" remote="yocto" path="meta-virtualization" revision="d75faad37ae3cbbfe31dffaa6432553fc5450838" />
 	<project name="meta-xilinx" remote="Xilinx" path="meta-xilinx" revision="936845b97ab1ff035108f219f4e7cfef5401eb02" />
 	<project name="meta-xilinx-tools" remote="Xilinx" path="meta-xilinx-tools" revision="fb6908f6a63c5c79cb1c096f54d8ef5605eb7b74" />
 	<project name="meta-openamp" remote="Xilinx" path="meta-openamp" revision="68049285b561f071bd7cc093f9ecbe4f5518ddf9" />
-	<project name="meta-arm" remote="yocto" path="meta-arm" revision="8e0f8af90fefb03f08cd2228cde7a89902a6b37c" />
-	<project name="meta-raspberrypi" remote="yocto" path="meta-raspberrypi" revision="aaf976a665daa7e520545908adef8a0e9410b57f" />
-	<project name="meta-intel" remote="yocto" path="meta-intel" revision="b065676a83371b34559f2077d9b2f6a6ac5652f7" />
+	<project name="meta-arm" remote="yocto" path="meta-arm" revision="a81c19915b5b9e71ed394032e9a50fd06919e1cd" />
+	<project name="meta-raspberrypi" remote="yocto" path="meta-raspberrypi" revision="cd677051d18d4af2f043ac1ab58509ae5f594cf6" />
+	<project name="meta-intel" remote="yocto" path="meta-intel" revision="6fc37057c7f0293a2345e303588901889df8b937" />
 	<project name="meta-swupdate" remote="sbabic" path="meta-swupdate" revision="43ef322cbf5b91d84b007c343cf73e9b01699594" />
 	<project name="meta-gnss-sdr" remote="gnss-sdr" path="meta-gnss-sdr" revision="scarthgap" />
 
