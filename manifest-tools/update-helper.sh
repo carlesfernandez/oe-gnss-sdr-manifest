@@ -578,7 +578,7 @@ if [ "${BRANCH}" == "scarthgap" ] || [ "${BRANCH}" == "styhead" ] || [ "${BRANCH
 fi
 
 # meta-riscv
-SPECIAL_RISCV_BRANCH==${BRANCH}
+SPECIAL_RISCV_BRANCH=${BRANCH}
 if [ "${BRANCH}" == "whinlatter" ]
     then
         SPECIAL_RISCV_BRANCH="master"
@@ -826,7 +826,7 @@ if [ "${BRANCH}" == "styhead" ] || [ "${BRANCH}" == "whinlatter" ]
             then
                 echo -e "meta-riscv last commit:          ${COMMIT_META_RISCV}"
             else
-                echo -e "meta-riscv last commit:          ${COLOR_WARNING}${COMMIT_META_RISCV}${COLOR_RESET} Check ${REPO_META_RISCV}/log/?h=${SPECIAL_RISCV_BRANCH}"
+                echo -e "meta-riscv last commit:          ${COLOR_WARNING}${COMMIT_META_RISCV}${COLOR_RESET} Check ${REPO_META_RISCV}/tree/${SPECIAL_RISCV_BRANCH}"
         fi
 fi
 
