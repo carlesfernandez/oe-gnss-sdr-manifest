@@ -578,7 +578,7 @@ if [ "${BRANCH}" == "scarthgap" ] || [ "${BRANCH}" == "styhead" ] || [ "${BRANCH
 fi
 
 # meta-riscv
-SPECIAL_RISCV_BRANCH==${BRANCH}
+SPECIAL_RISCV_BRANCH=${BRANCH}
 if [ "${BRANCH}" == "whinlatter" ]
     then
         SPECIAL_RISCV_BRANCH="master"
