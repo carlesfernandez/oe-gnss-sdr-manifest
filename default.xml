@@ -27,18 +27,18 @@
 	<default remote="openembedded" revision="master" />
 
 	<project name="bitbake" path="bitbake" revision="2.8" />
-	<project name="openembedded-core" path="oe-core" revision="7cfacaee1b3319e561036512a849e762d0f68a5e" />
+	<project name="openembedded-core" path="oe-core" revision="ef198b0c6063ede32cb93fe44eb89937c076a073" />
 	<project name="meta-openembedded" path="meta-oe" revision="89a01c3d9ad1f8fce6aeb4dd0e694cfa28d42099" />
 	<project name="meta-qt5" remote="qt5" path="meta-qt5" revision="9ae2fe2696b10f5dc4253c4f467dc388139860bd" />
 	<project name="meta-sdr" remote="balister" path="meta-sdr" revision="835e65adb22c9058ab84c70832c91114166f4934" />
-	<project name="meta-virtualization" remote="yocto" path="meta-virtualization" revision="d75faad37ae3cbbfe31dffaa6432553fc5450838" />
+	<project name="meta-virtualization" remote="yocto" path="meta-virtualization" revision="17ac21e7d7f6f40a87618b22278b63bcfa14dbf2" />
 	<project name="meta-xilinx" remote="Xilinx" path="meta-xilinx" revision="936845b97ab1ff035108f219f4e7cfef5401eb02" />
 	<project name="meta-xilinx-tools" remote="Xilinx" path="meta-xilinx-tools" revision="fb6908f6a63c5c79cb1c096f54d8ef5605eb7b74" />
 	<project name="meta-openamp" remote="Xilinx" path="meta-openamp" revision="68049285b561f071bd7cc093f9ecbe4f5518ddf9" />
 	<project name="meta-arm" remote="yocto" path="meta-arm" revision="a81c19915b5b9e71ed394032e9a50fd06919e1cd" />
 	<project name="meta-raspberrypi" remote="yocto" path="meta-raspberrypi" revision="cd677051d18d4af2f043ac1ab58509ae5f594cf6" />
 	<project name="meta-intel" remote="yocto" path="meta-intel" revision="6fc37057c7f0293a2345e303588901889df8b937" />
-	<project name="meta-swupdate" remote="sbabic" path="meta-swupdate" revision="43ef322cbf5b91d84b007c343cf73e9b01699594" />
+	<project name="meta-swupdate" remote="sbabic" path="meta-swupdate" revision="2b48267fcfedf61c2a33c7830e794115263639f8" />
 	<project name="meta-gnss-sdr" remote="gnss-sdr" path="meta-gnss-sdr" revision="scarthgap" />
 
 </manifest>
