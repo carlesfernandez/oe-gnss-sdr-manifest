@@ -37,7 +37,7 @@
 	<project name="meta-arm" remote="yocto" path="meta-arm" revision="b68089f2648d712b9406d0e88c71758913267f81" />
 	<project name="meta-raspberrypi" remote="yocto" path="meta-raspberrypi" revision="5c540d5447fba8b652c8778af30e605242df650c" />
 	<project name="meta-intel" remote="yocto" path="meta-intel" revision="a75e59bdba66fa6dcab8f2208e73fbf2fc576457" />
-	<project name="meta-swupdate" remote="sbabic" path="meta-swupdate" revision="8917300c985c2649149d6a87fa56a4ceb470ed74" />
+	<project name="meta-swupdate" remote="sbabic" path="meta-swupdate" revision="4e78bedc00f59cf2e7c5a757f5638ea7fca9241e" />
 	<project name="meta-gnss-sdr" remote="gnss-sdr" path="meta-gnss-sdr" revision="walnascar" />
 
 </manifest>
