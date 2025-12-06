@@ -614,14 +614,6 @@ fi
 
 # meta-swupdate
 SPECIAL_SWUPDATE_BRANCH=${BRANCH}
-if [ "${BRANCH}" == "walnascar" ]
-    then
-        SPECIAL_SWUPDATE_BRANCH="styhead"
-fi
-if [ "${BRANCH}" == "whinlatter" ]
-    then
-        SPECIAL_SWUPDATE_BRANCH="master"
-fi
 if [ -d "meta-swupdate" ]
     then
         cd meta-swupdate || exit
