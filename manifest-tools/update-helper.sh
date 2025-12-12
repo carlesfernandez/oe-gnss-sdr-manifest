@@ -544,10 +544,6 @@ cd ..
 
 # meta-arm
 SPECIAL_ARM_BRANCH=${BRANCH}
-if [ "${BRANCH}" == "whinlatter" ]
-    then
-        SPECIAL_ARM_BRANCH="master"
-fi
 if [ "${BRANCH}" == "scarthgap" ] || [ "${BRANCH}" == "styhead" ] || [ "${BRANCH}" == "walnascar" ] || [ "${BRANCH}" == "whinlatter" ]
     then
         if [ -d "meta-arm" ]
