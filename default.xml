@@ -30,15 +30,15 @@
 	<default remote="openembedded" revision="master" />
 
 	<project name="bitbake" path="bitbake" revision="2.14" />
-	<project name="openembedded-core" path="oe-core" revision="8519978592483bb096ed5192fff7af6c887b799e" />
-	<project name="meta-openembedded" path="meta-oe" revision="09c7f76c196876a4366f220b360f4bdb93ab95c0" />
+	<project name="openembedded-core" path="oe-core" revision="000a044d285d93ded3280f27360165c943bb5d7e" />
+	<project name="meta-openembedded" path="meta-oe" revision="d28d0a23615f4d91d125fdcd247a71245087dab3" />
 	<project name="meta-qt5" remote="qt5" path="meta-qt5" revision="9d9966d81d6a98876f3919127ece3a6829edf609" />
-	<project name="meta-sdr" remote="balister" path="meta-sdr" revision="6ba2caa4bb02b464293fc879cef4ce36ff564311" />
-	<project name="meta-arm" remote="yocto" path="meta-arm" revision="3752c4e4478a6dbdf7a722a261d16ebc7a4a99e5" />
-	<project name="meta-raspberrypi" remote="yocto" path="meta-raspberrypi" revision="95f2cefa1f3b46c5bb5ad27ed0a2147725ea2210" />
-	<project name="meta-intel" remote="yocto" path="meta-intel" revision="af904290f574ee9b1f62aade9f55dacdd9fb6cdb" />
-	<project name="meta-riscv" remote="riscv" path="meta-riscv" revision="7c24af840282997dcff7e2bea80897520a9e9e78" />
-	<project name="meta-swupdate" remote="sbabic" path="meta-swupdate" revision="0a90734f7f88cd364ddaff4fb6b79e46b757b3f3" />
+	<project name="meta-sdr" remote="balister" path="meta-sdr" revision="b86b8cda4890be7c1e1bb9ae69cfc44642263bf7" />
+	<project name="meta-arm" remote="yocto" path="meta-arm" revision="73460c53949658ab6c8b46269c3a69caccd3f745" />
+	<project name="meta-raspberrypi" remote="yocto" path="meta-raspberrypi" revision="046a23892770accf32776bd16a2bf6ad534f42eb" />
+	<project name="meta-intel" remote="yocto" path="meta-intel" revision="8ce44f818b975c2b2e125f703df2cbd3403acf9c" />
+	<project name="meta-riscv" remote="riscv" path="meta-riscv" revision="86d77583f76969120e1b250f0a74b88afafade06" />
+	<project name="meta-swupdate" remote="sbabic" path="meta-swupdate" revision="bccb80e274fe6ae9fbd260d86bd3821055f1b9fe" />
 	<project name="meta-gnss-sdr" remote="gnss-sdr" path="meta-gnss-sdr" revision="whinlatter" />
 
 </manifest>
