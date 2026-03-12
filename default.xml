@@ -43,7 +43,7 @@
 	<project name="meta-adi" remote="adi" path="meta-adi" revision="3a5de5cf8f1cf4a0fe39a26cbcc6a292a0e5b654" />
 	<project name="hdl" remote="adi" path="hdl" revision="ae6e248f219a5bb2e63733c762e9561c072d037e" />
 	<project name="meta-raspberrypi" remote="yocto" path="meta-raspberrypi" revision="378d4b6e7ba64b6a9a701457cc3780fa896ba5dc" />
-	<project name="meta-intel" remote="yocto" path="meta-intel" revision="8ce44f818b975c2b2e125f703df2cbd3403acf9c" />
+	<project name="meta-intel" remote="yocto" path="meta-intel" revision="75db9e135d53b070366cd0beecefd72e4cf135fd" />
 	<project name="meta-avnet" remote="avnet" path="meta-avnet" revision="aecf3bfa880a1bdbcd7bab4cddca90efb2a5d617" />
 	<project name="meta-swupdate" remote="sbabic" path="meta-swupdate" revision="539c58405f4d27389a27c98d7f2cc153b55aa4e6" />
 	<project name="meta-gnss-sdr" remote="gnss-sdr" path="meta-gnss-sdr" revision="honister" />
