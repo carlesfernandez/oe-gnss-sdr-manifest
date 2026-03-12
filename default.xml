@@ -43,7 +43,7 @@
 	<project name="meta-adi" remote="adi" path="meta-adi" revision="dd6808481711980ad240609f82e9f9710541d96f" />
 	<project name="hdl" remote="adi" path="hdl" revision="d0336c0f6ff88061d906621c11b616145f96358e" />
 	<project name="meta-raspberrypi" remote="yocto" path="meta-raspberrypi" revision="e5e976da0bed8eb9d3c4dc61e8ee3a6a864ff56b" />
-	<project name="meta-intel" remote="yocto" path="meta-intel" revision="8ce44f818b975c2b2e125f703df2cbd3403acf9c" />
+	<project name="meta-intel" remote="yocto" path="meta-intel" revision="adf3288b9890cbeb2519b57ca548a025ef7a82b0" />
 	<project name="meta-avnet" remote="avnet" path="meta-avnet" revision="dce93c658f2610c2892099104822e08272c8daad" />
 	<project name="meta-virtualization" remote="yocto" path="meta-virtualization" revision="2e5df1cd76265587e6db67f020a06566c4ed6dc4" />
 	<project name="meta-swupdate" remote="sbabic" path="meta-swupdate" revision="744d6b96fc0290a7df9045e60c734c4924abfd4a" />
