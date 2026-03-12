@@ -37,7 +37,7 @@
 	<project name="meta-openamp" remote="Xilinx" path="meta-openamp" revision="68049285b561f071bd7cc093f9ecbe4f5518ddf9" />
 	<project name="meta-arm" remote="yocto" path="meta-arm" revision="a81c19915b5b9e71ed394032e9a50fd06919e1cd" />
 	<project name="meta-raspberrypi" remote="yocto" path="meta-raspberrypi" revision="2c646d29912dcc873469a57b1c207e1549c5094d" />
-	<project name="meta-intel" remote="yocto" path="meta-intel" revision="8ce44f818b975c2b2e125f703df2cbd3403acf9c" />
+	<project name="meta-intel" remote="yocto" path="meta-intel" revision="5d153e35b4e752505efeae368f188fac5e31cf33" />
 	<project name="meta-swupdate" remote="sbabic" path="meta-swupdate" revision="db16b9aa3e39bc35ced39c526606102c9a466b81" />
 	<project name="meta-gnss-sdr" remote="gnss-sdr" path="meta-gnss-sdr" revision="scarthgap" />
 
