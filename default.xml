@@ -36,7 +36,7 @@
 	<project name="meta-sdr" remote="balister" path="meta-sdr" revision="85f767d45eae27d3b3ba649523846f5c9f8466f7" />
 	<project name="meta-arm" remote="yocto" path="meta-arm" revision="73460c53949658ab6c8b46269c3a69caccd3f745" />
 	<project name="meta-raspberrypi" remote="yocto" path="meta-raspberrypi" revision="046a23892770accf32776bd16a2bf6ad534f42eb" />
-	<project name="meta-intel" remote="yocto" path="meta-intel" revision="8ce44f818b975c2b2e125f703df2cbd3403acf9c" />
+	<project name="meta-intel" remote="yocto" path="meta-intel" revision="fc9bc44c9da5e7e7bae38313615aaff5873b843f" />
 	<project name="meta-riscv" remote="riscv" path="meta-riscv" revision="16ebec8c34f9c09370c3aa22733a9a7ad668a512" />
 	<project name="meta-swupdate" remote="sbabic" path="meta-swupdate" revision="06110ff504497b82a30f18a61da639276312b703" />
 	<project name="meta-gnss-sdr" remote="gnss-sdr" path="meta-gnss-sdr" revision="whinlatter" />
