@@ -480,10 +480,6 @@ fi
 
 # meta-raspberrypi
 SPECIAL_RASPBERRYPI_BRANCH=${BRANCH}
-if [ "${BRANCH}" == "whinlatter" ]
-    then
-        SPECIAL_RASPBERRYPI_BRANCH="master"
-fi
 if [ -d "meta-raspberrypi" ]
     then
         cd meta-raspberrypi || exit
@@ -571,10 +567,6 @@ fi
 
 # meta-riscv
 SPECIAL_RISCV_BRANCH=${BRANCH}
-if [ "${BRANCH}" == "whinlatter" ]
-    then
-        SPECIAL_RISCV_BRANCH="master"
-fi
 if [ "${BRANCH}" == "styhead" ] || [ "${BRANCH}" == "whinlatter" ]
     then
         if [ -d "meta-riscv" ]
